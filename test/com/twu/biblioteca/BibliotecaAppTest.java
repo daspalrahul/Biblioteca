@@ -13,12 +13,12 @@ public class BibliotecaAppTest {
 
     @Test
     public void bibliotecaAppKnowsHowToRun() {
-        View mockView = Mockito.mock(View.class);
-        ArrayList<String> list = new ArrayList<>();
-        BibliotecaApp bibliotecaApp = new BibliotecaApp(list, mockView);
+        View view = Mockito.mock(View.class);
+        ArrayList<String[]> list = new ArrayList<>();
+        BibliotecaApp bibliotecaApp = new BibliotecaApp(list, view);
 
         bibliotecaApp.start();
 
-        Mockito.verify(mockView).displayListOfBooks(list);
+        Mockito.verify(view).displayListOfBooks(list);
     }
 }
