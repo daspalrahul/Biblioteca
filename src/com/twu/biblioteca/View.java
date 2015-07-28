@@ -17,4 +17,9 @@ public class View {
             System.out.println("");
         }
     }
+
+    public void displayMenu() {
+        System.out.println("Enter the action you want to perform");
+        System.out.print("1. List Books\n2. Quit\n");
+    }
 }

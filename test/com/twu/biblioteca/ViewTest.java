@@ -5,7 +5,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import java.io.ByteArrayOutputStream;
@@ -14,7 +13,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Matchers.eq;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ViewTest {
@@ -45,7 +43,19 @@ public class ViewTest {
 
         view.displayListOfBooks(listOfBooks);
 
-        assertEquals("   Name                                          Author      Year\n1  A Game of Thrones                George R. R. Martin      1996\n2  A Game of Thrones                George R. R. Martin      1996\n", outContent.toString());
+        assertEquals("   Name                                          Author      Year\n" +
+                "1  A Game of Thrones                George R. R. Martin      1996\n" +
+                "2  A Game of Thrones                George R. R. Martin      1996\n", outContent.toString());
+    }
+
+    @Test
+    public void viewCanDisplayListOfAvailableMenu() {
+        View view = new View();
+
+        view.displayMenu();
+
+        assertEquals("Enter the action you want to perform\n1. List Books\n" +
+                "2. Quit\n", outContent.toString());
     }
 
     @After

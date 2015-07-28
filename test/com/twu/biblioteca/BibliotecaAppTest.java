@@ -19,6 +19,6 @@ public class BibliotecaAppTest {
 
         bibliotecaApp.start();
 
-        Mockito.verify(view).displayListOfBooks(list);
+        Mockito.verify(view).displayMenu();
     }
 }
