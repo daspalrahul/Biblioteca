@@ -4,9 +4,6 @@ package com.twu.biblioteca;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import static java.util.Arrays.asList;
 import static org.junit.Assert.*;
 

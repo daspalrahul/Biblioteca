@@ -20,6 +20,7 @@
         <junit haltonfailure="true" printsummary="true" showoutput="yes">
             <test name="com.twu.biblioteca.ViewTest"/>
             <test name="com.twu.biblioteca.BookTest"/>
+            <test name="com.twu.biblioteca.LibraryTest"/>
             <classpath>
                 <pathelement location="out"/>
                 <path refid="classpath"/>

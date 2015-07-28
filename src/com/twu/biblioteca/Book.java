@@ -25,6 +25,11 @@ public class Book {
     }
 
     @Override
+    public String toString() {
+        return bookName + " " + bookAuthor + " " + yearPublished;
+    }
+
+    @Override
     public int hashCode() {
         int result = bookName != null ? bookName.hashCode() : 0;
         result = 31 * result + (bookAuthor != null ? bookAuthor.hashCode() : 0);
