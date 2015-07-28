@@ -6,8 +6,8 @@ import java.util.ArrayList;
 public class Library {
     private ArrayList<Book> library;
 
-    public Library() {
-        this.library = new ArrayList<Book>();
+    public Library(ArrayList<Book> library) {
+        this.library = library;
     }
 
     public int numberOfBooks() {
