@@ -58,6 +58,15 @@ public class ViewTest {
                 "2. Quit\n", outContent.toString());
     }
 
+    @Test
+    public void viewCanDisplayInvalidCommandMessage() {
+        View view = new View();
+
+        view.displayInvalidCommandMessage();
+
+        assertEquals("Select a valid option!\n", outContent.toString());
+    }
+
     @After
     public void tearDown() {
         System.setOut(original);

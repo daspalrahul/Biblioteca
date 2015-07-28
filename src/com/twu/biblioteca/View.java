@@ -28,4 +28,8 @@ public class View {
         Scanner sc = new Scanner(System.in);
         return sc.nextLine();
     }
+
+    public void displayInvalidCommandMessage() {
+        System.out.println("Select a valid option!");
+    }
 }
