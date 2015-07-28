@@ -21,4 +21,15 @@ public class BibliotecaAppTest {
 
         Mockito.verify(view).displayMenu();
     }
+
+    @Test
+    public void bibliotecaAppCanGetUserInput() {
+        View view = Mockito.mock(View.class);
+        ArrayList<String[]> list = new ArrayList<>();
+        BibliotecaApp bibliotecaApp = new BibliotecaApp(list, view);
+
+        bibliotecaApp.start();
+
+        Mockito.verify(view).getUserInput();
+    }
 }

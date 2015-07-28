@@ -16,5 +16,6 @@ public class BibliotecaApp {
     public void start() {
         view.displayWelcomeMessage();
         view.displayMenu();
+        String userInput = view.getUserInput();
     }
 }
