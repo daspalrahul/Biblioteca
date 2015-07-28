@@ -5,11 +5,15 @@ import java.util.ArrayList;
 public class Library {
     private ArrayList<Book> library;
 
-    public Library(ArrayList<Book> library) {
-        this.library = library;
+    public Library() {
+        this.library = new ArrayList<Book>();
     }
 
     public int numberOfBooks() {
-        return 0;
+        return library.size();
+    }
+
+    public void addBook(Book book) {
+        library.add(book);
     }
 }
