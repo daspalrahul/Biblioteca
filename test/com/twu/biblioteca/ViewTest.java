@@ -24,7 +24,7 @@ public class ViewTest {
 
     @Test
     public void viewKnowsHowToDisplayListOfBooks() {
-        ArrayList<Book> listOfBooks = new ArrayList<>();
+        ArrayList<String> listOfBooks = new ArrayList<>();
         View view = Mockito.mock(View.class);
 
         view.displayListOfBooks(listOfBooks);

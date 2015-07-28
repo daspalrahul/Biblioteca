@@ -1,18 +1,20 @@
 package com.twu.biblioteca;
 
 
+import java.util.ArrayList;
+
 public class BibliotecaApp {
 
-    private Library library;
+    private ArrayList<String> library;
     private View view;
 
-    public BibliotecaApp(Library library, View view) {
+    public BibliotecaApp(ArrayList<String> library, View view) {
         this.library = library;
         this.view = view;
     }
 
     public void start() {
         view.displayWelcomeMessage();
-        view.displayListOfBooks(library.listOfBooks());
+        view.displayListOfBooks(library);
     }
 }

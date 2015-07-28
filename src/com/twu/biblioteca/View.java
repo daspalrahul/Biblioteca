@@ -8,9 +8,9 @@ public class View {
         System.out.println("Welcome");
     }
 
-    public void displayListOfBooks(ArrayList<Book> listOfBooks) {
-        for (int i = 0; i < listOfBooks.size(); i++) {
-            System.out.println(listOfBooks.get(i).toString());
+    public void displayListOfBooks(ArrayList<String> listOfBooks) {
+        for (String listOfBook : listOfBooks) {
+            System.out.println(listOfBook);
         }
     }
 }
