@@ -1,5 +1,6 @@
 package com.twu.biblioteca;
 
+
 import java.util.ArrayList;
 
 public class Library {
@@ -15,5 +16,9 @@ public class Library {
 
     public void addBook(Book book) {
         library.add(book);
+    }
+
+    public ArrayList<Book> listOfBooks() {
+        return library;
     }
 }
