@@ -28,4 +28,33 @@ public class BookTest {
         assertEquals(1996, book.getYearPublished());
     }
 
+    @Test
+    public void bookKnowsTwoEqualBooksAreEqual() {
+        Book book = new Book("A Game of Thrones", "George R.R. Martin", 1996);
+
+        assertEquals(book, book);
+    }
+
+    @Test
+    public void bookKnowsBookAndNullAreNotEqual() {
+        Book book = new Book("A Game of Thrones", "George R.R. Martin", 1996);
+
+        assertNotEquals(book, null);
+    }
+
+    @Test
+    public void bookKnowsEqualBookAreEqualInReverseOrder() {
+        Book book1 = new Book("A Game of Thrones", "George R.R. Martin", 1996);
+        Book book2 = new Book("A Game of Thrones", "George R.R. Martin", 1996);
+
+        assertEquals(book1, book2);
+    }
+
+    @Test
+    public void bookKnowsEqualBooksHaveEqualHashCodes() {
+        Book book1 = new Book("A Game of Thrones", "George R.R. Martin", 1996);
+        Book book2 = new Book("A Game of Thrones", "George R.R. Martin", 1996);
+
+        assertEquals(book1.hashCode(), book2.hashCode());
+    }
 }
