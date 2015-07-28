@@ -45,7 +45,7 @@ public class ViewTest {
 
         view.displayListOfBooks(listOfBooks);
 
-        assertEquals("A Game of Thrones George R. R. Martin 1996 \nA Game of Thrones George R. R. Martin 1996 \n", outContent.toString());
+        assertEquals("   Name                                          Author      Year\n1  A Game of Thrones                George R. R. Martin      1996\n2  A Game of Thrones                George R. R. Martin      1996\n", outContent.toString());
     }
 
     @After
