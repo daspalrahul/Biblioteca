@@ -19,6 +19,7 @@
     <target name="runjunit" depends="compile">
         <junit haltonfailure="true" printsummary="true" showoutput="yes">
             <test name="com.twu.biblioteca.ViewTest"/>
+            <test name="com.twu.biblioteca.InvalidOptionTest"/>
             <test name="com.twu.biblioteca.ListBooksTest"/>
             <test name="com.twu.biblioteca.BibliotecaAppTest"/>
             <classpath>
