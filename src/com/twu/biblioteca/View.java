@@ -5,8 +5,15 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class View {
+
+    Console console;
+
+    public View(Console console) {
+        this.console = console;
+    }
+
     public void displayWelcomeMessage() {
-        System.out.println("Welcome");
+        console.printOutput("Welcome");
     }
 
     public void displayListOfAllBooks(Library library) {
@@ -21,16 +28,16 @@ public class View {
     }
 
     public void displayMenu() {
-        System.out.println("Enter the action you want to perform");
-        System.out.print("1. List Books\n2. Quit\n");
+        console.printOutput("Enter the action you want to perform");
+        console.printOutput("1. List Books\n" +
+                "2. Quit\n");
     }
 
     public String getUserInput() {
-        Scanner sc = new Scanner(System.in);
-        return sc.nextLine();
+        return console.getInput();
     }
 
     public void displayInvalidCommandMessage() {
-        System.out.println("Select a valid option!");
+        console.printOutput("Select a valid option!");
     }
 }

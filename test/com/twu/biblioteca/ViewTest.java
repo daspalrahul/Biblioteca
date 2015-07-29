@@ -5,6 +5,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import java.io.ByteArrayOutputStream;
@@ -28,11 +29,12 @@ public class ViewTest {
 
     @Test
     public void viewKnowsHowToDisplayWelcomeMessage() {
-        View view = new View();
+        Console console = Mockito.mock(Console.class);
+        View view = new View(console);
 
         view.displayWelcomeMessage();
 
-        assertEquals("Welcome\n", outContent.toString());
+        Mockito.verify(console).printOutput("Welcome");
     }
 
     @Test
@@ -40,7 +42,8 @@ public class ViewTest {
         String[] book = {"A Game of Thrones", "George R. R. Martin", "1996"};
         ArrayList<String[]> listOfBooks = new ArrayList<>(Arrays.asList(book, book));
         Library library = new Library(listOfBooks);
-        View view = new View();
+        Console console = Mockito.mock(Console.class);
+        View view = new View(console);
 
         view.displayListOfAllBooks(library);
 
@@ -51,21 +54,22 @@ public class ViewTest {
 
     @Test
     public void viewCanDisplayListOfAvailableMenu() {
-        View view = new View();
+        Console console = Mockito.mock(Console.class);
+        View view = new View(console);
 
         view.displayMenu();
 
-        assertEquals("Enter the action you want to perform\n1. List Books\n" +
-                "2. Quit\n", outContent.toString());
+        Mockito.verify(console).printOutput("Enter the action you want to perform");
     }
 
     @Test
     public void viewCanDisplayInvalidCommandMessage() {
-        View view = new View();
+        Console console = Mockito.mock(Console.class);
+        View view = new View(console);
 
         view.displayInvalidCommandMessage();
 
-        assertEquals("Select a valid option!\n", outContent.toString());
+        Mockito.verify(console).printOutput("Select a valid option!");
     }
 
     @After
