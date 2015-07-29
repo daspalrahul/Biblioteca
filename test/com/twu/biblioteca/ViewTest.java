@@ -82,6 +82,16 @@ public class ViewTest {
         Mockito.verify(console).printOutput("Thank you! Enjoy the book");
     }
 
+    @Test
+    public void viewCanDisplayUnSuccessfulCheckoutMessage() {
+        Console console = Mockito.mock(Console.class);
+        View view = new View(console);
+
+        view.displayUnSuccessfulCheckOutMessage();
+
+        Mockito.verify(console).printOutput("That book is not available.");
+    }
+
     @After
     public void tearDown() {
         System.setOut(original);

@@ -44,4 +44,8 @@ public class View {
     public void displaySuccessfulCheckOutMessage() {
         console.printOutput("Thank you! Enjoy the book");
     }
+
+    public void displayUnSuccessfulCheckOutMessage() {
+        console.printOutput("That book is not available.");
+    }
 }
