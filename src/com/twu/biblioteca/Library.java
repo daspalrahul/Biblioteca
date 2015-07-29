@@ -22,4 +22,14 @@ public class Library {
     public ArrayList<String[]> listOfAllBooks() {
         return bookList;
     }
+
+    public boolean checkOut(String requestedBook) {
+        for (String[] book : bookList) {
+            if (book[0].equals(requestedBook) && book[3].equals("available")) {
+                book[3] = "unavailable";
+                return true;
+            }
+        }
+        return false;
+    }
 }

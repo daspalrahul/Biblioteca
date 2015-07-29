@@ -36,4 +36,13 @@ public class LibraryTest {
 
         assertEquals(Arrays.<String[]>asList(book), library.listOfAllBooks());
     }
+
+    @Test
+    public void libraryKnowsHowToCheckOutABook() {
+        String[] book = {"A Game Of Thrones", "George R.R. Martin", "1996", "available"};
+        ArrayList<String[]> list = new ArrayList<>(Arrays.<String[]>asList(book));
+        Library library = new Library(list);
+
+        assertEquals(true, library.checkOut("A Game Of Thrones"));
+    }
 }
