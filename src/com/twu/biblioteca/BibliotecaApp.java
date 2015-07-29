@@ -7,9 +7,9 @@ public class BibliotecaApp {
 
     private View view;
     private Parser parser;
-    ArrayList<String[]> library;
+    private Library library;
 
-    public BibliotecaApp(View view, Parser parser, ArrayList<String[]> library) {
+    public BibliotecaApp(View view, Parser parser, Library library) {
         this.view = view;
         this.parser = parser;
         this.library = library;

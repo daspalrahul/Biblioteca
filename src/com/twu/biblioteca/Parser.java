@@ -10,7 +10,7 @@ public class Parser {
         this.view = view;
     }
 
-    public LibraryOperation convertIntoLibraryOperation(String userInput, ArrayList<String[]> library) {
+    public LibraryOperation convertIntoLibraryOperation(String userInput, Library library) {
         LibraryOperation libraryOperation;
         if (userInput.equals("List Books")) {
             libraryOperation = new ListBooks(view, library);

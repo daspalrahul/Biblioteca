@@ -39,9 +39,10 @@ public class ViewTest {
     public void viewKnowsHowToDisplayListOfBooks() {
         String[] book = {"A Game of Thrones", "George R. R. Martin", "1996"};
         ArrayList<String[]> listOfBooks = new ArrayList<>(Arrays.asList(book, book));
+        Library library = new Library(listOfBooks);
         View view = new View();
 
-        view.displayListOfBooks(listOfBooks);
+        view.displayListOfAllBooks(library);
 
         assertEquals("   Name                                          Author      Year\n" +
                 "1  A Game of Thrones                George R. R. Martin      1996\n" +

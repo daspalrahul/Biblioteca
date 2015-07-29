@@ -1,7 +1,7 @@
 package com.twu.biblioteca;
 
-import org.junit.Test;
 
+import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -19,4 +19,21 @@ public class LibraryTest {
         assertEquals(true, library.hasBook("A Game Of Thrones"));
     }
 
+    @Test
+    public void libraryKnowsIfTheLibraryContainsAGameOfThrones() {
+        String[] book = {"A Game Of Thrones", "George R.R. Martin", "1996"};
+        ArrayList<String[]> list = new ArrayList<>(Arrays.<String[]>asList(book));
+        Library library = new Library(list);
+
+        assertEquals(true, library.hasBook("A Game Of Thrones"));
+    }
+
+    @Test
+    public void libraryCanReturnAListOfBooksItHas() {
+        String[] book = {"A Game Of Thrones", "George R.R. Martin", "1996"};
+        ArrayList<String[]> list = new ArrayList<>(Arrays.<String[]>asList(book));
+        Library library = new Library(list);
+
+        assertEquals(Arrays.<String[]>asList(book), library.listOfAllBooks());
+    }
 }

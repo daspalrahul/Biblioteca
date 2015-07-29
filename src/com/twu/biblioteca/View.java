@@ -9,8 +9,9 @@ public class View {
         System.out.println("Welcome");
     }
 
-    public void displayListOfBooks(ArrayList<String[]> listOfBooks) {
+    public void displayListOfAllBooks(Library library) {
         int i = 1;
+        ArrayList<String[]> listOfBooks = library.listOfAllBooks();
         System.out.format("   %-32s%20s%10s\n", "Name", "Author", "Year");
         for (String[] book : listOfBooks) {
             System.out.print(i++);
