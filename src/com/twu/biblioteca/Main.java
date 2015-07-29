@@ -10,7 +10,8 @@ public class Main {
         String book[] = {"A Game of Thrones", "George R. R. Martin", "1996"};
         ArrayList<String[]> library = new ArrayList<>(Arrays.asList(book, book));
         View view = new View();
-        BibliotecaApp bibliotecaApp = new BibliotecaApp(library, view);
+        Parser parser = new Parser(view, library);
+        BibliotecaApp bibliotecaApp = new BibliotecaApp(library, view, parser);
         bibliotecaApp.start();
     }
 

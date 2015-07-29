@@ -7,10 +7,12 @@ public class BibliotecaApp {
 
     private ArrayList<String[]> library;
     private View view;
+    private Parser parser;
 
-    public BibliotecaApp(ArrayList<String[]> library, View view) {
+    public BibliotecaApp(ArrayList<String[]> library, View view, Parser parser) {
         this.library = library;
         this.view = view;
+        this.parser = parser;
     }
 
     public void start() {
@@ -18,14 +20,7 @@ public class BibliotecaApp {
         while (true) {
             view.displayMenu();
             String userInput = view.getUserInput();
-            LibraryOperation libraryOperation;
-            if (userInput.equals("List Books")) {
-                libraryOperation = new ListBooks(view, library);
-            } else if (userInput.equals("Quit")) {
-                libraryOperation = new Quit();
-            } else {
-                libraryOperation = new InvalidOption(view);
-            }
+            LibraryOperation libraryOperation = parser.convertIntoLibraryOperation(userInput);
             libraryOperation.execute();
         }
     }
