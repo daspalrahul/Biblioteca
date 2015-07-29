@@ -40,4 +40,8 @@ public class View {
     public void displayInvalidCommandMessage() {
         console.printOutput("Select a valid option!");
     }
+
+    public void displaySuccessfulCheckOutMessage() {
+        console.printOutput("Thank you! Enjoy the book");
+    }
 }

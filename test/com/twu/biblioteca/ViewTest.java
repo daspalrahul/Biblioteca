@@ -72,6 +72,16 @@ public class ViewTest {
         Mockito.verify(console).printOutput("Select a valid option!");
     }
 
+    @Test
+    public void viewCanDisplaySuccessfulCheckoutMessage() {
+        Console console = Mockito.mock(Console.class);
+        View view = new View(console);
+
+        view.displaySuccessfulCheckOutMessage();
+
+        Mockito.verify(console).printOutput("Thank you! Enjoy the book");
+    }
+
     @After
     public void tearDown() {
         System.setOut(original);
