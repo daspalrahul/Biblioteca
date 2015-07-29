@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ListBooks implements LibraryOperation {
     private View view;
-    ArrayList<String[]> library;
+    private ArrayList<String[]> library;
 
     public ListBooks(View view, ArrayList<String[]> library) {
         this.view = view;
