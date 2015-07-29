@@ -16,9 +16,9 @@ public class ParserTest {
     public void parserKnowsHowToReturnLibraryOperation() {
         View view = Mockito.mock(View.class);
         ArrayList<String[]> library = new ArrayList<>();
-        Parser parser = new Parser(view, library);
+        Parser parser = new Parser(view);
 
-        LibraryOperation result = parser.convertIntoLibraryOperation("List Books");
+        LibraryOperation result = parser.convertIntoLibraryOperation("List Books", library);
 
         assertEquals(ListBooks.class, result.getClass());
     }

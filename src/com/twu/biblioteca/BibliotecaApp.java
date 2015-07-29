@@ -5,14 +5,14 @@ import java.util.ArrayList;
 
 public class BibliotecaApp {
 
-    private ArrayList<String[]> library;
     private View view;
     private Parser parser;
+    ArrayList<String[]> library;
 
-    public BibliotecaApp(ArrayList<String[]> library, View view, Parser parser) {
-        this.library = library;
+    public BibliotecaApp(View view, Parser parser, ArrayList<String[]> library) {
         this.view = view;
         this.parser = parser;
+        this.library = library;
     }
 
     public void start() {
@@ -20,7 +20,7 @@ public class BibliotecaApp {
         while (true) {
             view.displayMenu();
             String userInput = view.getUserInput();
-            LibraryOperation libraryOperation = parser.convertIntoLibraryOperation(userInput);
+            LibraryOperation libraryOperation = parser.convertIntoLibraryOperation(userInput, library);
             libraryOperation.execute();
         }
     }

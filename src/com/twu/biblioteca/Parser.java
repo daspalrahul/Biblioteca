@@ -5,14 +5,12 @@ import java.util.ArrayList;
 public class Parser {
 
     private View view;
-    ArrayList<String[]> library;
 
-    public Parser(View view, ArrayList<String[]> library) {
+    public Parser(View view) {
         this.view = view;
-        this.library = library;
     }
 
-    public LibraryOperation convertIntoLibraryOperation(String userInput) {
+    public LibraryOperation convertIntoLibraryOperation(String userInput, ArrayList<String[]> library) {
         LibraryOperation libraryOperation;
         if (userInput.equals("List Books")) {
             libraryOperation = new ListBooks(view, library);
