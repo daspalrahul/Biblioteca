@@ -18,13 +18,15 @@ public class BibliotecaApp {
         while (true) {
             view.displayMenu();
             String userInput = view.getUserInput();
+            LibraryOperation libraryOperation;
             if (userInput.equals("List Books")) {
-                view.displayListOfBooks(library);
+                libraryOperation = new ListBooks(view, library);
             } else if (userInput.equals("Quit")) {
-                break;
+                libraryOperation = new Quit();
             } else {
-                view.displayInvalidCommandMessage();
+                libraryOperation = new InvalidOption(view);
             }
+            libraryOperation.execute();
         }
     }
 }
