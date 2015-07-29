@@ -1,4 +1,7 @@
 package com.twu.biblioteca;
 
-public class LibraryOperation {
+public interface LibraryOperation {
+
+    void execute();
+
 }

@@ -2,8 +2,17 @@ package com.twu.biblioteca;
 
 import java.util.ArrayList;
 
-public class ListBooks extends LibraryOperation {
-    public void execute(View view, ArrayList<String[]> library) {
+public class ListBooks implements LibraryOperation {
+    private View view;
+    ArrayList<String[]> library;
+
+    public ListBooks(View view, ArrayList<String[]> library) {
+        this.view = view;
+        this.library = library;
+    }
+
+    @Override
+    public void execute() {
         view.displayListOfBooks(library);
     }
 }
