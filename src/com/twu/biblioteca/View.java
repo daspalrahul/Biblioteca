@@ -28,7 +28,7 @@ public class View {
     }
 
     public void displayMenu() {
-        console.printOutput("\n\nEnter the action you want to perform:");
+        console.printOutput("\n\nEnter the action you want to perform");
         console.printOutput("1. List Books\n2. Checkout\n3. Checkin\n" +
                 "4. Quit\n\n\n");
     }

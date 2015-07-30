@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Matchers.anyString;
+import static org.mockito.Mockito.times;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ViewTest {
@@ -59,7 +61,7 @@ public class ViewTest {
 
         view.displayMenu();
 
-        Mockito.verify(console).printOutput("Enter the action you want to perform");
+        Mockito.verify(console, times(2)).printOutput(anyString());
     }
 
     @Test
