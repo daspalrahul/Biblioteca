@@ -12,6 +12,11 @@ public class Checkin implements LibraryOperation {
 
     @Override
     public void execute() {
-
+        String book = view.getUserInput();
+        if (library.checkIn(book)) {
+            view.displaySuccessfulCheckinMessage();
+        } else {
+            view.displayUnSuccessfulCheckinMessage();
+        }
     }
 }
