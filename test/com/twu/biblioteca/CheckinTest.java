@@ -11,7 +11,7 @@ public class CheckinTest {
     public void checkinIsSuccessfulWhenBookBelongsToTheLibary() {
         String[] book = {"A Game Of Thrones", "George R.R. Martin", "1996", "unavailable"};
         ArrayList<String[]> list = new ArrayList<>(Arrays.<String[]>asList(book));
-        Library library = new Library(list);
+        Library library = new Library(list, new ArrayList<String[]>());
         View view = Mockito.mock(View.class);
         Checkin checkin = new Checkin(view, library);
 

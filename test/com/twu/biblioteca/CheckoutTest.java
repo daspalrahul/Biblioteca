@@ -11,7 +11,7 @@ public class CheckoutTest {
     public void checkoutCanCheckoutAGameOfThronesFromLibraryThatContainsTheSame() {
         String[] book = {"A Game Of Thrones", "George R.R. Martin", "1996", "available"};
         ArrayList<String[]> list = new ArrayList<>(Arrays.<String[]>asList(book));
-        Library library = new Library(list);
+        Library library = new Library(list, new ArrayList<String[]>());
         View view = Mockito.mock(View.class);
         Checkout checkout = new Checkout(view, library);
 
@@ -25,7 +25,7 @@ public class CheckoutTest {
     public void checkoutCanNotCheckoutAGameOfThronesFromLibraryThatDoesNotContainsTheSame() {
         String[] book = {"A Game Of Thrones", "George R.R. Martin", "1996", "available"};
         ArrayList<String[]> list = new ArrayList<>(Arrays.<String[]>asList(book));
-        Library library = new Library(list);
+        Library library = new Library(list, new ArrayList<String[]>());
         View view = Mockito.mock(View.class);
         Checkout checkout = new Checkout(view, library);
 

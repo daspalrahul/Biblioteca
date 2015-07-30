@@ -15,7 +15,7 @@ public class LibraryTest {
         String[] book1 = {"A Game Of Thrones", "George R.R. Martin", "1996"};
         String[] book2 = {"A CLash Of Kings", "George R.R. Martin", "1998"};
         ArrayList<String[]> list = new ArrayList<>(Arrays.asList(book1, book2));
-        Library library = new Library(list);
+        Library library = new Library(list, new ArrayList<String[]>());
 
         assertEquals(true, library.hasBook("A Game Of Thrones"));
     }
@@ -24,7 +24,7 @@ public class LibraryTest {
     public void libraryKnowsIfTheLibraryContainsAGameOfThrones() {
         String[] book = {"A Game Of Thrones", "George R.R. Martin", "1996"};
         ArrayList<String[]> list = new ArrayList<>(Arrays.<String[]>asList(book));
-        Library library = new Library(list);
+        Library library = new Library(list, new ArrayList<String[]>());
 
         assertEquals(true, library.hasBook("A Game Of Thrones"));
     }
@@ -33,7 +33,7 @@ public class LibraryTest {
     public void libraryCanReturnAListOfBooksItHas() {
         String[] book = {"A Game Of Thrones", "George R.R. Martin", "1996"};
         ArrayList<String[]> list = new ArrayList<>(Arrays.<String[]>asList(book));
-        Library library = new Library(list);
+        Library library = new Library(list, new ArrayList<String[]>());
 
         assertEquals(Arrays.<String[]>asList(book), library.listOfAllBooks());
     }
@@ -42,7 +42,7 @@ public class LibraryTest {
     public void libraryKnowsHowToCheckOutABook() {
         String[] book = {"A Game Of Thrones", "George R.R. Martin", "1996", "available"};
         ArrayList<String[]> list = new ArrayList<>(Arrays.<String[]>asList(book));
-        Library library = new Library(list);
+        Library library = new Library(list, new ArrayList<String[]>());
 
         assertEquals(true, library.checkOut("A Game Of Thrones"));
     }
@@ -51,8 +51,17 @@ public class LibraryTest {
     public void libraryKnowsHowToCheckInABook() {
         String[] book = {"A Game Of Thrones", "George R.R. Martin", "1996", "unavailable"};
         ArrayList<String[]> list = new ArrayList<>(Arrays.<String[]>asList(book));
-        Library library = new Library(list);
+        Library library = new Library(list, new ArrayList<String[]>());
 
         assertEquals(true, library.checkIn("A Game Of Thrones"));
+    }
+
+    @Test
+    public void libraryKnowsHowToDisplayListOfAvailableBooks() {
+        String[] book = {"A CLash Of Kings", "George R.R. Martin", "1998"};
+        ArrayList<String[]> list = new ArrayList<>(Arrays.<String[]>asList(book));
+        Library library = new Library(list, new ArrayList<String[]>());
+
+        assertEquals(new ArrayList<>(Arrays.<String[]>asList(book)), library.listOfAllAvailableBooks());
     }
 }
