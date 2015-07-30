@@ -2,7 +2,6 @@ package com.twu.biblioteca;
 
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class View {
 
@@ -29,8 +28,12 @@ public class View {
 
     public void displayMenu() {
         console.printOutput("Enter the action you want to perform");
-        console.printOutput("1. List Books\n2. Checkout\n" +
-                "3. Quit\n");
+        console.printOutput("1. List Books\n2. Checkout\n3. Checkin\n" +
+                "4. Quit\n");
+    }
+
+    public void displaySuccessfulCheckinMessage() {
+        console.printOutput("Thank you for returning the book.");
     }
 
     public String getUserInput() {

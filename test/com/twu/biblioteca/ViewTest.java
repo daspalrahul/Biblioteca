@@ -92,6 +92,16 @@ public class ViewTest {
         Mockito.verify(console).printOutput("That book is not available.");
     }
 
+    @Test
+    public void viewCanDisplaySuccessfulCheckinMessage() {
+        Console console = Mockito.mock(Console.class);
+        View view = new View(console);
+
+        view.displaySuccessfulCheckinMessage();
+
+        Mockito.verify(console).printOutput("Thank you for returning the book.");
+    }
+
     @After
     public void tearDown() {
         System.setOut(original);
