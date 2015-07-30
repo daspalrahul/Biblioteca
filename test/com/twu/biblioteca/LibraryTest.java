@@ -46,4 +46,13 @@ public class LibraryTest {
 
         assertEquals(true, library.checkOut("A Game Of Thrones"));
     }
+
+    @Test
+    public void libraryKnowsHowToCheckInABook() {
+        String[] book = {"A Game Of Thrones", "George R.R. Martin", "1996", "unavailable"};
+        ArrayList<String[]> list = new ArrayList<>(Arrays.<String[]>asList(book));
+        Library library = new Library(list);
+
+        assertEquals(true, library.checkIn("A Game Of Thrones"));
+    }
 }

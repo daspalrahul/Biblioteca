@@ -41,4 +41,14 @@ public class Library {
         }
         return false;
     }
+
+    public boolean checkIn(String book) {
+        for (String[] libraryBook : bookList) {
+            if (libraryBook[0].equals(book) && libraryBook[3].equals("unavailable")) {
+                libraryBook[3] = "available";
+                return true;
+            }
+        }
+        return false;
+    }
 }
