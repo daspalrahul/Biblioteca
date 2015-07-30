@@ -102,6 +102,16 @@ public class ViewTest {
         Mockito.verify(console).printOutput("Thank you for returning the book.");
     }
 
+    @Test
+    public void viewCanDisplayUnSuccessfulCheckinMessage() {
+        Console console = Mockito.mock(Console.class);
+        View view = new View(console);
+
+        view.displayUnSuccessfulCheckinMessage();
+
+        Mockito.verify(console).printOutput("That is not a valid book to return.");
+    }
+
     @After
     public void tearDown() {
         System.setOut(original);

@@ -36,6 +36,10 @@ public class View {
         console.printOutput("Thank you for returning the book.");
     }
 
+    public void displayUnSuccessfulCheckinMessage() {
+        console.printOutput("That is not a valid book to return.");
+    }
+
     public String getUserInput() {
         return console.getInput();
     }
