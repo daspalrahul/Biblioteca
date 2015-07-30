@@ -18,6 +18,8 @@ public class Parser {
             libraryOperation = new Quit();
         } else if (userInput.equals("Checkout")) {
             libraryOperation = new Checkout(view, library);
+        } else if (userInput.equals("Checkin")) {
+            libraryOperation = new Checkin(view, library);
         } else {
             libraryOperation = new InvalidOption(view);
         }

@@ -22,4 +22,15 @@ public class ParserTest {
         assertEquals(ListBooks.class, result.getClass());
     }
 
+    @Test
+    public void parserKnowsHowToReturnCheckinOperation() {
+        View view = Mockito.mock(View.class);
+        Library library = Mockito.mock(Library.class);
+        Parser parser = new Parser(view);
+
+        LibraryOperation result = parser.convertIntoLibraryOperation("Checkin", library);
+
+        assertEquals(Checkin.class, result.getClass());
+    }
+
 }
