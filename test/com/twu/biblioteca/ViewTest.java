@@ -39,7 +39,7 @@ public class ViewTest {
 
     @Test
     public void viewKnowsHowToDisplayListOfBooks() {
-        String[] book = {"A Game of Thrones", "George R. R. Martin", "1996"};
+        String[] book = {"A Game of Thrones", "George R. R. Martin", "1996", "available"};
         ArrayList<String[]> listOfBooks = new ArrayList<>(Arrays.asList(book, book));
         Library library = new Library(listOfBooks);
         Console console = Mockito.mock(Console.class);

@@ -23,6 +23,15 @@ public class Library {
         return bookList;
     }
 
+    public ArrayList<String[]> listOfAllAvailableBooks() {
+        ArrayList<String[]> availableBooks = new ArrayList<>();
+        for (String[] book : bookList) {
+            if (book[3].equals("available"))
+                availableBooks.add(book);
+        }
+        return availableBooks;
+    }
+
     public boolean checkOut(String requestedBook) {
         for (String[] book : bookList) {
             if (book[0].equals(requestedBook) && book[3].equals("available")) {

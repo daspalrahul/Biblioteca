@@ -18,7 +18,7 @@ public class View {
 
     public void displayListOfAllBooks(Library library) {
         int i = 1;
-        ArrayList<String[]> listOfBooks = library.listOfAllBooks();
+        ArrayList<String[]> listOfBooks = library.listOfAllAvailableBooks();
         System.out.format("   %-32s%20s%10s\n", "Name", "Author", "Year");
         for (String[] book : listOfBooks) {
             System.out.print(i++);
@@ -29,8 +29,8 @@ public class View {
 
     public void displayMenu() {
         console.printOutput("Enter the action you want to perform");
-        console.printOutput("1. List Books\n" +
-                "2. Quit\n");
+        console.printOutput("1. List Books\n2. Checkout\n" +
+                "3. Quit\n");
     }
 
     public String getUserInput() {
