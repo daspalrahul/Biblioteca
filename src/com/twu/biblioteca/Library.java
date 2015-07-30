@@ -41,9 +41,10 @@ public class Library {
     }
 
     public boolean checkIn(String book) {
-        for (String[] libraryBook : availableBookList) {
-            if (libraryBook[0].equals(book) && libraryBook[3].equals("unavailable")) {
-                libraryBook[3] = "available";
+        for (String[] libraryBook : checkedOutBookList) {
+            if (libraryBook[0].equals(book)) {
+                availableBookList.add(libraryBook);
+                checkedOutBookList.remove(libraryBook);
                 return true;
             }
         }
