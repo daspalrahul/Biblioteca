@@ -14,7 +14,7 @@ public class Book {
     }
 
     public boolean hasTitle(String title) {
-        if (this.name == title)
+        if (name.equals(title))
             return true;
         return false;
     }
