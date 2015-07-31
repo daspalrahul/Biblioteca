@@ -5,33 +5,33 @@ import java.util.ArrayList;
 
 public class Library {
 
-    ArrayList<String[]> availableBookList;
-    ArrayList<String[]> checkedOutBookList;
+    ArrayList<Book> availableBookList;
+    ArrayList<Book> checkedOutBookList;
 
-    public Library(ArrayList<String[]> availableBookList, ArrayList<String[]> checkedOutBookList) {
+    public Library(ArrayList<Book> availableBookList, ArrayList<Book> checkedOutBookList) {
         this.availableBookList = availableBookList;
         this.checkedOutBookList = checkedOutBookList;
     }
 
     public boolean hasBook(String nameOfBook) {
         for (int i = 0; i < availableBookList.size(); i++) {
-            if (availableBookList.get(0)[0].equals(nameOfBook))
+            if (availableBookList.get(0).hasTitle(nameOfBook))
                 return true;
         }
         return false;
     }
 
-    public ArrayList<String[]> listOfAllBooks() {
+    public ArrayList<Book> listOfAllBooks() {
         return availableBookList;
     }
 
-    public ArrayList<String[]> listOfAllAvailableBooks() {
+    public ArrayList<Book> listOfAllAvailableBooks() {
         return availableBookList;
     }
 
     public boolean checkOut(String requestedBook) {
-        for (String[] book : availableBookList) {
-            if (book[0].equals(requestedBook)) {
+        for (Book book : availableBookList) {
+            if (book.hasTitle(requestedBook)) {
                 checkedOutBookList.add(book);
                 availableBookList.remove(book);
                 return true;
@@ -41,8 +41,8 @@ public class Library {
     }
 
     public boolean checkIn(String book) {
-        for (String[] libraryBook : checkedOutBookList) {
-            if (libraryBook[0].equals(book)) {
+        for (Book libraryBook : checkedOutBookList) {
+            if (libraryBook.hasTitle(book)) {
                 availableBookList.add(libraryBook);
                 checkedOutBookList.remove(libraryBook);
                 return true;

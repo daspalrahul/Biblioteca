@@ -3,6 +3,7 @@ package com.twu.biblioteca;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -41,17 +42,19 @@ public class ViewTest {
 
     @Test
     public void viewKnowsHowToDisplayListOfBooks() {
-        String[] book = {"A Game of Thrones", "George R. R. Martin", "1996", "available"};
-        ArrayList<String[]> listOfBooks = new ArrayList<>(Arrays.asList(book, book));
-        Library library = new Library(listOfBooks,  new ArrayList<String[]>());
+        Book book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
+        ArrayList<Book> listOfBooks = new ArrayList<>();
+        listOfBooks.add(book);
+        listOfBooks.add(book);
+        Library library = new Library(listOfBooks,  new ArrayList<Book>());
         Console console = Mockito.mock(Console.class);
         View view = new View(console);
 
         view.displayListOfAllBooks(library);
 
         assertEquals("   Name                                          Author      Year\n" +
-                "1  A Game of Thrones                George R. R. Martin      1996\n" +
-                "2  A Game of Thrones                George R. R. Martin      1996\n", outContent.toString());
+                "1 A Game Of Thrones    George R.R. Martin    1996\n" +
+                "2 A Game Of Thrones    George R.R. Martin    1996\n", outContent.toString());
     }
 
     @Test

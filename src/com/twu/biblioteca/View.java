@@ -18,11 +18,11 @@ public class View {
 
     public void displayListOfAllBooks(Library library) {
         int i = 1;
-        ArrayList<String[]> listOfBooks = library.listOfAllAvailableBooks();
+        ArrayList<Book> listOfBooks = library.listOfAllAvailableBooks();
         System.out.format("   %-32s%20s%10s\n", "Name", "Author", "Year");
-        for (String[] book : listOfBooks) {
-            System.out.print(i++);
-            System.out.format("  %-32s%20s%10s", book[0], book[1], book[2]);
+        for (Book book : listOfBooks) {
+            System.out.print(i++ + " ");
+            System.out.print(book.toString());
             System.out.println("");
         }
     }

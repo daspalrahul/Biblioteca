@@ -7,9 +7,10 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        String[] book = {"A Game Of Thrones", "George R.R. Martin", "1996", "available"};
-        ArrayList<String[]> list = new ArrayList<>(Arrays.<String[]>asList(book));
-        Library library = new Library(list, new ArrayList<String[]>());
+        Book book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
+        ArrayList<Book> list = new ArrayList<>();
+        list.add(book);
+        Library library = new Library(list, new ArrayList<Book>());
         Console console = new Console();
         View view = new View(console);
         Parser parser = new Parser(view);

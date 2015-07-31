@@ -18,4 +18,9 @@ public class Book {
             return true;
         return false;
     }
+
+    @Override
+    public String toString() {
+        return name + "    " + author + "    " + year;
+    }
 }
