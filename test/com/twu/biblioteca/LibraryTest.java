@@ -10,28 +10,6 @@ import static org.junit.Assert.*;
 public class LibraryTest {
 
     @Test
-    public void libraryKnowsIfItHasACertainBook() {
-        LibraryItem book1 = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
-        LibraryItem book2 = new Book("A CLash Of Kings", "George R.R. Martin", "1998");
-        ArrayList<LibraryItem> list = new ArrayList<>();
-        list.add(book1);
-        list.add(book2);
-        Library library = new Library(list, new ArrayList<LibraryItem>());
-
-        assertEquals(true, library.hasBook("A Game Of Thrones"));
-    }
-
-    @Test
-    public void libraryKnowsIfTheLibraryContainsAGameOfThrones() {
-        Book book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
-        ArrayList<LibraryItem> list = new ArrayList<>();
-        list.add(book);
-        Library library = new Library(list, new ArrayList<LibraryItem>());
-
-        assertEquals(true, library.hasBook("A Game Of Thrones"));
-    }
-
-    @Test
     public void libraryCanReturnAListOfBooksItHas() {
         LibraryItem book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
         ArrayList<LibraryItem> list = new ArrayList<>();

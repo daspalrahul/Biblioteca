@@ -13,13 +13,6 @@ public class Library {
         this.checkedOutLibraryItemList = checkedOutLibraryItemList;
     }
 
-    public boolean hasBook(String nameOfBook) {
-        for (int i = 0; i < availableLibraryItemList.size(); i++) {
-            if (availableLibraryItemList.get(0).hasName(nameOfBook))
-                return true;
-        }
-        return false;
-    }
 
     public ArrayList<LibraryItem> listOfAllAvailableBooks() {
         ArrayList<LibraryItem> availableBookList = new ArrayList<>();
