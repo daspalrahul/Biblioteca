@@ -40,7 +40,7 @@ public class LibraryTest {
         ArrayList<LibraryItem> expectedList = new ArrayList<>();
         expectedList.add(book);
 
-        assertEquals(expectedList, library.listOfAllBooks());
+        assertEquals(expectedList, library.listOfAllAvailableBooks());
     }
 
     @Test

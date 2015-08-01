@@ -5,35 +5,36 @@ import java.util.ArrayList;
 
 public class Library {
 
-    ArrayList<LibraryItem> availableBookList;
-    ArrayList<LibraryItem> checkedOutBookList;
+    ArrayList<LibraryItem> availableLibraryItemList;
+    ArrayList<LibraryItem> checkedOutLibraryItemList;
 
-    public Library(ArrayList<LibraryItem> availableBookList, ArrayList<LibraryItem> checkedOutBookList) {
-        this.availableBookList = availableBookList;
-        this.checkedOutBookList = checkedOutBookList;
+    public Library(ArrayList<LibraryItem> availableLibraryItemList, ArrayList<LibraryItem> checkedOutLibraryItemList) {
+        this.availableLibraryItemList = availableLibraryItemList;
+        this.checkedOutLibraryItemList = checkedOutLibraryItemList;
     }
 
     public boolean hasBook(String nameOfBook) {
-        for (int i = 0; i < availableBookList.size(); i++) {
-            if (availableBookList.get(0).hasName(nameOfBook))
+        for (int i = 0; i < availableLibraryItemList.size(); i++) {
+            if (availableLibraryItemList.get(0).hasName(nameOfBook))
                 return true;
         }
         return false;
     }
 
-    public ArrayList<LibraryItem> listOfAllBooks() {
-        return availableBookList;
-    }
-
     public ArrayList<LibraryItem> listOfAllAvailableBooks() {
+        ArrayList<LibraryItem> availableBookList = new ArrayList<>();
+        for (LibraryItem libraryItem : availableLibraryItemList) {
+            if (libraryItem.getClass() == Book.class)
+                availableBookList.add(libraryItem);
+        }
         return availableBookList;
     }
 
     public boolean checkOut(String requestedBook) {
-        for (LibraryItem libraryItem : availableBookList) {
+        for (LibraryItem libraryItem : availableLibraryItemList) {
             if (libraryItem.hasName(requestedBook)) {
-                checkedOutBookList.add(libraryItem);
-                availableBookList.remove(libraryItem);
+                checkedOutLibraryItemList.add(libraryItem);
+                availableLibraryItemList.remove(libraryItem);
                 return true;
             }
         }
@@ -41,10 +42,10 @@ public class Library {
     }
 
     public boolean checkIn(String book) {
-        for (LibraryItem libraryItem : checkedOutBookList) {
+        for (LibraryItem libraryItem : checkedOutLibraryItemList) {
             if (libraryItem.hasName(book)) {
-                availableBookList.add(libraryItem);
-                checkedOutBookList.remove(libraryItem);
+                availableLibraryItemList.add(libraryItem);
+                checkedOutLibraryItemList.remove(libraryItem);
                 return true;
             }
         }
