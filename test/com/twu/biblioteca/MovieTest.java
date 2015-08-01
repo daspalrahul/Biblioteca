@@ -9,15 +9,15 @@ public class MovieTest {
 
     @Test
     public void movieKnowsIfAGivenStringIsEqualToItsName() {
-        Movie movie = new Movie("Kick", "2014", "Parul", "-10");
+        LibraryItem libraryItem = new Movie("Kick", "2014", "Parul", "-10");
 
-        assertEquals(true, movie.hasName("Kick"));
+        assertEquals(true, libraryItem.hasName("Kick"));
     }
 
     @Test
     public void movieKnowsItsToStringBehaviour() {
-        Movie movie = new Movie("Kick", "2014", "Parul", "-10");
+        LibraryItem libraryItem = new Movie("Kick", "2014", "Parul", "-10");
 
-        assertEquals("Kick    2014    Parul    -10", movie.toString());
+        assertEquals("Kick    2014    Parul    -10", libraryItem.toString());
     }
 }

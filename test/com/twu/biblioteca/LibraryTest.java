@@ -11,12 +11,12 @@ public class LibraryTest {
 
     @Test
     public void libraryKnowsIfItHasACertainBook() {
-        Book book1 = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
-        Book book2 = new Book("A CLash Of Kings", "George R.R. Martin", "1998");
-        ArrayList<Book> list = new ArrayList<>();
+        LibraryItem book1 = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
+        LibraryItem book2 = new Book("A CLash Of Kings", "George R.R. Martin", "1998");
+        ArrayList<LibraryItem> list = new ArrayList<>();
         list.add(book1);
         list.add(book2);
-        Library library = new Library(list, new ArrayList<Book>());
+        Library library = new Library(list, new ArrayList<LibraryItem>());
 
         assertEquals(true, library.hasBook("A Game Of Thrones"));
     }
@@ -24,20 +24,20 @@ public class LibraryTest {
     @Test
     public void libraryKnowsIfTheLibraryContainsAGameOfThrones() {
         Book book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
-        ArrayList<Book> list = new ArrayList<>();
+        ArrayList<LibraryItem> list = new ArrayList<>();
         list.add(book);
-        Library library = new Library(list, new ArrayList<Book>());
+        Library library = new Library(list, new ArrayList<LibraryItem>());
 
         assertEquals(true, library.hasBook("A Game Of Thrones"));
     }
 
     @Test
     public void libraryCanReturnAListOfBooksItHas() {
-        Book book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
-        ArrayList<Book> list = new ArrayList<>();
+        LibraryItem book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
+        ArrayList<LibraryItem> list = new ArrayList<>();
         list.add(book);
-        Library library = new Library(list, new ArrayList<Book>());
-        ArrayList<Book> expectedList = new ArrayList<>();
+        Library library = new Library(list, new ArrayList<LibraryItem>());
+        ArrayList<LibraryItem> expectedList = new ArrayList<>();
         expectedList.add(book);
 
         assertEquals(expectedList, library.listOfAllBooks());
@@ -45,31 +45,31 @@ public class LibraryTest {
 
     @Test
     public void libraryKnowsHowToCheckOutABook() {
-        Book book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
-        ArrayList<Book> list = new ArrayList<>();
+        LibraryItem book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
+        ArrayList<LibraryItem> list = new ArrayList<>();
         list.add(book);
-        Library library = new Library(list, new ArrayList<Book>());
+        Library library = new Library(list, new ArrayList<LibraryItem>());
 
         assertEquals(true, library.checkOut("A Game Of Thrones"));
     }
 
     @Test
     public void libraryKnowsHowToCheckInABook() {
-        Book book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
-        ArrayList<Book> list = new ArrayList<>();
+        LibraryItem book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
+        ArrayList<LibraryItem> list = new ArrayList<>();
         list.add(book);
-        Library library = new Library(new ArrayList<Book>(), list);
+        Library library = new Library(new ArrayList<LibraryItem>(), list);
 
         assertEquals(true, library.checkIn("A Game Of Thrones"));
     }
 
     @Test
     public void libraryKnowsHowToDisplayListOfAvailableBooks() {
-        Book book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
-        ArrayList<Book> list = new ArrayList<>();
+        LibraryItem book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
+        ArrayList<LibraryItem> list = new ArrayList<>();
         list.add(book);
-        Library library = new Library(list, new ArrayList<Book>());
-        ArrayList<Book> expectedList = new ArrayList<>();
+        Library library = new Library(list, new ArrayList<LibraryItem>());
+        ArrayList<LibraryItem> expectedList = new ArrayList<>();
         expectedList.add(book);
 
         assertEquals(expectedList, library.listOfAllAvailableBooks());
@@ -77,20 +77,20 @@ public class LibraryTest {
 
     @Test
     public void libraryKnowsHowToCheckOutABookAndStoreItInCheckedOutBookList() {
-        Book book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
-        ArrayList<Book> list = new ArrayList<>();
+        LibraryItem book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
+        ArrayList<LibraryItem> list = new ArrayList<>();
         list.add(book);
-        Library library = new Library(list, new ArrayList<Book>());
+        Library library = new Library(list, new ArrayList<LibraryItem>());
 
         assertEquals(true, library.checkOut("A Game Of Thrones"));
     }
 
     @Test
     public void libraryKnowsHowToCheckInABookAndStoreItInAvailableBookList() {
-        Book book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
-        ArrayList<Book> list = new ArrayList<>();
+        LibraryItem book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
+        ArrayList<LibraryItem> list = new ArrayList<>();
         list.add(book);
-        Library library = new Library(new ArrayList<Book>(), list);
+        Library library = new Library(new ArrayList<LibraryItem>(), list);
 
         assertEquals(true, library.checkIn("A Game Of Thrones"));
     }

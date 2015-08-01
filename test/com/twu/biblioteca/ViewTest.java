@@ -42,11 +42,11 @@ public class ViewTest {
 
     @Test
     public void viewKnowsHowToDisplayListOfBooks() {
-        Book book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
-        ArrayList<Book> listOfBooks = new ArrayList<>();
+        LibraryItem book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
+        ArrayList<LibraryItem> listOfBooks = new ArrayList<>();
         listOfBooks.add(book);
         listOfBooks.add(book);
-        Library library = new Library(listOfBooks,  new ArrayList<Book>());
+        Library library = new Library(listOfBooks,  new ArrayList<LibraryItem>());
         Console console = Mockito.mock(Console.class);
         View view = new View(console);
 

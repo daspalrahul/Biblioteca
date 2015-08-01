@@ -1,22 +1,15 @@
 package com.twu.biblioteca;
 
 
-public class Book {
+public class Book extends LibraryItem {
 
-    private String name;
     private String author;
     private String year;
 
     public Book(String name, String author, String year) {
-        this.name = name;
+        super(name);
         this.author = author;
         this.year = year;
-    }
-
-    public boolean hasTitle(String title) {
-        if (name.equals(title))
-            return true;
-        return false;
     }
 
     @Override

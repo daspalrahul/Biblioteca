@@ -1,26 +1,21 @@
 package com.twu.biblioteca;
 
 
-public class Movie {
+public class Movie extends LibraryItem {
 
-    private String name;
     private String year;
     private String director;
-    private String unrated;
+    private String rating;
 
-    public Movie(String name, String year, String director, String unrated) {
-        this.name = name;
+    public Movie(String name, String year, String director, String rating) {
+        super(name);
         this.year = year;
         this.director = director;
-        this.unrated = unrated;
-    }
-
-    public boolean hasName(String movieName) {
-        return movieName.equals(name);
+        this.rating = rating;
     }
 
     @Override
     public String toString() {
-        return name + "    " + year + "    " + director + "    " + unrated;
+        return name + "    " + year + "    " + director + "    " + rating;
     }
 }

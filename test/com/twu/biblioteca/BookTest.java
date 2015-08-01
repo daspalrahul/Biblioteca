@@ -9,8 +9,8 @@ public class BookTest {
 
     @Test
     public void bookKnowsIfAGivenStringIsEqualToItsName() {
-        Book book = new Book("bookName", "bookAuthor", "bookYear");
+        LibraryItem libraryItem = new Book("bookName", "bookAuthor", "bookYear");
 
-        assertEquals(true, book.hasTitle("bookName"));
+        assertEquals(true, libraryItem.hasName("bookName"));
     }
 }
