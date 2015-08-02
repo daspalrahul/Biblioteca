@@ -18,7 +18,7 @@ public class View {
 
     public void displayListOfAllBooks(Library library) {
         int i = 1;
-        ArrayList<LibraryItem> listOfBooks = library.listOfAllAvailableBooks();
+        ArrayList<LibraryItem> listOfBooks = library.listOfAllAvailableLibraryItems();
         System.out.format("   %-32s%20s%10s\n", "Name", "Author", "Year");
         for (LibraryItem libraryItem : listOfBooks) {
             System.out.print(i++ + " ");

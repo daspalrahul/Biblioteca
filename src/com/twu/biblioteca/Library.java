@@ -14,18 +14,13 @@ public class Library {
     }
 
 
-    public ArrayList<LibraryItem> listOfAllAvailableBooks() {
-        ArrayList<LibraryItem> availableBookList = new ArrayList<>();
-        for (LibraryItem libraryItem : availableLibraryItemList) {
-            if (libraryItem.getClass() == Book.class)
-                availableBookList.add(libraryItem);
-        }
-        return availableBookList;
+    public ArrayList<LibraryItem> listOfAllAvailableLibraryItems() {
+        return availableLibraryItemList;
     }
 
-    public boolean checkOut(String requestedBook) {
+    public boolean checkOut(String requestedLibraryItem) {
         for (LibraryItem libraryItem : availableLibraryItemList) {
-            if (libraryItem.hasName(requestedBook)) {
+            if (libraryItem.hasName(requestedLibraryItem)) {
                 checkedOutLibraryItemList.add(libraryItem);
                 availableLibraryItemList.remove(libraryItem);
                 return true;
@@ -34,9 +29,9 @@ public class Library {
         return false;
     }
 
-    public boolean checkIn(String book) {
+    public boolean checkIn(String givenLibraryItem) {
         for (LibraryItem libraryItem : checkedOutLibraryItemList) {
-            if (libraryItem.hasName(book)) {
+            if (libraryItem.hasName(givenLibraryItem)) {
                 availableLibraryItemList.add(libraryItem);
                 checkedOutLibraryItemList.remove(libraryItem);
                 return true;

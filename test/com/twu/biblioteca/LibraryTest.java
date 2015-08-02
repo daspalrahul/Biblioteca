@@ -3,7 +3,6 @@ package com.twu.biblioteca;
 
 import org.junit.Test;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import static org.junit.Assert.*;
 
@@ -18,7 +17,7 @@ public class LibraryTest {
         ArrayList<LibraryItem> expectedList = new ArrayList<>();
         expectedList.add(book);
 
-        assertEquals(expectedList, library.listOfAllAvailableBooks());
+        assertEquals(expectedList, library.listOfAllAvailableLibraryItems());
     }
 
     @Test
@@ -50,7 +49,7 @@ public class LibraryTest {
         ArrayList<LibraryItem> expectedList = new ArrayList<>();
         expectedList.add(book);
 
-        assertEquals(expectedList, library.listOfAllAvailableBooks());
+        assertEquals(expectedList, library.listOfAllAvailableLibraryItems());
     }
 
     @Test
