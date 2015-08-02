@@ -4,15 +4,15 @@ package com.twu.biblioteca;
 public class ListBooks implements LibraryOperation {
 
     private View view;
-    private Library library;
+    private Section section;
 
-    public ListBooks(View view, Library library) {
+    public ListBooks(View view, Section section) {
         this.view = view;
-        this.library = library;
+        this.section = section;
     }
 
     @Override
     public void execute() {
-        view.displayListOfAllBooks(library);
+        view.displayListOfAllBooks(section);
     }
 }

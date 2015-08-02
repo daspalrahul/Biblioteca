@@ -3,12 +3,12 @@ package com.twu.biblioteca;
 
 import java.util.ArrayList;
 
-public class Library {
+public class Section {
 
     ArrayList<LibraryItem> availableLibraryItemList;
     ArrayList<LibraryItem> checkedOutLibraryItemList;
 
-    public Library(ArrayList<LibraryItem> availableLibraryItemList, ArrayList<LibraryItem> checkedOutLibraryItemList) {
+    public Section(ArrayList<LibraryItem> availableLibraryItemList, ArrayList<LibraryItem> checkedOutLibraryItemList) {
         this.availableLibraryItemList = availableLibraryItemList;
         this.checkedOutLibraryItemList = checkedOutLibraryItemList;
     }

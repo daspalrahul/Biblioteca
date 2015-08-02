@@ -6,18 +6,18 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
-public class LibraryTest {
+public class SectionTest {
 
     @Test
     public void libraryCanReturnAListOfBooksItHas() {
         LibraryItem book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
         ArrayList<LibraryItem> list = new ArrayList<>();
         list.add(book);
-        Library library = new Library(list, new ArrayList<LibraryItem>());
+        Section section = new Section(list, new ArrayList<LibraryItem>());
         ArrayList<LibraryItem> expectedList = new ArrayList<>();
         expectedList.add(book);
 
-        assertEquals(expectedList, library.listOfAllAvailableLibraryItems());
+        assertEquals(expectedList, section.listOfAllAvailableLibraryItems());
     }
 
     @Test
@@ -25,9 +25,9 @@ public class LibraryTest {
         LibraryItem book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
         ArrayList<LibraryItem> list = new ArrayList<>();
         list.add(book);
-        Library library = new Library(list, new ArrayList<LibraryItem>());
+        Section section = new Section(list, new ArrayList<LibraryItem>());
 
-        assertEquals(true, library.checkOut("A Game Of Thrones"));
+        assertEquals(true, section.checkOut("A Game Of Thrones"));
     }
 
     @Test
@@ -35,9 +35,9 @@ public class LibraryTest {
         LibraryItem book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
         ArrayList<LibraryItem> list = new ArrayList<>();
         list.add(book);
-        Library library = new Library(new ArrayList<LibraryItem>(), list);
+        Section section = new Section(new ArrayList<LibraryItem>(), list);
 
-        assertEquals(true, library.checkIn("A Game Of Thrones"));
+        assertEquals(true, section.checkIn("A Game Of Thrones"));
     }
 
     @Test
@@ -45,11 +45,11 @@ public class LibraryTest {
         LibraryItem book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
         ArrayList<LibraryItem> list = new ArrayList<>();
         list.add(book);
-        Library library = new Library(list, new ArrayList<LibraryItem>());
+        Section section = new Section(list, new ArrayList<LibraryItem>());
         ArrayList<LibraryItem> expectedList = new ArrayList<>();
         expectedList.add(book);
 
-        assertEquals(expectedList, library.listOfAllAvailableLibraryItems());
+        assertEquals(expectedList, section.listOfAllAvailableLibraryItems());
     }
 
     @Test
@@ -57,9 +57,9 @@ public class LibraryTest {
         LibraryItem book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
         ArrayList<LibraryItem> list = new ArrayList<>();
         list.add(book);
-        Library library = new Library(list, new ArrayList<LibraryItem>());
+        Section section = new Section(list, new ArrayList<LibraryItem>());
 
-        assertEquals(true, library.checkOut("A Game Of Thrones"));
+        assertEquals(true, section.checkOut("A Game Of Thrones"));
     }
 
     @Test
@@ -67,8 +67,8 @@ public class LibraryTest {
         LibraryItem book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
         ArrayList<LibraryItem> list = new ArrayList<>();
         list.add(book);
-        Library library = new Library(new ArrayList<LibraryItem>(), list);
+        Section section = new Section(new ArrayList<LibraryItem>(), list);
 
-        assertEquals(true, library.checkIn("A Game Of Thrones"));
+        assertEquals(true, section.checkIn("A Game Of Thrones"));
     }
 }

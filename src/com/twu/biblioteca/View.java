@@ -16,9 +16,9 @@ public class View {
         console.printOutput("=======");
     }
 
-    public void displayListOfAllBooks(Library library) {
+    public void displayListOfAllBooks(Section section) {
         int i = 1;
-        ArrayList<LibraryItem> listOfBooks = library.listOfAllAvailableLibraryItems();
+        ArrayList<LibraryItem> listOfBooks = section.listOfAllAvailableLibraryItems();
         System.out.format("   %-32s%20s%10s\n", "Name", "Author", "Year");
         for (LibraryItem libraryItem : listOfBooks) {
             System.out.print(i++ + " ");
@@ -29,8 +29,8 @@ public class View {
 
     public void displayMenu() {
         console.printOutput("\n\nEnter the action you want to perform");
-        console.printOutput("1. List Books\n2. Checkout\n3. Checkin\n" +
-                "4. Quit\n\n\n");
+        console.printOutput("List Books\nCheckout Book\nCheckin Book\nList Movies\nCheckout Movie\nCheckin Movie" +
+                "Quit\n\n\n");
     }
 
     public void displaySuccessfulCheckinMessage() {

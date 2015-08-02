@@ -9,12 +9,12 @@ public class ListBooksTest {
     @Test
     public void listBookKnowsHowToListTheBook() {
         View view = Mockito.mock(View.class);
-        Library library = Mockito.mock(Library.class);
-        ListBooks listBooks = new ListBooks(view, library);
+        Section section = Mockito.mock(Section.class);
+        ListBooks listBooks = new ListBooks(view, section);
 
         listBooks.execute();
 
-        Mockito.verify(view).displayListOfAllBooks(library);
+        Mockito.verify(view).displayListOfAllBooks(section);
     }
 
 }

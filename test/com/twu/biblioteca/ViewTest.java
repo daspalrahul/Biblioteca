@@ -3,7 +3,6 @@ package com.twu.biblioteca;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -12,7 +11,6 @@ import org.mockito.runners.MockitoJUnitRunner;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Matchers.anyString;
@@ -46,11 +44,11 @@ public class ViewTest {
         ArrayList<LibraryItem> listOfBooks = new ArrayList<>();
         listOfBooks.add(book);
         listOfBooks.add(book);
-        Library library = new Library(listOfBooks,  new ArrayList<LibraryItem>());
+        Section section = new Section(listOfBooks,  new ArrayList<LibraryItem>());
         Console console = Mockito.mock(Console.class);
         View view = new View(console);
 
-        view.displayListOfAllBooks(library);
+        view.displayListOfAllBooks(section);
 
         assertEquals("   Name                                          Author      Year\n" +
                 "1 A Game Of Thrones    George R.R. Martin    1996\n" +

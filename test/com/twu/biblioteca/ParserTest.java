@@ -14,10 +14,11 @@ public class ParserTest {
     @Test
     public void parserKnowsHowToReturnLibraryOperation() {
         View view = Mockito.mock(View.class);
-        Library library = Mockito.mock(Library.class);
+        Section books = Mockito.mock(Section.class);
+        Section movies = Mockito.mock(Section.class);
         Parser parser = new Parser(view);
 
-        LibraryOperation result = parser.convertIntoLibraryOperation("List Books", library);
+        LibraryOperation result = parser.convertIntoLibraryOperation("List Books", books, movies);
 
         assertEquals(ListBooks.class, result.getClass());
     }
@@ -25,10 +26,11 @@ public class ParserTest {
     @Test
     public void parserKnowsHowToReturnCheckinOperation() {
         View view = Mockito.mock(View.class);
-        Library library = Mockito.mock(Library.class);
+        Section books = Mockito.mock(Section.class);
+        Section movies = Mockito.mock(Section.class);
         Parser parser = new Parser(view);
 
-        LibraryOperation result = parser.convertIntoLibraryOperation("Checkin", library);
+        LibraryOperation result = parser.convertIntoLibraryOperation("Checkin Book", books, movies);
 
         assertEquals(Checkin.class, result.getClass());
     }

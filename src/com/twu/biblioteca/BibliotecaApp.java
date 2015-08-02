@@ -5,12 +5,14 @@ public class BibliotecaApp {
 
     private View view;
     private Parser parser;
-    private Library library;
+    private Section movies;
+    private Section books;
 
-    public BibliotecaApp(View view, Parser parser, Library library) {
+    public BibliotecaApp(View view, Parser parser, Section movies, Section books) {
         this.view = view;
         this.parser = parser;
-        this.library = library;
+        this.movies = movies;
+        this.books = books;
     }
 
     public void start() {
@@ -18,7 +20,7 @@ public class BibliotecaApp {
         while (true) {
             view.displayMenu();
             String userInput = view.getUserInput();
-            LibraryOperation libraryOperation = parser.convertIntoLibraryOperation(userInput, library);
+            LibraryOperation libraryOperation = parser.convertIntoLibraryOperation(userInput, books, movies);
             libraryOperation.execute();
         }
     }

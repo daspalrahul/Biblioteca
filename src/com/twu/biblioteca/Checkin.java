@@ -4,17 +4,17 @@ package com.twu.biblioteca;
 public class Checkin implements LibraryOperation {
 
     View view;
-    Library library;
+    Section section;
 
-    public Checkin(View view, Library library) {
+    public Checkin(View view, Section section) {
         this.view = view;
-        this.library = library;
+        this.section = section;
     }
 
     @Override
     public void execute() {
         String book = view.getUserInput();
-        if (library.checkIn(book)) {
+        if (section.checkIn(book)) {
             view.displaySuccessfulCheckinMessage();
         } else {
             view.displayUnSuccessfulCheckinMessage();

@@ -4,16 +4,16 @@ package com.twu.biblioteca;
 public class Checkout implements LibraryOperation {
 
     private View view;
-    private Library library;
-    public Checkout(View view, Library library) {
+    private Section section;
+    public Checkout(View view, Section section) {
         this.view = view;
-        this.library = library;
+        this.section = section;
     }
 
     @Override
     public void execute() {
         String requestedBook = view.getUserInput();
-        if (library.checkOut(requestedBook)) {
+        if (section.checkOut(requestedBook)) {
             view.displaySuccessfulCheckOutMessage();
         }
         else {

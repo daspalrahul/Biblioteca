@@ -9,18 +9,33 @@ public class Parser {
         this.view = view;
     }
 
-    public LibraryOperation convertIntoLibraryOperation(String userInput, Library library) {
+    public LibraryOperation convertIntoLibraryOperation(String userInput, Section books, Section movies) {
         LibraryOperation libraryOperation;
-        if (userInput.equals("List Books")) {
-            libraryOperation = new ListBooks(view, library);
-        } else if (userInput.equals("Quit")) {
-            libraryOperation = new Quit();
-        } else if (userInput.equals("Checkout")) {
-            libraryOperation = new Checkout(view, library);
-        } else if (userInput.equals("Checkin")) {
-            libraryOperation = new Checkin(view, library);
-        } else {
-            libraryOperation = new InvalidOption(view);
+        switch (userInput) {
+            case "List Books":
+                libraryOperation = new ListBooks(view, books);
+                break;
+            case "Quit":
+                libraryOperation = new Quit();
+                break;
+            case "Checkout Book":
+                libraryOperation = new Checkout(view, books);
+                break;
+            case "Checkin Book":
+                libraryOperation = new Checkin(view, books);
+                break;
+            case "List Movies":
+                libraryOperation = new ListBooks(view, movies);
+                break;
+            case "Checkout Movie":
+                libraryOperation = new Checkout(view, movies);
+                break;
+            case "Checkin Movie":
+                libraryOperation = new Checkin(view, movies);
+                break;
+            default:
+                libraryOperation = new InvalidOption(view);
+                break;
         }
         return libraryOperation;
     }
