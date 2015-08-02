@@ -5,19 +5,22 @@ public class Checkout implements LibraryOperation {
 
     private View view;
     private Section section;
-    public Checkout(View view, Section section) {
+    private Class<?> requestType;
+
+    public Checkout(View view, Section section, Class<?> requestType) {
         this.view = view;
         this.section = section;
+        this.requestType = requestType;
     }
 
     @Override
     public void execute() {
-        String requestedBook = view.getUserInput();
-        if (section.checkOut(requestedBook)) {
-            view.displaySuccessfulCheckOutMessage();
+        String requestedLibraryItem = view.getUserInput();
+        if (section.checkOut(requestedLibraryItem)) {
+            view.displaySuccessfulCheckOutMessage(requestType);
         }
         else {
-            view.displayUnSuccessfulCheckOutMessage();
+            view.displayUnSuccessfulCheckOutMessage(requestType);
         }
     }
 }

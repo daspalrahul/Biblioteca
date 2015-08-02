@@ -46,11 +46,17 @@ public class View {
         console.printOutput("Select a valid option!");
     }
 
-    public void displaySuccessfulCheckOutMessage() {
-        console.printOutput("Thank you! Enjoy the book");
+    public void displaySuccessfulCheckOutMessage(Class<?> type) {
+        if (type == Book.class)
+            console.printOutput("Thank you! Enjoy the book");
+        else
+            console.printOutput("Thank you! Enjoy the movie");
     }
 
-    public void displayUnSuccessfulCheckOutMessage() {
-        console.printOutput("That book is not available.");
+    public void displayUnSuccessfulCheckOutMessage(Class<?> type) {
+        if (type == Book.class)
+            console.printOutput("That book is not available.");
+        else
+            console.printOutput("That movie is not available.");
     }
 }

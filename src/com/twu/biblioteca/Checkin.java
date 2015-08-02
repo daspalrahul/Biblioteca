@@ -13,8 +13,8 @@ public class Checkin implements LibraryOperation {
 
     @Override
     public void execute() {
-        String book = view.getUserInput();
-        if (section.checkIn(book)) {
+        String libraryItem = view.getUserInput();
+        if (section.checkIn(libraryItem)) {
             view.displaySuccessfulCheckinMessage();
         } else {
             view.displayUnSuccessfulCheckinMessage();

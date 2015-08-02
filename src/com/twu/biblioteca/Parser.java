@@ -19,7 +19,7 @@ public class Parser {
                 libraryOperation = new Quit();
                 break;
             case "Checkout Book":
-                libraryOperation = new Checkout(view, books);
+                libraryOperation = new Checkout(view, books, Book.class);
                 break;
             case "Checkin Book":
                 libraryOperation = new Checkin(view, books);
@@ -28,7 +28,7 @@ public class Parser {
                 libraryOperation = new ListLibraryItems(view, movies);
                 break;
             case "Checkout Movie":
-                libraryOperation = new Checkout(view, movies);
+                libraryOperation = new Checkout(view, movies, Movie.class);
                 break;
             case "Checkin Movie":
                 libraryOperation = new Checkin(view, movies);

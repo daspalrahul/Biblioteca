@@ -14,12 +14,12 @@ public class CheckoutTest {
         list.add(book);
         Section section = new Section(list, new ArrayList<LibraryItem>());
         View view = Mockito.mock(View.class);
-        Checkout checkout = new Checkout(view, section);
+        Checkout checkout = new Checkout(view, section, Book.class);
 
         Mockito.when(view.getUserInput()).thenReturn("A Game Of Thrones");
         checkout.execute();
 
-        Mockito.verify(view).displaySuccessfulCheckOutMessage();
+        Mockito.verify(view).displaySuccessfulCheckOutMessage(Book.class);
     }
 
     @Test
@@ -29,11 +29,11 @@ public class CheckoutTest {
         list.add(book);
         Section section = new Section(list, new ArrayList<LibraryItem>());
         View view = Mockito.mock(View.class);
-        Checkout checkout = new Checkout(view, section);
+        Checkout checkout = new Checkout(view, section, Book.class);
 
         Mockito.when(view.getUserInput()).thenReturn("Cupcakes and Tiaras");
         checkout.execute();
 
-        Mockito.verify(view).displayUnSuccessfulCheckOutMessage();
+        Mockito.verify(view).displayUnSuccessfulCheckOutMessage(Book.class);
     }
 }

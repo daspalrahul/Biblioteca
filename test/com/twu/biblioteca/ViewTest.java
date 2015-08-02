@@ -69,7 +69,7 @@ public class ViewTest {
         Console console = Mockito.mock(Console.class);
         View view = new View(console);
 
-        view.displaySuccessfulCheckOutMessage();
+        view.displaySuccessfulCheckOutMessage(Book.class);
 
         Mockito.verify(console).printOutput("Thank you! Enjoy the book");
     }
@@ -79,7 +79,7 @@ public class ViewTest {
         Console console = Mockito.mock(Console.class);
         View view = new View(console);
 
-        view.displayUnSuccessfulCheckOutMessage();
+        view.displayUnSuccessfulCheckOutMessage(Book.class);
 
         Mockito.verify(console).printOutput("That book is not available.");
     }
