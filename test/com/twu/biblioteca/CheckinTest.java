@@ -14,11 +14,11 @@ public class CheckinTest {
         list.add(book);
         Section section = new Section(list, new ArrayList<LibraryItem>());
         View view = Mockito.mock(View.class);
-        Checkin checkin = new Checkin(view, section);
+        Checkin checkin = new Checkin(view, section, Book.class);
 
         Mockito.when(view.getUserInput()).thenReturn("A Game Of Thrones");
         checkin.execute();
 
-        Mockito.verify(view).displaySuccessfulCheckinMessage();
+        Mockito.verify(view).displaySuccessfulCheckinMessage(Book.class);
     }
 }

@@ -22,7 +22,7 @@ public class Parser {
                 libraryOperation = new Checkout(view, books, Book.class);
                 break;
             case "Checkin Book":
-                libraryOperation = new Checkin(view, books);
+                libraryOperation = new Checkin(view, books, Book.class);
                 break;
             case "List Movies":
                 libraryOperation = new ListLibraryItems(view, movies);
@@ -31,7 +31,7 @@ public class Parser {
                 libraryOperation = new Checkout(view, movies, Movie.class);
                 break;
             case "Checkin Movie":
-                libraryOperation = new Checkin(view, movies);
+                libraryOperation = new Checkin(view, movies, Movie.class);
                 break;
             default:
                 libraryOperation = new InvalidOption(view);

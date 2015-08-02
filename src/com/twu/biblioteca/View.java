@@ -30,12 +30,18 @@ public class View {
                 "Quit\n\n\n");
     }
 
-    public void displaySuccessfulCheckinMessage() {
-        console.printOutput("Thank you for returning the book.");
+    public void displaySuccessfulCheckinMessage(Class<?> type) {
+        if (type == Book.class)
+            console.printOutput("Thank you for returning the book.");
+        else
+            console.printOutput("Thank you for returning the movie.");
     }
 
-    public void displayUnSuccessfulCheckinMessage() {
-        console.printOutput("That is not a valid book to return.");
+    public void displayUnSuccessfulCheckinMessage(Class<?> type) {
+        if (type == Book.class)
+            console.printOutput("That is not a valid book to return.");
+        else
+            console.printOutput("That is not a valid movie to return.");
     }
 
     public String getUserInput() {

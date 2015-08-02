@@ -89,7 +89,7 @@ public class ViewTest {
         Console console = Mockito.mock(Console.class);
         View view = new View(console);
 
-        view.displaySuccessfulCheckinMessage();
+        view.displaySuccessfulCheckinMessage(Book.class);
 
         Mockito.verify(console).printOutput("Thank you for returning the book.");
     }
@@ -99,7 +99,7 @@ public class ViewTest {
         Console console = Mockito.mock(Console.class);
         View view = new View(console);
 
-        view.displayUnSuccessfulCheckinMessage();
+        view.displayUnSuccessfulCheckinMessage(Book.class);
 
         Mockito.verify(console).printOutput("That is not a valid book to return.");
     }
