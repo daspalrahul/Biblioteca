@@ -12,7 +12,7 @@ public class CheckinTest {
         LibraryItem book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
         ArrayList<LibraryItem> list = new ArrayList<>();
         list.add(book);
-        Section section = new Section(list, new ArrayList<LibraryItem>());
+        Section section = new Section(new ArrayList<LibraryItem>(), list);
         View view = Mockito.mock(View.class);
         Checkin checkin = new Checkin(view, section, Book.class);
 

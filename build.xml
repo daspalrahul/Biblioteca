@@ -11,7 +11,8 @@
     </path>
 
     <target name="compile">
-        <mkdir dir="out" />
+        <delete dir="out"/>
+        <mkdir dir="out"/>
         <javac srcdir="src" includeantruntime="false" destdir="out" classpathref="classpath"/>
         <javac srcdir="test" includeantruntime="false" destdir="out" classpathref="classpath"/>
     </target>
@@ -21,6 +22,7 @@
             <test name="com.twu.biblioteca.ViewTest"/>
             <test name="com.twu.biblioteca.ParserTest"/>
             <test name="com.twu.biblioteca.CheckoutTest"/>
+            <test name="com.twu.biblioteca.CheckinTest"/>
             <test name="com.twu.biblioteca.SectionTest"/>
             <test name="com.twu.biblioteca.InvalidOptionTest"/>
             <test name="com.twu.biblioteca.ListLibraryItemsTest"/>

@@ -1,14 +1,15 @@
 package com.twu.biblioteca;
 
 
-public class Movie extends LibraryItem {
+public class Movie implements LibraryItem {
 
+    private String title;
     private String year;
     private String director;
     private String rating;
 
-    public Movie(String name, String year, String director, String rating) {
-        super(name);
+    public Movie(String title, String year, String director, String rating) {
+        this.title = title;
         this.year = year;
         this.director = director;
         this.rating = rating;
@@ -16,6 +17,11 @@ public class Movie extends LibraryItem {
 
     @Override
     public String toString() {
-        return name + "    " + year + "    " + director + "    " + rating;
+        return title + "    " + year + "    " + director + "    " + rating;
+    }
+
+    @Override
+    public boolean hasName(String itemName) {
+        return title.equals(itemName);
     }
 }

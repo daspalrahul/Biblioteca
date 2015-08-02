@@ -1,18 +1,7 @@
 package com.twu.biblioteca;
 
-public class LibraryItem {
-    protected String name;
+public interface LibraryItem {
 
-    public LibraryItem(String name) {
-        this.name = name;
-    }
+    boolean hasName(String itemName);
 
-    public boolean hasName(String itemName) {
-        return itemName.equals(name);
-    }
-
-    @Override
-    public String toString() {
-        return "";
-    }
 }
