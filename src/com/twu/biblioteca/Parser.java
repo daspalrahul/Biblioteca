@@ -13,7 +13,7 @@ public class Parser {
         LibraryOperation libraryOperation;
         switch (userInput) {
             case "List Books":
-                libraryOperation = new ListBooks(view, books);
+                libraryOperation = new ListLibraryItems(view, books);
                 break;
             case "Quit":
                 libraryOperation = new Quit();
@@ -25,7 +25,7 @@ public class Parser {
                 libraryOperation = new Checkin(view, books);
                 break;
             case "List Movies":
-                libraryOperation = new ListBooks(view, movies);
+                libraryOperation = new ListLibraryItems(view, movies);
                 break;
             case "Checkout Movie":
                 libraryOperation = new Checkout(view, movies);

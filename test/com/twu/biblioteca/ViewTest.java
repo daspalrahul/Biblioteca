@@ -19,15 +19,6 @@ import static org.mockito.Mockito.times;
 @RunWith(MockitoJUnitRunner.class)
 public class ViewTest {
 
-    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    PrintStream original;
-
-    @Before
-    public void setUp() {
-        original = System.out;
-        System.setOut(new PrintStream(outContent));
-    }
-
     @Test
     public void viewKnowsHowToDisplayWelcomeMessage() {
         Console console = Mockito.mock(Console.class);
@@ -44,15 +35,13 @@ public class ViewTest {
         ArrayList<LibraryItem> listOfBooks = new ArrayList<>();
         listOfBooks.add(book);
         listOfBooks.add(book);
-        Section section = new Section(listOfBooks,  new ArrayList<LibraryItem>());
+        Section books = new Section(listOfBooks,  new ArrayList<LibraryItem>());
         Console console = Mockito.mock(Console.class);
         View view = new View(console);
 
-        view.displayListOfAllBooks(section);
+        view.displayListOfAllBooks(books);
 
-        assertEquals("   Name                                          Author      Year\n" +
-                "1 A Game Of Thrones    George R.R. Martin    1996\n" +
-                "2 A Game Of Thrones    George R.R. Martin    1996\n", outContent.toString());
+        Mockito.verify(console,times(2)).printOutput(anyString());
     }
 
     @Test
@@ -115,8 +104,4 @@ public class ViewTest {
         Mockito.verify(console).printOutput("That is not a valid book to return.");
     }
 
-    @After
-    public void tearDown() {
-        System.setOut(original);
-    }
 }

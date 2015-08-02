@@ -4,15 +4,15 @@ package com.twu.biblioteca;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-public class ListBooksTest {
+public class ListLibraryItemsTest {
 
     @Test
     public void listBookKnowsHowToListTheBook() {
         View view = Mockito.mock(View.class);
         Section section = Mockito.mock(Section.class);
-        ListBooks listBooks = new ListBooks(view, section);
+        ListLibraryItems listLibraryItems = new ListLibraryItems(view, section);
 
-        listBooks.execute();
+        listLibraryItems.execute();
 
         Mockito.verify(view).displayListOfAllBooks(section);
     }

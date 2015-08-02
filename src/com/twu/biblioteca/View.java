@@ -19,17 +19,14 @@ public class View {
     public void displayListOfAllBooks(Section section) {
         int i = 1;
         ArrayList<LibraryItem> listOfBooks = section.listOfAllAvailableLibraryItems();
-        System.out.format("   %-32s%20s%10s\n", "Name", "Author", "Year");
         for (LibraryItem libraryItem : listOfBooks) {
-            System.out.print(i++ + " ");
-            System.out.print(libraryItem.toString());
-            System.out.println("");
+            console.printOutput(i++ + ". " + libraryItem);
         }
     }
 
     public void displayMenu() {
         console.printOutput("\n\nEnter the action you want to perform");
-        console.printOutput("List Books\nCheckout Book\nCheckin Book\nList Movies\nCheckout Movie\nCheckin Movie" +
+        console.printOutput("List Books\nCheckout Book\nCheckin Book\nList Movies\nCheckout Movie\nCheckin Movie\n" +
                 "Quit\n\n\n");
     }
 

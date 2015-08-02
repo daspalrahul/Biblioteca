@@ -20,7 +20,7 @@ public class ParserTest {
 
         LibraryOperation result = parser.convertIntoLibraryOperation("List Books", books, movies);
 
-        assertEquals(ListBooks.class, result.getClass());
+        assertEquals(ListLibraryItems.class, result.getClass());
     }
 
     @Test

@@ -8,7 +8,7 @@ public class BibliotecaApp {
     private Section movies;
     private Section books;
 
-    public BibliotecaApp(View view, Parser parser, Section movies, Section books) {
+    public BibliotecaApp(View view, Parser parser, Section books, Section movies) {
         this.view = view;
         this.parser = parser;
         this.movies = movies;

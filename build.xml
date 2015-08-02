@@ -23,7 +23,7 @@
             <test name="com.twu.biblioteca.CheckoutTest"/>
             <test name="com.twu.biblioteca.SectionTest"/>
             <test name="com.twu.biblioteca.InvalidOptionTest"/>
-            <test name="com.twu.biblioteca.ListBooksTest"/>
+            <test name="com.twu.biblioteca.ListLibraryItemsTest"/>
             <test name="com.twu.biblioteca.BibliotecaAppTest"/>
             <test name="com.twu.biblioteca.BookTest"/>
             <test name="com.twu.biblioteca.MovieTest"/>
