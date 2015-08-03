@@ -12,4 +12,11 @@ public class UserTest {
 
         assertEquals(true, user.authenticateUser("123-4567", "diney"));
     }
+
+    @Test
+    public void userKnowsTheInformationItNeedsTodisplay() {
+        User user = new User("123-4567", "diney", "Rahul", "daspalrahul@gmail.com", "8860250486");
+
+        assertEquals("Rahul daspalrahul@gmail.com 8860250486", user.userInformation());
+    }
 }

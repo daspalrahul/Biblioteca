@@ -1,5 +1,6 @@
 package com.twu.biblioteca;
 
+
 public class User {
 
     private String libraryNumber;
@@ -18,5 +19,9 @@ public class User {
 
     public boolean authenticateUser(String libraryNumber, String password) {
         return libraryNumber.equals(this.libraryNumber) && password.equals(this.password);
+    }
+
+    public String userInformation() {
+        return name + " " + email + " " + phoneNumber;
     }
 }
