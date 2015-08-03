@@ -8,13 +8,15 @@ public class User {
     private String name;
     private String email;
     private String phoneNumber;
+    private String role;
 
-    public User(String libraryNumber, String password, String name, String email, String phoneNumber) {
+    public User(String libraryNumber, String password, String name, String email, String phoneNumber, String role) {
         this.libraryNumber = libraryNumber;
         this.password = password;
         this.name = name;
         this.email = email;
         this.phoneNumber = phoneNumber;
+        this.role = role;
     }
 
     public boolean authenticateUser(String libraryNumber, String password) {
@@ -23,5 +25,9 @@ public class User {
 
     public String userInformation() {
         return name + " " + email + " " + phoneNumber;
+    }
+
+    public String getRole() {
+        return role;
     }
 }
