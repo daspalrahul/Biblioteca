@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 
+import com.sun.org.apache.xerces.internal.impl.dv.ValidatedInfo;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -112,5 +113,16 @@ public class ViewTest {
         view.displayUnsuccessfulLoginMessage();
 
         Mockito.verify(console).printOutput("Invalid User");
+    }
+
+    @Test
+    public void viewCanDoSuccessfulLogin() {
+        Console console = Mockito.mock(Console.class);
+        View view = new View(console);
+        User user = Mockito.mock(User.class);
+
+        view.successfulLogin(user);
+
+        Mockito.verify(console).printOutput(anyString());
     }
 }

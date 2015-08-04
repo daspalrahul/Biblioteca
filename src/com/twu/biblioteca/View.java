@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class View {
 
     Console console;
+    User user;
 
     public View(Console console) {
         this.console = console;
@@ -68,5 +69,10 @@ public class View {
 
     public void displayUnsuccessfulLoginMessage() {
         console.printOutput("Invalid User");
+    }
+
+    public void successfulLogin(User user) {
+        this.user = user;
+        console.printOutput("Thanks for logging in " + user.userInformation());
     }
 }
