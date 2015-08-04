@@ -11,9 +11,9 @@ public class LoginAuthenticator {
         this.users = users;
     }
 
-    public boolean authenticateUser(String librarynumber, String password) {
+    public boolean authenticateUser(String libraryNumber, String password) {
         for (User user : users) {
-            if (user.authenticateUser(librarynumber, password))
+            if (user.authenticateUser(libraryNumber, password))
                 return true;
         }
         return false;

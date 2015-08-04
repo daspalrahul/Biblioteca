@@ -27,7 +27,7 @@ public class User {
         return name + " " + email + " " + phoneNumber;
     }
 
-    public String getRole() {
-        return role;
+    public boolean isLibrarian() {
+        return role.equals("librarian");
     }
 }

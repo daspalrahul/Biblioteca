@@ -24,6 +24,6 @@ public class UserTest {
     public void userKnowsAboutItsRole() {
         User user = new User("123-4567", "diney", "Rahul", "daspalrahul@gmail.com", "8860250486", "customer");
 
-        assertEquals("customer", user.getRole());
+        assertEquals(false, user.isLibrarian());
     }
 }
