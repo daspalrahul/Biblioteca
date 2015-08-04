@@ -30,10 +30,11 @@ public class Section {
         return false;
     }
 
-    public boolean checkIn(String givenLibraryItem) {
+    public boolean checkIn(String givenLibraryItem, User currentUser) {
         for (Map.Entry<LibraryItem, User> entry : checkedOutLibraryItemList.entrySet()) {
             LibraryItem libraryItem = entry.getKey();
-            if (libraryItem.hasName(givenLibraryItem)) {
+            User user = entry.getValue();
+            if (libraryItem.hasName(givenLibraryItem) && user == currentUser) {
                 availableLibraryItemList.add(libraryItem);
                 checkedOutLibraryItemList.remove(libraryItem);
                 return true;

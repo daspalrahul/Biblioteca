@@ -16,7 +16,7 @@ public class Checkin implements LibraryOperation {
     @Override
     public void execute() {
         String libraryItem = view.getUserInput();
-        if (section.checkIn(libraryItem)) {
+        if (section.checkIn(libraryItem, view.getUser())) {
             view.displaySuccessfulCheckinMessage(requestType);
         } else {
             view.displayUnSuccessfulCheckinMessage(requestType);

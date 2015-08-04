@@ -50,7 +50,7 @@ public class SectionTest {
         map.put(book, user);
         Section section = new Section(new ArrayList<LibraryItem>(), map);
 
-        assertEquals(true, section.checkIn("A Game Of Thrones"));
+        assertEquals(true, section.checkIn("A Game Of Thrones", user));
     }
 
     @Test
@@ -91,6 +91,6 @@ public class SectionTest {
         map.put(book, user);
         Section section = new Section(new ArrayList<LibraryItem>(), map);
 
-        assertEquals(true, section.checkIn("A Game Of Thrones"));
+        assertEquals(true, section.checkIn("A Game Of Thrones", user));
     }
 }

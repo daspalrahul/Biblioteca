@@ -19,6 +19,7 @@ public class CheckinTest {
         View view = Mockito.mock(View.class);
         Checkin checkin = new Checkin(view, section, Book.class);
 
+        Mockito.when(view.getUser()).thenReturn(user);
         Mockito.when(view.getUserInput()).thenReturn("A Game Of Thrones");
         checkin.execute();
 
