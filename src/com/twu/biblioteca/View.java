@@ -7,9 +7,11 @@ public class View {
 
     Console console;
     User user;
+    Menu menu;
 
-    public View(Console console) {
+    public View(Console console, Menu menu) {
         this.console = console;
+        this.menu = menu;
     }
 
     public void displayWelcomeMessage() {
@@ -78,5 +80,9 @@ public class View {
 
     public User getUser() {
         return user;
+    }
+
+    public void displayLoginMenu() {
+        console.printOutput(menu.displayLoginMenu());
     }
 }

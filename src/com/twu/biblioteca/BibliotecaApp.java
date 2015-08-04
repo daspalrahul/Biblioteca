@@ -17,6 +17,10 @@ public class BibliotecaApp {
 
     public void start() {
         view.displayWelcomeMessage();
+        /*boolean untillLoginSuccessful = true;
+        do {
+            view.d
+        }*/
         while (true) {
             view.displayMenu();
             String userInput = view.getUserInput();

@@ -17,7 +17,8 @@ public class ViewTest {
     @Test
     public void viewKnowsHowToDisplayWelcomeMessage() {
         Console console = Mockito.mock(Console.class);
-        View view = new View(console);
+        Menu menu = new Menu();
+        View view = new View(console, menu);
 
         view.displayWelcomeMessage();
 
@@ -32,7 +33,8 @@ public class ViewTest {
         listOfBooks.add(book);
         Section books = new Section(listOfBooks,  new HashMap<LibraryItem, User>());
         Console console = Mockito.mock(Console.class);
-        View view = new View(console);
+        Menu menu = new Menu();
+        View view = new View(console, menu);
 
         view.displayListOfAllBooks(books);
 
@@ -42,7 +44,8 @@ public class ViewTest {
     @Test
     public void viewCanDisplayListOfAvailableMenu() {
         Console console = Mockito.mock(Console.class);
-        View view = new View(console);
+        Menu menu = new Menu();
+        View view = new View(console, menu);
 
         view.displayMenu();
 
@@ -52,7 +55,8 @@ public class ViewTest {
     @Test
     public void viewCanDisplayInvalidCommandMessage() {
         Console console = Mockito.mock(Console.class);
-        View view = new View(console);
+        Menu menu = new Menu();
+        View view = new View(console, menu);
 
         view.displayInvalidCommandMessage();
 
@@ -62,7 +66,8 @@ public class ViewTest {
     @Test
     public void viewCanDisplaySuccessfulCheckoutMessage() {
         Console console = Mockito.mock(Console.class);
-        View view = new View(console);
+        Menu menu = new Menu();
+        View view = new View(console, menu);
 
         view.displaySuccessfulCheckOutMessage(Book.class);
 
@@ -72,7 +77,8 @@ public class ViewTest {
     @Test
     public void viewCanDisplayUnSuccessfulCheckoutMessage() {
         Console console = Mockito.mock(Console.class);
-        View view = new View(console);
+        Menu menu = new Menu();
+        View view = new View(console, menu);
 
         view.displayUnSuccessfulCheckOutMessage(Book.class);
 
@@ -82,7 +88,8 @@ public class ViewTest {
     @Test
     public void viewCanDisplaySuccessfulCheckinMessage() {
         Console console = Mockito.mock(Console.class);
-        View view = new View(console);
+        Menu menu = new Menu();
+        View view = new View(console, menu);
 
         view.displaySuccessfulCheckinMessage(Book.class);
 
@@ -92,7 +99,8 @@ public class ViewTest {
     @Test
     public void viewCanDisplayUnSuccessfulCheckinMessage() {
         Console console = Mockito.mock(Console.class);
-        View view = new View(console);
+        Menu menu = new Menu();
+        View view = new View(console, menu);
 
         view.displayUnSuccessfulCheckinMessage(Book.class);
 
@@ -102,7 +110,8 @@ public class ViewTest {
     @Test
     public void viewCanDisplayInvalidLoginMessage() {
         Console console = Mockito.mock(Console.class);
-        View view = new View(console);
+        Menu menu = new Menu();
+        View view = new View(console, menu);
 
         view.displayUnsuccessfulLoginMessage();
 
@@ -112,10 +121,24 @@ public class ViewTest {
     @Test
     public void viewCanDoSuccessfulLogin() {
         Console console = Mockito.mock(Console.class);
-        View view = new View(console);
+        Menu menu = new Menu();
+        View view = new View(console, menu);
         User user = Mockito.mock(User.class);
 
         view.successfulLogin(user);
+
+        Mockito.verify(console).printOutput(anyString());
+    }
+
+    @Test
+    public void viewKnowsHowToDisplayLoginMenu() {
+        Console console = Mockito.mock(Console.class);
+        Menu menu = Mockito.mock(Menu.class);
+        User user = Mockito.mock(User.class);
+        View view = new View(console, menu);
+
+        Mockito.when(menu.displayOptionMenuList(user)).thenReturn("menu");
+        view.displayLoginMenu();
 
         Mockito.verify(console).printOutput(anyString());
     }

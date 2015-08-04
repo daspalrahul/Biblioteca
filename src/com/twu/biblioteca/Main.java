@@ -16,7 +16,8 @@ public class Main {
         movieList.add(movie);
         Section movies = new Section(movieList, new HashMap<LibraryItem, User>());
         Console console = new Console();
-        View view = new View(console);
+        Menu menu = new Menu();
+        View view = new View(console, menu);
         ArrayList<User> users = new ArrayList<>();
         users.add(new User("123-4567", "diney", "Rahul", "daspalrahul@gmail.com", "8860250486", "customer"));
         LoginAuthenticator loginAuthenticator = new LoginAuthenticator(users);
