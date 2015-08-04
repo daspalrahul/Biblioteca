@@ -11,11 +11,11 @@ public class LoginAuthenticator {
         this.users = users;
     }
 
-    public boolean authenticateUser(String libraryNumber, String password) {
+    public User authenticateUser(String libraryNumber, String password) {
         for (User user : users) {
             if (user.authenticateUser(libraryNumber, password))
-                return true;
+                return user;
         }
-        return false;
+        return null;
     }
 }
