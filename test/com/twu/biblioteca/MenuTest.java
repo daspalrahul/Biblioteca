@@ -25,4 +25,11 @@ public class MenuTest {
                 "List CheckedOut Movies\n", menu.displayOptionMenuList(user));
     }
 
+    @Test
+    public void menuKnowsWhatToDisplayWhenLogginIn() {
+        Menu menu = new Menu();
+
+        assertEquals("Login\n" +
+                "Quit\n", menu.displayLoginMenu());
+    }
 }
