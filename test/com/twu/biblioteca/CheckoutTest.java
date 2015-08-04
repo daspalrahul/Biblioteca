@@ -4,6 +4,7 @@ package com.twu.biblioteca;
 import org.junit.Test;
 import org.mockito.Mockito;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class CheckoutTest {
 
@@ -12,7 +13,7 @@ public class CheckoutTest {
         LibraryItem book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
         ArrayList<LibraryItem> list = new ArrayList<>();
         list.add(book);
-        Section section = new Section(list, new ArrayList<LibraryItem>());
+        Section section = new Section(list, new HashMap<LibraryItem, User>());
         View view = Mockito.mock(View.class);
         Checkout checkout = new Checkout(view, section, Book.class);
 
@@ -27,7 +28,7 @@ public class CheckoutTest {
         LibraryItem book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
         ArrayList<LibraryItem> list = new ArrayList<>();
         list.add(book);
-        Section section = new Section(list, new ArrayList<LibraryItem>());
+        Section section = new Section(list, new HashMap<LibraryItem, User>());
         View view = Mockito.mock(View.class);
         Checkout checkout = new Checkout(view, section, Book.class);
 

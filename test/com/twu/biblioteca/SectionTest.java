@@ -2,7 +2,11 @@ package com.twu.biblioteca;
 
 
 import org.junit.Test;
+import org.mockito.Mockito;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import static org.junit.Assert.*;
 
@@ -13,7 +17,10 @@ public class SectionTest {
         LibraryItem book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
         ArrayList<LibraryItem> list = new ArrayList<>();
         list.add(book);
-        Section section = new Section(list, new ArrayList<LibraryItem>());
+        User user = Mockito.mock(User.class);
+        Map<LibraryItem, User> map = new HashMap<>();
+        map.put(book, user);
+        Section section = new Section(list, new HashMap<LibraryItem, User>(){});
         ArrayList<LibraryItem> expectedList = new ArrayList<>();
         expectedList.add(book);
 
@@ -25,9 +32,12 @@ public class SectionTest {
         LibraryItem book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
         ArrayList<LibraryItem> list = new ArrayList<>();
         list.add(book);
-        Section section = new Section(list, new ArrayList<LibraryItem>());
+        User user = Mockito.mock(User.class);
+        Map<LibraryItem, User> map = new HashMap<>();
+        map.put(book, user);
+        Section section = new Section(list, new HashMap<LibraryItem, User>(){});
 
-        assertEquals(true, section.checkOut("A Game Of Thrones"));
+        assertEquals(true, section.checkOut("A Game Of Thrones", user));
     }
 
     @Test
@@ -35,7 +45,10 @@ public class SectionTest {
         LibraryItem book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
         ArrayList<LibraryItem> list = new ArrayList<>();
         list.add(book);
-        Section section = new Section(new ArrayList<LibraryItem>(), list);
+        User user = Mockito.mock(User.class);
+        Map<LibraryItem, User> map = new HashMap<>();
+        map.put(book, user);
+        Section section = new Section(new ArrayList<LibraryItem>(), map);
 
         assertEquals(true, section.checkIn("A Game Of Thrones"));
     }
@@ -45,7 +58,10 @@ public class SectionTest {
         LibraryItem book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
         ArrayList<LibraryItem> list = new ArrayList<>();
         list.add(book);
-        Section section = new Section(list, new ArrayList<LibraryItem>());
+        User user = Mockito.mock(User.class);
+        Map<LibraryItem, User> map = new HashMap<>();
+        map.put(book, user);
+        Section section = new Section(list, new HashMap<LibraryItem, User>(){});
         ArrayList<LibraryItem> expectedList = new ArrayList<>();
         expectedList.add(book);
 
@@ -57,9 +73,12 @@ public class SectionTest {
         LibraryItem book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
         ArrayList<LibraryItem> list = new ArrayList<>();
         list.add(book);
-        Section section = new Section(list, new ArrayList<LibraryItem>());
+        User user = Mockito.mock(User.class);
+        Map<LibraryItem, User> map = new HashMap<>();
+        map.put(book, user);
+        Section section = new Section(list, new HashMap<LibraryItem, User>(){});
 
-        assertEquals(true, section.checkOut("A Game Of Thrones"));
+        assertEquals(true, section.checkOut("A Game Of Thrones", user));
     }
 
     @Test
@@ -67,7 +86,10 @@ public class SectionTest {
         LibraryItem book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
         ArrayList<LibraryItem> list = new ArrayList<>();
         list.add(book);
-        Section section = new Section(new ArrayList<LibraryItem>(), list);
+        User user = Mockito.mock(User.class);
+        Map<LibraryItem, User> map = new HashMap<>();
+        map.put(book, user);
+        Section section = new Section(new ArrayList<LibraryItem>(), map);
 
         assertEquals(true, section.checkIn("A Game Of Thrones"));
     }

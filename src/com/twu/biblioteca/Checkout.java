@@ -16,7 +16,7 @@ public class Checkout implements LibraryOperation {
     @Override
     public void execute() {
         String requestedLibraryItem = view.getUserInput();
-        if (section.checkOut(requestedLibraryItem)) {
+        if (section.checkOut(requestedLibraryItem, view.getUser())) {
             view.displaySuccessfulCheckOutMessage(requestType);
         }
         else {

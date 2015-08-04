@@ -2,13 +2,14 @@ package com.twu.biblioteca;
 
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Section {
 
     ArrayList<LibraryItem> availableLibraryItemList;
-    ArrayList<LibraryItem> checkedOutLibraryItemList;
+    Map<LibraryItem, User> checkedOutLibraryItemList;
 
-    public Section(ArrayList<LibraryItem> availableLibraryItemList, ArrayList<LibraryItem> checkedOutLibraryItemList) {
+    public Section(ArrayList<LibraryItem> availableLibraryItemList, Map<LibraryItem, User> checkedOutLibraryItemList) {
         this.availableLibraryItemList = availableLibraryItemList;
         this.checkedOutLibraryItemList = checkedOutLibraryItemList;
     }
@@ -18,10 +19,10 @@ public class Section {
         return availableLibraryItemList;
     }
 
-    public boolean checkOut(String requestedLibraryItem) {
+    public boolean checkOut(String requestedLibraryItem, User user) {
         for (LibraryItem libraryItem : availableLibraryItemList) {
             if (libraryItem.hasName(requestedLibraryItem)) {
-                checkedOutLibraryItemList.add(libraryItem);
+                checkedOutLibraryItemList.put(libraryItem, user);
                 availableLibraryItemList.remove(libraryItem);
                 return true;
             }
@@ -30,7 +31,8 @@ public class Section {
     }
 
     public boolean checkIn(String givenLibraryItem) {
-        for (LibraryItem libraryItem : checkedOutLibraryItemList) {
+        for (Map.Entry<LibraryItem, User> entry : checkedOutLibraryItemList.entrySet()) {
+            LibraryItem libraryItem = entry.getKey();
             if (libraryItem.hasName(givenLibraryItem)) {
                 availableLibraryItemList.add(libraryItem);
                 checkedOutLibraryItemList.remove(libraryItem);

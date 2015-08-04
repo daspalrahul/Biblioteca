@@ -75,4 +75,8 @@ public class View {
         this.user = user;
         console.printOutput("Thanks for logging in " + user.userInformation());
     }
+
+    public User getUser() {
+        return user;
+    }
 }

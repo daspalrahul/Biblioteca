@@ -6,6 +6,7 @@ import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.times;
@@ -29,7 +30,7 @@ public class ViewTest {
         ArrayList<LibraryItem> listOfBooks = new ArrayList<>();
         listOfBooks.add(book);
         listOfBooks.add(book);
-        Section books = new Section(listOfBooks,  new ArrayList<LibraryItem>());
+        Section books = new Section(listOfBooks,  new HashMap<LibraryItem, User>());
         Console console = Mockito.mock(Console.class);
         View view = new View(console);
 
