@@ -16,7 +16,8 @@ public class ParserTest {
         View view = Mockito.mock(View.class);
         Section books = Mockito.mock(Section.class);
         Section movies = Mockito.mock(Section.class);
-        Parser parser = new Parser(view);
+        LoginAuthenticator loginAuthenticator = Mockito.mock(LoginAuthenticator.class);
+        Parser parser = new Parser(view, loginAuthenticator);
 
         LibraryOperation result = parser.convertIntoLibraryOperation("List Books", books, movies);
 
@@ -28,11 +29,24 @@ public class ParserTest {
         View view = Mockito.mock(View.class);
         Section books = Mockito.mock(Section.class);
         Section movies = Mockito.mock(Section.class);
-        Parser parser = new Parser(view);
+        LoginAuthenticator loginAuthenticator = Mockito.mock(LoginAuthenticator.class);
+        Parser parser = new Parser(view, loginAuthenticator);
 
         LibraryOperation result = parser.convertIntoLibraryOperation("Checkin Book", books, movies);
 
         assertEquals(Checkin.class, result.getClass());
     }
 
+    @Test
+    public void parserKnowsHowToReturnLoginOperation() {
+        View view = Mockito.mock(View.class);
+        Section books = Mockito.mock(Section.class);
+        Section movies = Mockito.mock(Section.class);
+        LoginAuthenticator loginAuthenticator = Mockito.mock(LoginAuthenticator.class);
+        Parser parser = new Parser(view, loginAuthenticator);
+
+        LibraryOperation result = parser.convertIntoLibraryOperation("Login", books, movies);
+
+        assertEquals(Login.class, result.getClass());
+    }
 }

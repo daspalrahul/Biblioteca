@@ -16,7 +16,10 @@ public class Main {
         Section movies = new Section(movieList, new ArrayList<LibraryItem>());
         Console console = new Console();
         View view = new View(console);
-        Parser parser = new Parser(view);
+        ArrayList<User> users = new ArrayList<>();
+        users.add(new User("123-4567", "diney", "Rahul", "daspalrahul@gmail.com", "8860250486", "customer"));
+        LoginAuthenticator loginAuthenticator = new LoginAuthenticator(users);
+        Parser parser = new Parser(view, loginAuthenticator);
         BibliotecaApp bibliotecaApp = new BibliotecaApp(view, parser, books, movies);
         bibliotecaApp.start();
     }

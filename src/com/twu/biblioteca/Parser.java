@@ -4,9 +4,11 @@ package com.twu.biblioteca;
 public class Parser {
 
     private View view;
+    private LoginAuthenticator loginAuthenticator;
 
-    public Parser(View view) {
+    public Parser(View view, LoginAuthenticator loginAuthenticator) {
         this.view = view;
+        this.loginAuthenticator = loginAuthenticator;
     }
 
     public LibraryOperation convertIntoLibraryOperation(String userInput, Section books, Section movies) {
@@ -32,6 +34,9 @@ public class Parser {
                 break;
             case "Checkin Movie":
                 libraryOperation = new Checkin(view, movies, Movie.class);
+                break;
+            case "Login":
+                libraryOperation = new Login(view, loginAuthenticator);
                 break;
             default:
                 libraryOperation = new InvalidOption(view);
