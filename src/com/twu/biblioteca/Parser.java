@@ -38,6 +38,9 @@ public class Parser {
             case "Login":
                 libraryOperation = new Login(view, loginAuthenticator);
                 break;
+            case "Logout":
+                libraryOperation = new Logout(view);
+                break;
             default:
                 libraryOperation = new InvalidOption(view);
                 break;

@@ -19,7 +19,8 @@ public class Main {
         Menu menu = new Menu();
         View view = new View(console, menu);
         ArrayList<User> users = new ArrayList<>();
-        users.add(new User("123-4567", "diney", "Rahul", "daspalrahul@gmail.com", "8860250486", "customer"));
+        users.add(new User("123-4567", "123456", "Rahul", "daspalrahul@gmail.com", "8860250486", "customer"));
+        users.add(new User("999-9999", "123456", "Rahul", "daspalrahul@gmail.com", "8860250486", "librarian"));
         LoginAuthenticator loginAuthenticator = new LoginAuthenticator(users);
         Parser parser = new Parser(view, loginAuthenticator);
         BibliotecaApp bibliotecaApp = new BibliotecaApp(view, parser, books, movies);

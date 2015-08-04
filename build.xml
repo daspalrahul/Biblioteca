@@ -33,6 +33,7 @@
             <test name="com.twu.biblioteca.MenuTest"/>
             <test name="com.twu.biblioteca.LoginAuthenticatorTest"/>
             <test name="com.twu.biblioteca.LoginTest"/>
+            <test name="com.twu.biblioteca.LogoutTest"/>
             <classpath>
                 <pathelement location="out"/>
                 <path refid="classpath"/>
