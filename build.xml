@@ -30,6 +30,9 @@
             <test name="com.twu.biblioteca.BookTest"/>
             <test name="com.twu.biblioteca.MovieTest"/>
             <test name="com.twu.biblioteca.UserTest"/>
+            <test name="com.twu.biblioteca.MenuTest"/>
+            <test name="com.twu.biblioteca.LoginAuthenticatorTest"/>
+            <test name="com.twu.biblioteca.LoginTest"/>
             <classpath>
                 <pathelement location="out"/>
                 <path refid="classpath"/>

@@ -16,6 +16,6 @@ public class LoginAuthenticatorTest {
         users.add(user);
         LoginAuthenticator loginAuthenticator = new LoginAuthenticator(users);
 
-        assertEquals(true, loginAuthenticator.authenticateUser("123-4567", "diney"));
+        assertEquals(user, loginAuthenticator.authenticateUser("123-4567", "diney"));
     }
 }

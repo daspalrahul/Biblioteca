@@ -28,9 +28,7 @@ public class View {
     }
 
     public void displayMenu() {
-        console.printOutput("\n\nEnter the action you want to perform");
-        console.printOutput("List Books\nCheckout Book\nCheckin Book\nList Movies\nCheckout Movie\nCheckin Movie\n" +
-                "Quit\n\n\n");
+        console.printOutput(menu.displayOptionMenuList(user));
     }
 
     public void displaySuccessfulCheckinMessage(Class<?> type) {
