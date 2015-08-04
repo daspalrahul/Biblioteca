@@ -130,4 +130,15 @@ public class ViewTest {
 
         Mockito.verify(console).printOutput(anyString());
     }
+
+    @Test
+    public void viewKnowsHowToSuccessfullyLogout() {
+        Console console = Mockito.mock(Console.class);
+        Menu menu = Mockito.mock(Menu.class);
+        View view = new View(console, menu);
+
+        view.logoutSuccess();
+
+        Mockito.verify(console).printOutput(anyString());
+    }
 }

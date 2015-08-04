@@ -83,4 +83,9 @@ public class View {
     public void displayLoginMenu() {
         console.printOutput(menu.displayLoginMenu());
     }
+
+    public void logoutSuccess() {
+        this.user = null;
+        console.printOutput("You have logged out!");
+    }
 }
