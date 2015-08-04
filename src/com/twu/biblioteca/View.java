@@ -65,4 +65,8 @@ public class View {
         else
             console.printOutput("That movie is not available.");
     }
+
+    public void displayUnsuccessfulLoginMessage() {
+        console.printOutput("Invalid User");
+    }
 }

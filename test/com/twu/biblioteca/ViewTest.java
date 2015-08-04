@@ -104,4 +104,13 @@ public class ViewTest {
         Mockito.verify(console).printOutput("That is not a valid book to return.");
     }
 
+    @Test
+    public void viewCanDisplayInvalidLoginMessage() {
+        Console console = Mockito.mock(Console.class);
+        View view = new View(console);
+
+        view.displayUnsuccessfulLoginMessage();
+
+        Mockito.verify(console).printOutput("Invalid User");
+    }
 }
