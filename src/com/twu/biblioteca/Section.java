@@ -6,8 +6,8 @@ import java.util.Map;
 
 public class Section {
 
-    ArrayList<LibraryItem> availableLibraryItemList;
-    Map<LibraryItem, User> checkedOutLibraryItemList;
+    private ArrayList<LibraryItem> availableLibraryItemList;
+    private Map<LibraryItem, User> checkedOutLibraryItemList;
 
     public Section(ArrayList<LibraryItem> availableLibraryItemList, Map<LibraryItem, User> checkedOutLibraryItemList) {
         this.availableLibraryItemList = availableLibraryItemList;

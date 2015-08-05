@@ -13,6 +13,6 @@ public class ListLibraryItems implements LibraryOperation {
 
     @Override
     public void execute() {
-        view.displayListOfAllBooks(section);
+        view.displayListOfAllAvailableLibraryItems(section);
     }
 }

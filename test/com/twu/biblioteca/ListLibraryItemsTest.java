@@ -14,7 +14,7 @@ public class ListLibraryItemsTest {
 
         listLibraryItems.execute();
 
-        Mockito.verify(view).displayListOfAllBooks(section);
+        Mockito.verify(view).displayListOfAllAvailableLibraryItems(section);
     }
 
 }
