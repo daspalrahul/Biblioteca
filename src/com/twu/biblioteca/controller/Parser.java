@@ -3,14 +3,7 @@ package com.twu.biblioteca.controller;
 
 import com.twu.biblioteca.model.Movie;
 import com.twu.biblioteca.model.Section;
-import com.twu.biblioteca.operation.Checkin;
-import com.twu.biblioteca.operation.Checkout;
-import com.twu.biblioteca.operation.InvalidOption;
-import com.twu.biblioteca.operation.ListCheckedOutLibraryItems;
-import com.twu.biblioteca.operation.ListLibraryItems;
-import com.twu.biblioteca.operation.Login;
-import com.twu.biblioteca.operation.Logout;
-import com.twu.biblioteca.operation.Quit;
+import com.twu.biblioteca.operation.*;
 import com.twu.biblioteca.view.View;
 
 public class Parser {
@@ -58,6 +51,9 @@ public class Parser {
                 break;
             case "List CheckedOut Movies":
                 libraryOperation = new ListCheckedOutLibraryItems(view, movies);
+                break;
+            case "User Information":
+                libraryOperation = new UserDetails(view);
                 break;
             default:
                 libraryOperation = new InvalidOption(view);

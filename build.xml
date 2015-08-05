@@ -35,6 +35,7 @@
             <test name="com.twu.biblioteca.operation.LoginTest"/>
             <test name="com.twu.biblioteca.operation.LogoutTest"/>
             <test name="com.twu.biblioteca.operation.ListCheckedOutLibraryItemsTest"/>
+            <test name="com.twu.biblioteca.operation.UserDetailsTest"/>
             <classpath>
                 <pathelement location="out"/>
                 <path refid="classpath"/>

@@ -15,7 +15,7 @@ public class UserDetailsTest {
         UserDetails userDetails = new UserDetails(view);
 
         userDetails.execute();
-        
+
         Mockito.verify(view).displayUserInformation();
     }
 }

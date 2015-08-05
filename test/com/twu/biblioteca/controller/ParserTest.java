@@ -2,6 +2,10 @@ package com.twu.biblioteca.controller;
 
 
 import com.twu.biblioteca.model.Section;
+import com.twu.biblioteca.operation.LibraryOperation;
+import com.twu.biblioteca.operation.ListCheckedOutLibraryItems;
+import com.twu.biblioteca.operation.ListLibraryItems;
+import com.twu.biblioteca.operation.UserDetails;
 import com.twu.biblioteca.view.View;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,11 +23,11 @@ public class ParserTest {
         Section books = Mockito.mock(Section.class);
         Section movies = Mockito.mock(Section.class);
         LoginAuthenticator loginAuthenticator = Mockito.mock(LoginAuthenticator.class);
-        com.twu.biblioteca.controller.Parser parser = new com.twu.biblioteca.controller.Parser(view, loginAuthenticator);
+        Parser parser = new Parser(view, loginAuthenticator);
 
-        com.twu.biblioteca.operation.LibraryOperation result = parser.convertIntoLibraryOperation("List Books", books, movies);
+        LibraryOperation result = parser.convertIntoLibraryOperation("List Books", books, movies);
 
-        assertEquals(com.twu.biblioteca.operation.ListLibraryItems.class, result.getClass());
+        assertEquals(ListLibraryItems.class, result.getClass());
     }
 
     @Test
@@ -32,9 +36,9 @@ public class ParserTest {
         Section books = Mockito.mock(Section.class);
         Section movies = Mockito.mock(Section.class);
         LoginAuthenticator loginAuthenticator = Mockito.mock(LoginAuthenticator.class);
-        com.twu.biblioteca.controller.Parser parser = new com.twu.biblioteca.controller.Parser(view, loginAuthenticator);
+        Parser parser = new Parser(view, loginAuthenticator);
 
-        com.twu.biblioteca.operation.LibraryOperation result = parser.convertIntoLibraryOperation("Checkin Book", books, movies);
+        LibraryOperation result = parser.convertIntoLibraryOperation("Checkin Book", books, movies);
 
         assertEquals(com.twu.biblioteca.operation.Checkin.class, result.getClass());
     }
@@ -45,9 +49,9 @@ public class ParserTest {
         Section books = Mockito.mock(Section.class);
         Section movies = Mockito.mock(Section.class);
         LoginAuthenticator loginAuthenticator = Mockito.mock(LoginAuthenticator.class);
-        com.twu.biblioteca.controller.Parser parser = new com.twu.biblioteca.controller.Parser(view, loginAuthenticator);
+        Parser parser = new Parser(view, loginAuthenticator);
 
-        com.twu.biblioteca.operation.LibraryOperation result = parser.convertIntoLibraryOperation("Login", books, movies);
+        LibraryOperation result = parser.convertIntoLibraryOperation("Login", books, movies);
 
         assertEquals(com.twu.biblioteca.operation.Login.class, result.getClass());
     }
@@ -58,10 +62,23 @@ public class ParserTest {
         Section books = Mockito.mock(Section.class);
         Section movies = Mockito.mock(Section.class);
         LoginAuthenticator loginAuthenticator = Mockito.mock(LoginAuthenticator.class);
-        com.twu.biblioteca.controller.Parser parser = new com.twu.biblioteca.controller.Parser(view, loginAuthenticator);
+        Parser parser = new Parser(view, loginAuthenticator);
 
-        com.twu.biblioteca.operation.LibraryOperation result = parser.convertIntoLibraryOperation("List CheckedOut Books", books, movies);
+        LibraryOperation result = parser.convertIntoLibraryOperation("List CheckedOut Books", books, movies);
 
-        assertEquals(com.twu.biblioteca.operation.ListCheckedOutLibraryItems.class, result.getClass());
+        assertEquals(ListCheckedOutLibraryItems.class, result.getClass());
+    }
+
+    @Test
+    public void parserKnowsHowToReturnUserDetailsLibraryItemOperation() {
+        View view = Mockito.mock(View.class);
+        Section books = Mockito.mock(Section.class);
+        Section movies = Mockito.mock(Section.class);
+        LoginAuthenticator loginAuthenticator = Mockito.mock(LoginAuthenticator.class);
+        Parser parser = new Parser(view, loginAuthenticator);
+
+        LibraryOperation result = parser.convertIntoLibraryOperation("User Information", books, movies);
+
+        assertEquals(UserDetails.class, result.getClass());
     }
 }
