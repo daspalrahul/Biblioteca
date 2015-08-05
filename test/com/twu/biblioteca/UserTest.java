@@ -17,7 +17,7 @@ public class UserTest {
     public void userKnowsTheInformationItNeedsTodisplay() {
         User user = new User("123-4567", "diney", "Rahul", "daspalrahul@gmail.com", "8860250486", "customer");
 
-        assertEquals("Rahul daspalrahul@gmail.com 8860250486", user.userInformation());
+        assertEquals("123-4567 Rahul daspalrahul@gmail.com 8860250486", user.userInformation());
     }
 
     @Test

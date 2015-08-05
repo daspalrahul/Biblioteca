@@ -24,7 +24,7 @@ public class User {
     }
 
     public String userInformation() {
-        return name + " " + email + " " + phoneNumber;
+        return libraryNumber + " " + name + " " + email + " " + phoneNumber;
     }
 
     public boolean isLibrarian() {

@@ -49,4 +49,17 @@ public class ParserTest {
 
         assertEquals(Login.class, result.getClass());
     }
+
+    @Test
+    public void parserKnowsHowToReturnListCheckedOutLibraryItemOperation() {
+        View view = Mockito.mock(View.class);
+        Section books = Mockito.mock(Section.class);
+        Section movies = Mockito.mock(Section.class);
+        LoginAuthenticator loginAuthenticator = Mockito.mock(LoginAuthenticator.class);
+        Parser parser = new Parser(view, loginAuthenticator);
+
+        LibraryOperation result = parser.convertIntoLibraryOperation("List CheckedOut Books", books, movies);
+
+        assertEquals(ListCheckedOutLibraryItems.class, result.getClass());
+    }
 }

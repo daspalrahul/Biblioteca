@@ -41,6 +41,12 @@ public class Parser {
             case "Logout":
                 libraryOperation = new Logout(view);
                 break;
+            case "List CheckedOut Books":
+                libraryOperation = new ListCheckedOutLibraryItems(view, books);
+                break;
+            case "List CheckedOut Movies":
+                libraryOperation = new ListCheckedOutLibraryItems(view, movies);
+                break;
             default:
                 libraryOperation = new InvalidOption(view);
                 break;
