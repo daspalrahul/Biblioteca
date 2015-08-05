@@ -42,4 +42,14 @@ public class Section {
         }
         return false;
     }
+
+    public String listOfAllCheckedOutLIbraryItems() {
+        String result = "";
+        for (Map.Entry<LibraryItem, User> entry : checkedOutLibraryItemList.entrySet()) {
+            LibraryItem libraryItem = entry.getKey();
+            User user = entry.getValue();
+            result += libraryItem.toString() + "    " + user.userInformation() + "\n";
+        }
+        return result;
+    }
 }

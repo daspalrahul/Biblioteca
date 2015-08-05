@@ -93,4 +93,18 @@ public class SectionTest {
 
         assertEquals(true, section.checkIn("A Game Of Thrones", user));
     }
+
+    @Test
+    public void libraryKnowsHowToDisplayInformationRelatedToCheckedOutBook() {
+        LibraryItem book = Mockito.mock(Book.class);
+        User user = Mockito.mock(User.class);
+        Map<LibraryItem, User> map = new HashMap<>();
+        map.put(book, user);
+        Section section = new Section(new ArrayList<LibraryItem>(), map);
+
+        Mockito.when(book.toString()).thenReturn("book");
+        Mockito.when(user.userInformation()).thenReturn("user");
+
+        assertEquals("book    user\n", section.listOfAllCheckedOutLIbraryItems());
+    }
 }
