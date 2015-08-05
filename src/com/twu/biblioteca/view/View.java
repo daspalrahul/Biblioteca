@@ -98,4 +98,8 @@ public class View {
         this.user = null;
         console.printOutput("You have logged out!");
     }
+
+    public void displayUserInformation() {
+        console.printOutput(user.userInformation());
+    }
 }

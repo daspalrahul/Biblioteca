@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import static org.mockito.Matchers.anyString;
+import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.times;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -155,5 +156,18 @@ public class ViewTest {
         view.displayListOfAllCheckedOutLibraryItems("list");
 
         Mockito.verify(console).printOutput(anyString());
+    }
+
+    @Test
+    public void viewKnowsHowToDisplayUserInformation() {
+        Console console = Mockito.mock(Console.class);
+        Menu menu = Mockito.mock(Menu.class);
+        User user = Mockito.mock(User.class);
+        View view = new View(console, menu);
+
+        view.successfulLogin(user);
+        view.displayUserInformation();
+
+        Mockito.verify(console, atLeastOnce()).printOutput(anyString());
     }
 }
