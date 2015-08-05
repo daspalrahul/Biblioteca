@@ -3,7 +3,7 @@ package com.twu.biblioteca.operation;
 import com.twu.biblioteca.model.Section;
 import com.twu.biblioteca.view.View;
 
-public class ListCheckedOutLibraryItems implements com.twu.biblioteca.operation.LibraryOperation {
+public class ListCheckedOutLibraryItems implements LibraryOperation {
 
 
     private View view;

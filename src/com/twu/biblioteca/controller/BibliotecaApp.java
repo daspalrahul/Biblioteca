@@ -2,6 +2,7 @@ package com.twu.biblioteca.controller;
 
 
 import com.twu.biblioteca.model.Section;
+import com.twu.biblioteca.operation.LibraryOperation;
 import com.twu.biblioteca.view.View;
 
 public class BibliotecaApp {
@@ -23,7 +24,7 @@ public class BibliotecaApp {
         while (true) {
             view.displayLoginMenu();
             String userInput = view.getUserInput();
-            com.twu.biblioteca.operation.LibraryOperation libraryOperation = parser.convertIntoLibraryOperation(userInput, books, movies);
+            LibraryOperation libraryOperation = parser.convertIntoLibraryOperation(userInput, books, movies);
             libraryOperation.execute();
             if (view.getUser() == null)
                 continue;

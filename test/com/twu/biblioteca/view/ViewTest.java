@@ -2,6 +2,10 @@ package com.twu.biblioteca.view;
 
 
 import com.twu.biblioteca.Console;
+import com.twu.biblioteca.model.Book;
+import com.twu.biblioteca.model.LibraryItem;
+import com.twu.biblioteca.model.Section;
+import com.twu.biblioteca.model.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -18,8 +22,8 @@ public class ViewTest {
     @Test
     public void viewKnowsHowToDisplayWelcomeMessage() {
         Console console = Mockito.mock(Console.class);
-        com.twu.biblioteca.view.Menu menu = new com.twu.biblioteca.view.Menu();
-        com.twu.biblioteca.view.View view = new com.twu.biblioteca.view.View(console, menu);
+        Menu menu = new Menu();
+        View view = new View(console, menu);
 
         view.displayWelcomeMessage();
 
@@ -28,14 +32,14 @@ public class ViewTest {
 
     @Test
     public void viewKnowsHowToDisplayListOfBooks() {
-        com.twu.biblioteca.model.LibraryItem book = new com.twu.biblioteca.model.Book("A Game Of Thrones", "George R.R. Martin", "1996");
-        ArrayList<com.twu.biblioteca.model.LibraryItem> listOfBooks = new ArrayList<>();
+        LibraryItem book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
+        ArrayList<LibraryItem> listOfBooks = new ArrayList<>();
         listOfBooks.add(book);
         listOfBooks.add(book);
-        com.twu.biblioteca.model.Section books = new com.twu.biblioteca.model.Section(listOfBooks,  new HashMap<com.twu.biblioteca.model.LibraryItem, com.twu.biblioteca.model.User>());
+        Section books = new Section(listOfBooks,  new HashMap<LibraryItem, User>());
         Console console = Mockito.mock(Console.class);
-        com.twu.biblioteca.view.Menu menu = new com.twu.biblioteca.view.Menu();
-        com.twu.biblioteca.view.View view = new com.twu.biblioteca.view.View(console, menu);
+        Menu menu = new Menu();
+        View view = new View(console, menu);
 
         view.displayListOfAllAvailableLibraryItems(books);
 
@@ -45,8 +49,8 @@ public class ViewTest {
     @Test
     public void viewCanDisplayInvalidCommandMessage() {
         Console console = Mockito.mock(Console.class);
-        com.twu.biblioteca.view.Menu menu = new com.twu.biblioteca.view.Menu();
-        com.twu.biblioteca.view.View view = new com.twu.biblioteca.view.View(console, menu);
+        Menu menu = new Menu();
+        View view = new View(console, menu);
 
         view.displayInvalidCommandMessage();
 
@@ -56,10 +60,10 @@ public class ViewTest {
     @Test
     public void viewCanDisplaySuccessfulCheckoutMessage() {
         Console console = Mockito.mock(Console.class);
-        com.twu.biblioteca.view.Menu menu = new com.twu.biblioteca.view.Menu();
-        com.twu.biblioteca.view.View view = new com.twu.biblioteca.view.View(console, menu);
+        Menu menu = new Menu();
+        View view = new View(console, menu);
 
-        view.displaySuccessfulCheckOutMessage(com.twu.biblioteca.model.Book.class);
+        view.displaySuccessfulCheckOutMessage(Book.class);
 
         Mockito.verify(console).printOutput("Thank you! Enjoy the book");
     }
@@ -67,10 +71,10 @@ public class ViewTest {
     @Test
     public void viewCanDisplayUnSuccessfulCheckoutMessage() {
         Console console = Mockito.mock(Console.class);
-        com.twu.biblioteca.view.Menu menu = new com.twu.biblioteca.view.Menu();
-        com.twu.biblioteca.view.View view = new com.twu.biblioteca.view.View(console, menu);
+        Menu menu = new Menu();
+        View view = new View(console, menu);
 
-        view.displayUnSuccessfulCheckOutMessage(com.twu.biblioteca.model.Book.class);
+        view.displayUnSuccessfulCheckOutMessage(Book.class);
 
         Mockito.verify(console).printOutput("That book is not available.");
     }
@@ -78,10 +82,10 @@ public class ViewTest {
     @Test
     public void viewCanDisplaySuccessfulCheckinMessage() {
         Console console = Mockito.mock(Console.class);
-        com.twu.biblioteca.view.Menu menu = new com.twu.biblioteca.view.Menu();
-        com.twu.biblioteca.view.View view = new com.twu.biblioteca.view.View(console, menu);
+        Menu menu = new Menu();
+        View view = new View(console, menu);
 
-        view.displaySuccessfulCheckinMessage(com.twu.biblioteca.model.Book.class);
+        view.displaySuccessfulCheckinMessage(Book.class);
 
         Mockito.verify(console).printOutput("Thank you for returning the book.");
     }
@@ -89,10 +93,10 @@ public class ViewTest {
     @Test
     public void viewCanDisplayUnSuccessfulCheckinMessage() {
         Console console = Mockito.mock(Console.class);
-        com.twu.biblioteca.view.Menu menu = new com.twu.biblioteca.view.Menu();
-        com.twu.biblioteca.view.View view = new com.twu.biblioteca.view.View(console, menu);
+        Menu menu = new Menu();
+        View view = new View(console, menu);
 
-        view.displayUnSuccessfulCheckinMessage(com.twu.biblioteca.model.Book.class);
+        view.displayUnSuccessfulCheckinMessage(Book.class);
 
         Mockito.verify(console).printOutput("That is not a valid book to return.");
     }
@@ -100,8 +104,8 @@ public class ViewTest {
     @Test
     public void viewCanDisplayInvalidLoginMessage() {
         Console console = Mockito.mock(Console.class);
-        com.twu.biblioteca.view.Menu menu = new com.twu.biblioteca.view.Menu();
-        com.twu.biblioteca.view.View view = new com.twu.biblioteca.view.View(console, menu);
+        Menu menu = new Menu();
+        View view = new View(console, menu);
 
         view.displayUnsuccessfulLoginMessage();
 
@@ -111,9 +115,9 @@ public class ViewTest {
     @Test
     public void viewCanDoSuccessfulLogin() {
         Console console = Mockito.mock(Console.class);
-        com.twu.biblioteca.view.Menu menu = new com.twu.biblioteca.view.Menu();
-        com.twu.biblioteca.view.View view = new com.twu.biblioteca.view.View(console, menu);
-        com.twu.biblioteca.model.User user = Mockito.mock(com.twu.biblioteca.model.User.class);
+        Menu menu = new Menu();
+        View view = new View(console, menu);
+        User user = Mockito.mock(User.class);
 
         view.successfulLogin(user);
 
@@ -123,8 +127,8 @@ public class ViewTest {
     @Test
     public void viewKnowsHowToDisplayLoginMenu() {
         Console console = Mockito.mock(Console.class);
-        com.twu.biblioteca.view.Menu menu = Mockito.mock(com.twu.biblioteca.view.Menu.class);
-        com.twu.biblioteca.view.View view = new com.twu.biblioteca.view.View(console, menu);
+        Menu menu = Mockito.mock(Menu.class);
+        View view = new View(console, menu);
 
         view.displayLoginMenu();
 
@@ -134,8 +138,8 @@ public class ViewTest {
     @Test
     public void viewKnowsHowToSuccessfullyLogout() {
         Console console = Mockito.mock(Console.class);
-        com.twu.biblioteca.view.Menu menu = Mockito.mock(com.twu.biblioteca.view.Menu.class);
-        com.twu.biblioteca.view.View view = new com.twu.biblioteca.view.View(console, menu);
+        Menu menu = Mockito.mock(Menu.class);
+        View view = new View(console, menu);
 
         view.logoutSuccess();
 
@@ -145,8 +149,8 @@ public class ViewTest {
     @Test
     public void viewKnowsHowToDisplayListOfAllCheckedOutItems() {
         Console console = Mockito.mock(Console.class);
-        com.twu.biblioteca.view.Menu menu = Mockito.mock(com.twu.biblioteca.view.Menu.class);
-        com.twu.biblioteca.view.View view = new com.twu.biblioteca.view.View(console, menu);
+        Menu menu = Mockito.mock(Menu.class);
+        View view = new View(console, menu);
 
         view.displayListOfAllCheckedOutLibraryItems("list");
 

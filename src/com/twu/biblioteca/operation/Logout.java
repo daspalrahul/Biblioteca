@@ -3,7 +3,7 @@ package com.twu.biblioteca.operation;
 
 import com.twu.biblioteca.view.View;
 
-public class Logout implements com.twu.biblioteca.operation.LibraryOperation {
+public class Logout implements LibraryOperation {
 
     private View view;
 

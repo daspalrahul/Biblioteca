@@ -1,5 +1,7 @@
 package com.twu.biblioteca.view;
 
+import com.twu.biblioteca.model.User;
+
 public class Menu {
 
     private String listBooks;
@@ -30,7 +32,7 @@ public class Menu {
         delimiter = "\n";
     }
 
-    public String displayOptionMenuList(com.twu.biblioteca.model.User user) {
+    public String displayOptionMenuList(User user) {
         String output = listBooks + delimiter + listMovies + delimiter + checkinBook + delimiter + checkoutBook + delimiter + checkinMovie + delimiter + checkoutMovie + delimiter;
         if (user.isLibrarian())
             output += listCheckedOutBooks + delimiter + listCheckedOutMovies + delimiter;

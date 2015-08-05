@@ -4,7 +4,7 @@ import com.twu.biblioteca.controller.LoginAuthenticator;
 import com.twu.biblioteca.model.User;
 import com.twu.biblioteca.view.View;
 
-public class Login implements com.twu.biblioteca.operation.LibraryOperation {
+public class Login implements LibraryOperation {
 
     View view;
     LoginAuthenticator loginAuthenticator;

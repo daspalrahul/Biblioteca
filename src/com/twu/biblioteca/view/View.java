@@ -2,14 +2,18 @@ package com.twu.biblioteca.view;
 
 
 import com.twu.biblioteca.Console;
+import com.twu.biblioteca.model.Book;
+import com.twu.biblioteca.model.LibraryItem;
+import com.twu.biblioteca.model.Section;
+import com.twu.biblioteca.model.User;
 
 import java.util.ArrayList;
 
 public class View {
 
-    Console console;
-    com.twu.biblioteca.model.User user;
-    Menu menu;
+    private Console console;
+    private User user;
+    private Menu menu;
 
     public View(Console console, Menu menu) {
         this.console = console;
@@ -21,10 +25,10 @@ public class View {
         console.printOutput("=======");
     }
 
-    public void displayListOfAllAvailableLibraryItems(com.twu.biblioteca.model.Section section) {
+    public void displayListOfAllAvailableLibraryItems(Section section) {
         int i = 1;
-        ArrayList<com.twu.biblioteca.model.LibraryItem> listOfLibraryItems = section.listOfAllAvailableLibraryItems();
-        for (com.twu.biblioteca.model.LibraryItem libraryItem : listOfLibraryItems) {
+        ArrayList<LibraryItem> listOfLibraryItems = section.listOfAllAvailableLibraryItems();
+        for (LibraryItem libraryItem : listOfLibraryItems) {
             console.printOutput(i++ + ". " + libraryItem);
         }
     }
@@ -38,14 +42,14 @@ public class View {
     }
 
     public void displaySuccessfulCheckinMessage(Class<?> type) {
-        if (type == com.twu.biblioteca.model.Book.class)
+        if (type == Book.class)
             console.printOutput("Thank you for returning the book.");
         else
             console.printOutput("Thank you for returning the movie.");
     }
 
     public void displayUnSuccessfulCheckinMessage(Class<?> type) {
-        if (type == com.twu.biblioteca.model.Book.class)
+        if (type == Book.class)
             console.printOutput("That is not a valid book to return.");
         else
             console.printOutput("That is not a valid movie to return.");
@@ -60,14 +64,14 @@ public class View {
     }
 
     public void displaySuccessfulCheckOutMessage(Class<?> type) {
-        if (type == com.twu.biblioteca.model.Book.class)
+        if (type == Book.class)
             console.printOutput("Thank you! Enjoy the book");
         else
             console.printOutput("Thank you! Enjoy the movie");
     }
 
     public void displayUnSuccessfulCheckOutMessage(Class<?> type) {
-        if (type == com.twu.biblioteca.model.Book.class)
+        if (type == Book.class)
             console.printOutput("That book is not available.");
         else
             console.printOutput("That movie is not available.");
@@ -77,12 +81,12 @@ public class View {
         console.printOutput("Invalid User");
     }
 
-    public void successfulLogin(com.twu.biblioteca.model.User user) {
+    public void successfulLogin(User user) {
         this.user = user;
         console.printOutput("Thanks for logging in " + user.userInformation());
     }
 
-    public com.twu.biblioteca.model.User getUser() {
+    public User getUser() {
         return user;
     }
 

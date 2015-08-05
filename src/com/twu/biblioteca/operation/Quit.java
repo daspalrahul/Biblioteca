@@ -1,7 +1,7 @@
 package com.twu.biblioteca.operation;
 
 
-public class Quit implements com.twu.biblioteca.operation.LibraryOperation {
+public class Quit implements LibraryOperation {
 
     @Override
     public void execute() {
