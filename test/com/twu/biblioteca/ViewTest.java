@@ -1,7 +1,6 @@
 package com.twu.biblioteca;
 
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -37,7 +36,7 @@ public class ViewTest {
         Menu menu = new Menu();
         View view = new View(console, menu);
 
-        view.displayListOfAllBooks(books);
+        view.displayListOfAllAvailableLibraryItems(books);
 
         Mockito.verify(console,times(2)).printOutput(anyString());
     }
@@ -138,6 +137,17 @@ public class ViewTest {
         View view = new View(console, menu);
 
         view.logoutSuccess();
+
+        Mockito.verify(console).printOutput(anyString());
+    }
+
+    @Test
+    public void viewKnowsHowToDisplayListOfAllCheckedOutItems() {
+        Console console = Mockito.mock(Console.class);
+        Menu menu = Mockito.mock(Menu.class);
+        View view = new View(console, menu);
+
+        view.displayListOfAllCheckedOutLibraryItems("list");
 
         Mockito.verify(console).printOutput(anyString());
     }

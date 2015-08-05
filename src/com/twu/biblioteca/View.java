@@ -19,12 +19,16 @@ public class View {
         console.printOutput("=======");
     }
 
-    public void displayListOfAllBooks(Section section) {
+    public void displayListOfAllAvailableLibraryItems(Section section) {
         int i = 1;
-        ArrayList<LibraryItem> listOfBooks = section.listOfAllAvailableLibraryItems();
-        for (LibraryItem libraryItem : listOfBooks) {
+        ArrayList<LibraryItem> listOfLibraryItems = section.listOfAllAvailableLibraryItems();
+        for (LibraryItem libraryItem : listOfLibraryItems) {
             console.printOutput(i++ + ". " + libraryItem);
         }
+    }
+
+    public void displayListOfAllCheckedOutLibraryItems(String list) {
+        console.printOutput(list);
     }
 
     public void displayMenu() {
