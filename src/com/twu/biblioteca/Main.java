@@ -7,23 +7,23 @@ import java.util.HashMap;
 public class Main {
 
     public static void main(String[] args) {
-        LibraryItem book = new Book("A Game Of Thrones", "George R.R. Martin", "1996");
-        ArrayList<LibraryItem> bookList = new ArrayList<>();
+        com.twu.biblioteca.model.LibraryItem book = new com.twu.biblioteca.model.Book("A Game Of Thrones", "George R.R. Martin", "1996");
+        ArrayList<com.twu.biblioteca.model.LibraryItem> bookList = new ArrayList<>();
         bookList.add(book);
-        Section books = new Section(bookList, new HashMap<LibraryItem, User>());
-        LibraryItem movie = new Movie("Kick", "2014", "Parul", "-10");
-        ArrayList<LibraryItem> movieList = new ArrayList<>();
+        com.twu.biblioteca.model.Section books = new com.twu.biblioteca.model.Section(bookList, new HashMap<com.twu.biblioteca.model.LibraryItem, com.twu.biblioteca.model.User>());
+        com.twu.biblioteca.model.LibraryItem movie = new com.twu.biblioteca.model.Movie("Kick", "2014", "Parul", "-10");
+        ArrayList<com.twu.biblioteca.model.LibraryItem> movieList = new ArrayList<>();
         movieList.add(movie);
-        Section movies = new Section(movieList, new HashMap<LibraryItem, User>());
+        com.twu.biblioteca.model.Section movies = new com.twu.biblioteca.model.Section(movieList, new HashMap<com.twu.biblioteca.model.LibraryItem, com.twu.biblioteca.model.User>());
         Console console = new Console();
-        Menu menu = new Menu();
-        View view = new View(console, menu);
-        ArrayList<User> users = new ArrayList<>();
-        users.add(new User("123-4567", "123456", "Rahul", "daspalrahul@gmail.com", "8860250486", "customer"));
-        users.add(new User("999-9999", "123456", "Rahul", "daspalrahul@gmail.com", "8860250486", "librarian"));
-        LoginAuthenticator loginAuthenticator = new LoginAuthenticator(users);
-        Parser parser = new Parser(view, loginAuthenticator);
-        BibliotecaApp bibliotecaApp = new BibliotecaApp(view, parser, books, movies);
+        com.twu.biblioteca.view.Menu menu = new com.twu.biblioteca.view.Menu();
+        com.twu.biblioteca.view.View view = new com.twu.biblioteca.view.View(console, menu);
+        ArrayList<com.twu.biblioteca.model.User> users = new ArrayList<>();
+        users.add(new com.twu.biblioteca.model.User("123-4567", "123456", "Rahul", "daspalrahul@gmail.com", "8860250486", "customer"));
+        users.add(new com.twu.biblioteca.model.User("999-9999", "123456", "Rahul", "daspalrahul@gmail.com", "8860250486", "librarian"));
+        com.twu.biblioteca.controller.LoginAuthenticator loginAuthenticator = new com.twu.biblioteca.controller.LoginAuthenticator(users);
+        com.twu.biblioteca.controller.Parser parser = new com.twu.biblioteca.controller.Parser(view, loginAuthenticator);
+        com.twu.biblioteca.controller.BibliotecaApp bibliotecaApp = new com.twu.biblioteca.controller.BibliotecaApp(view, parser, books, movies);
         bibliotecaApp.start();
     }
 
