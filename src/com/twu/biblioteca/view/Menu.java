@@ -15,6 +15,7 @@ public class Menu {
     private String quit;
     private String login;
     private String logout;
+    private String userInformation;
     private String delimiter;
 
     public Menu() {
@@ -29,6 +30,7 @@ public class Menu {
         quit = "Quit";
         login = "Login";
         logout = "Logout";
+        userInformation = "User Information";
         delimiter = "\n";
     }
 
@@ -36,7 +38,7 @@ public class Menu {
         String output = listBooks + delimiter + listMovies + delimiter + checkinBook + delimiter + checkoutBook + delimiter + checkinMovie + delimiter + checkoutMovie + delimiter;
         if (user.isLibrarian())
             output += listCheckedOutBooks + delimiter + listCheckedOutMovies + delimiter;
-        return output + logout + delimiter;
+        return output + userInformation + delimiter + logout + delimiter;
     }
 
     public String displayLoginMenu() {

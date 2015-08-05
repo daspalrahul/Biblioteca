@@ -22,7 +22,9 @@ public class MenuTest {
                 "Checkin Movie\n" +
                 "Checkout Movie\n" +
                 "List CheckedOut Books\n" +
-                "List CheckedOut Movies\nLogout\n", menu.displayOptionMenuList(user));
+                "List CheckedOut Movies\n" +
+                "User Information\n" +
+                "Logout\n", menu.displayOptionMenuList(user));
     }
 
     @Test
