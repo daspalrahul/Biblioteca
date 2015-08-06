@@ -21,4 +21,12 @@ public class DisplayWelcomeMessageViewTest {
         Mockito.verify(console).printOutput("++++++++++WELCOME++++++++++");
     }
 
+    @Test
+    public void displayWelcomeMessageViewKnowsWhatViewToGoNext() {
+        Console console = Mockito.mock(Console.class);
+        IView loginMenuView = Mockito.mock(LoginMenuView.class);
+        DisplayWelcomeMessageView displayWelcomeMessageView = new DisplayWelcomeMessageView(loginMenuView, console);
+
+        assertEquals(loginMenuView, displayWelcomeMessageView.next());
+    }
 }
