@@ -18,6 +18,6 @@ public class MovieTest {
     public void movieKnowsItsToStringBehaviour() {
         com.twu.biblioteca.model.LibraryItem libraryItem = new com.twu.biblioteca.model.Movie("Kick", "2014", "Parul", "-10");
 
-        assertEquals("Kick    2014    Parul    -10", libraryItem.toString());
+        assertEquals("Kick                            2014                     Parul        -10", libraryItem.toString());
     }
 }

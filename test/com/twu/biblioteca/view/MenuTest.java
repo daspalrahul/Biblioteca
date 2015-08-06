@@ -15,7 +15,11 @@ public class MenuTest {
 
         Mockito.when(user.isLibrarian()).thenReturn(true);
 
-        assertEquals("List Books\n" +
+        assertEquals("\n" +
+                "===========================\n" +
+                "          MENU\n" +
+                "===========================\n" +
+                "List Books\n" +
                 "List Movies\n" +
                 "Checkin Book\n" +
                 "Checkout Book\n" +
@@ -24,14 +28,22 @@ public class MenuTest {
                 "List CheckedOut Books\n" +
                 "List CheckedOut Movies\n" +
                 "User Information\n" +
-                "Logout\n", menu.displayOptionMenuList(user));
+                "Logout\n" +
+                "===========================\n" +
+                "\n", menu.displayOptionMenuList(user));
     }
 
     @Test
     public void menuKnowsWhatToDisplayWhenLogginIn() {
         com.twu.biblioteca.view.Menu menu = new com.twu.biblioteca.view.Menu();
 
-        assertEquals("Login\n" +
-                "Quit\n", menu.displayLoginMenu());
+        assertEquals("\n" +
+                "===========================\n" +
+                "          MENU\n" +
+                "===========================\n" +
+                "Login\n" +
+                "Quit\n" +
+                "===========================\n" +
+                "\n", menu.displayLoginMenu());
     }
 }

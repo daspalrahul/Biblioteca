@@ -17,7 +17,7 @@ public class Movie implements LibraryItem {
 
     @Override
     public String toString() {
-        return title + "    " + year + "    " + director + "    " + rating;
+        return String.format("%-25s %10s %25s %10s", title, year, director, rating);
     }
 
     @Override

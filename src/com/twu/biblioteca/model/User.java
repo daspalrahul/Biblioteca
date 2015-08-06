@@ -24,7 +24,7 @@ public class User {
     }
 
     public String userInformation() {
-        return libraryNumber + " " + name + " " + email + " " + phoneNumber;
+        return String.format("%-20s %-20s %20s %20s", libraryNumber, name, email, phoneNumber);
     }
 
     public boolean isLibrarian() {

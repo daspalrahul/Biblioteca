@@ -4,6 +4,8 @@ import com.twu.biblioteca.model.User;
 
 public class Menu {
 
+    private String menuDecorator;
+    private String menu;
     private String listBooks;
     private String listMovies;
     private String checkoutBook;
@@ -19,6 +21,8 @@ public class Menu {
     private String delimiter;
 
     public Menu() {
+        menuDecorator = "===========================";
+        menu = "          MENU";
         listBooks = "List Books";
         listMovies = "List Movies";
         checkinBook = "Checkin Book";
@@ -35,13 +39,13 @@ public class Menu {
     }
 
     public String displayOptionMenuList(User user) {
-        String output = listBooks + delimiter + listMovies + delimiter + checkinBook + delimiter + checkoutBook + delimiter + checkinMovie + delimiter + checkoutMovie + delimiter;
+        String output = delimiter + menuDecorator + delimiter + menu + delimiter + menuDecorator + delimiter + listBooks + delimiter + listMovies + delimiter + checkinBook + delimiter + checkoutBook + delimiter + checkinMovie + delimiter + checkoutMovie + delimiter;
         if (user.isLibrarian())
             output += listCheckedOutBooks + delimiter + listCheckedOutMovies + delimiter;
-        return output + userInformation + delimiter + logout + delimiter;
+        return output + userInformation + delimiter + logout + delimiter + menuDecorator + delimiter + delimiter;
     }
 
     public String displayLoginMenu() {
-        return login + delimiter + quit + delimiter;
+        return delimiter + menuDecorator + delimiter + menu + delimiter + menuDecorator + delimiter + login + delimiter + quit + delimiter + menuDecorator + delimiter + delimiter;
     }
 }
