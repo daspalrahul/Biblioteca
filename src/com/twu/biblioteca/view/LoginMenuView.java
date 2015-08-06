@@ -2,22 +2,20 @@ package com.twu.biblioteca.view;
 
 
 import com.twu.biblioteca.Console;
+import com.twu.biblioteca.controller.ViewDispatcher;
 
 
 public class LoginMenuView implements IView {
 
     private Menu menu;
     private Console console;
-    private IView quitView;
-    private IView invalidOptionView;
-    private IView loginView;
+    private ViewDispatcher viewDispatcher;
 
-    public LoginMenuView(Menu menu, Console console, IView quitView, IView invalidOptionView, IView loginView) {
+
+    public LoginMenuView(Menu menu, Console console, ViewDispatcher viewDispatcher) {
         this.menu = menu;
         this.console = console;
-        this.quitView = quitView;
-        this.invalidOptionView = invalidOptionView;
-        this.loginView = loginView;
+        this.viewDispatcher = viewDispatcher;
     }
 
     @Override
@@ -27,6 +25,6 @@ public class LoginMenuView implements IView {
 
     @Override
     public IView next() {
-        return null;
+        return viewDispatcher.convertIntoView(console.getInput());
     }
 }
