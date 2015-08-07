@@ -18,7 +18,7 @@ public class DisplayWelcomeMessageView implements IView {
     }
 
     @Override
-    public IView next(IView view) {
+    public IView next() {
         return loginMenuView;
     }
 }

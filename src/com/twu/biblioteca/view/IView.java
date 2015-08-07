@@ -5,5 +5,5 @@ public interface IView {
 
     public void draw();
 
-    public IView next(IView view);
+    public IView next();
 }

@@ -27,6 +27,6 @@ public class DisplayWelcomeMessageViewTest {
         IView loginMenuView = Mockito.mock(LoginMenuView.class);
         DisplayWelcomeMessageView displayWelcomeMessageView = new DisplayWelcomeMessageView(loginMenuView, console);
 
-        assertEquals(loginMenuView, displayWelcomeMessageView.next(displayWelcomeMessageView));
+        assertEquals(loginMenuView, displayWelcomeMessageView.next());
     }
 }

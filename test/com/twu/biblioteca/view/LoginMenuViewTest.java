@@ -43,13 +43,13 @@ public class LoginMenuViewTest {
         Console console = Mockito.mock(Console.class);
         Menu menu = Mockito.mock(Menu.class);
         IView quitView = Mockito.mock(QuitView.class);
-        IView invalidOptionView = Mockito.mock(InvalidOptionView.class);
+        IView invalidOptionView = Mockito.mock(InvalidLoginMenuOptionView.class);
         IView loginView = Mockito.mock(LoginView.class);
         ViewDispatcher viewDispatcher = new ViewDispatcher(invalidOptionView, quitView, loginView);
         IView loginMenuView = new LoginMenuView(menu, console, viewDispatcher);
 
         Mockito.when(console.getInput()).thenReturn("Login");
 
-        assertEquals(loginView, loginMenuView.next(loginView));
+        assertEquals(loginView, loginMenuView.next());
     }
 }

@@ -7,7 +7,7 @@ public class QuitView implements IView {
     }
 
     @Override
-    public IView next(IView view) {
+    public IView next() {
         return null;
     }
 }
