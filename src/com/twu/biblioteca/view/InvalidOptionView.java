@@ -1,13 +1,22 @@
 package com.twu.biblioteca.view;
 
-public class InvalidOptionView implements IView {
-    @Override
-    public void draw() {
+import com.twu.biblioteca.Console;
 
+public class InvalidOptionView implements IView {
+
+    Console console;
+
+    public InvalidOptionView(Console console) {
+        this.console = console;
     }
 
     @Override
-    public IView next() {
+    public void draw() {
+        console.printOutput("Select a valid option!");
+    }
+
+    @Override
+    public IView next(IView view) {
         return null;
     }
 }

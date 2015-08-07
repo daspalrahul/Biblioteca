@@ -50,6 +50,6 @@ public class LoginMenuViewTest {
 
         Mockito.when(console.getInput()).thenReturn("Login");
 
-        assertEquals(loginView, loginMenuView.next());
+        assertEquals(loginView, loginMenuView.next(loginView));
     }
 }

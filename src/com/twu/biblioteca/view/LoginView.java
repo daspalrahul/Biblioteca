@@ -7,7 +7,7 @@ public class LoginView implements IView{
     }
 
     @Override
-    public IView next() {
+    public IView next(IView view) {
         return null;
     }
 }
