@@ -4,12 +4,12 @@ import com.twu.biblioteca.view.IView;
 
 public class ViewDispatcher {
 
-    IView invalidOptionView;
+    IView invalidLoginMenuOptionView;
     IView quitView;
     IView loginView;
 
-    public ViewDispatcher(IView invalidOptionView, IView quitView, IView loginView) {
-        this.invalidOptionView = invalidOptionView;
+    public ViewDispatcher(IView invalidLoginMenuOptionView, IView quitView, IView loginView) {
+        this.invalidLoginMenuOptionView = invalidLoginMenuOptionView;
         this.quitView = quitView;
         this.loginView = loginView;
     }
@@ -21,7 +21,7 @@ public class ViewDispatcher {
             case "Quit":
                 return quitView;
             default:
-                return invalidOptionView;
+                return invalidLoginMenuOptionView;
         }
     }
 }

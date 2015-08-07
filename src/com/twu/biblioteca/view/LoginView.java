@@ -40,4 +40,8 @@ public class LoginView implements IView{
         else
             return userMenuView;
     }
+
+    public User getUser() {
+        return currentUser;
+    }
 }
