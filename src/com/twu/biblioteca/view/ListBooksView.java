@@ -24,6 +24,6 @@ public class ListBooksView implements IView {
 
     @Override
     public IView next() {
-        return null;
+        return userMenuView;
     }
 }

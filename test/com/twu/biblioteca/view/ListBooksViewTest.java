@@ -24,4 +24,13 @@ public class ListBooksViewTest {
         Mockito.verify(console).printOutput("booklist");
     }
 
+    @Test
+    public void listBookViewKnowsHowToReturnNextView() {
+        Console console = Mockito.mock(Console.class);
+        IView userMenuView = Mockito.mock(UserMenuView.class);
+        Section books = Mockito.mock(Section.class);
+        IView listBooksView = new ListBooksView(console, userMenuView, books);
+
+        assertEquals(userMenuView, listBooksView.next());
+    }
 }
