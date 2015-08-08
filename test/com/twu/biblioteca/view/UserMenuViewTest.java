@@ -3,6 +3,7 @@ package com.twu.biblioteca.view;
 
 import com.twu.biblioteca.Console;
 import com.twu.biblioteca.controller.UserMenuDispatcher;
+import com.twu.biblioteca.model.Session;
 import org.junit.Test;
 import org.mockito.Mockito;
 
@@ -16,9 +17,9 @@ public class UserMenuViewTest {
     public void userMenuViewTestKnowsHowToDrawItself() {
         Menu menu = Mockito.mock(Menu.class);
         Console console = Mockito.mock(Console.class);
-        LoginView loginView = Mockito.mock(LoginView.class);
         UserMenuDispatcher userMenuDispatcher = Mockito.mock(UserMenuDispatcher.class);
-        IView userMenuViewTest = new UserMenuView(menu, console, loginView, userMenuDispatcher);
+        Session session = Mockito.mock(Session.class);
+        IView userMenuViewTest = new UserMenuView(menu, console, session, userMenuDispatcher);
 
         userMenuViewTest.draw();
 
@@ -29,10 +30,10 @@ public class UserMenuViewTest {
     public void userMenuViewKnowsWhatToReturnNext() {
         Menu menu = Mockito.mock(Menu.class);
         Console console = Mockito.mock(Console.class);
-        LoginView loginView = Mockito.mock(LoginView.class);
         UserMenuDispatcher userMenuDispatcher = Mockito.mock(UserMenuDispatcher.class);
         IView listBooksView = Mockito.mock(ListBooksView.class);
-        IView userMenuViewTest = new UserMenuView(menu, console, loginView, userMenuDispatcher);
+        Session session = Mockito.mock(Session.class);
+        IView userMenuViewTest = new UserMenuView(menu, console, session, userMenuDispatcher);
 
         Mockito.when(console.getInput()).thenReturn("List Books");
         Mockito.when(userMenuDispatcher.dispatch("List Books")).thenReturn(listBooksView);
