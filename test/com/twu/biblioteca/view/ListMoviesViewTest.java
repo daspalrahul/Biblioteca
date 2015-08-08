@@ -18,9 +18,19 @@ public class ListMoviesViewTest {
         Section movies = Mockito.mock(Section.class);
         IView listBooksView = new ListBooksView(console, userMenuView, movies);
 
-        Mockito.when(movies.listOfAllAvailableLibraryItems()).thenReturn("booklist");
+        Mockito.when(movies.listOfAllAvailableLibraryItems()).thenReturn("movielist");
         listBooksView.draw();
 
-        Mockito.verify(console).printOutput("booklist");
+        Mockito.verify(console).printOutput("movielist");
+    }
+
+    @Test
+    public void listBookViewKnowsHowToReturnNextView() {
+        Console console = Mockito.mock(Console.class);
+        IView userMenuView = Mockito.mock(UserMenuView.class);
+        Section movies = Mockito.mock(Section.class);
+        IView listBooksView = new ListBooksView(console, userMenuView, movies);
+
+        assertEquals(userMenuView, listBooksView.next());
     }
 }
