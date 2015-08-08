@@ -38,6 +38,10 @@
             <test name="com.twu.biblioteca.operation.UserDetailsTest"/>
             <test name="com.twu.biblioteca.view.DisplayWelcomeMessageViewTest"/>
             <test name="com.twu.biblioteca.view.LoginMenuViewTest"/>
+            <test name="com.twu.biblioteca.view.InvalidLoginMenuOptionViewTest"/>
+            <test name="com.twu.biblioteca.view.ListBooksViewTest"/>
+            <test name="com.twu.biblioteca.view.UserMenuViewTest"/>
+            <test name="com.twu.biblioteca.view.ListMoviesViewTest"/>
             <test name="com.twu.biblioteca.controller.ViewDispatcherTest"/>
             <classpath>
                 <pathelement location="out"/>
