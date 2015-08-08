@@ -16,6 +16,6 @@ public class ListLibraryItems implements LibraryOperation {
 
     @Override
     public void execute() {
-        view.displayListOfAllAvailableLibraryItems(section);
+        view.displayListOfAllAvailableLibraryItems(section.listOfAllAvailableLibraryItems());
     }
 }

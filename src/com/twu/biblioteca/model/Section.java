@@ -15,8 +15,12 @@ public class Section {
     }
 
 
-    public ArrayList<LibraryItem> listOfAllAvailableLibraryItems() {
-        return availableLibraryItemList;
+    public String listOfAllAvailableLibraryItems() {
+        String result = "";
+        for (LibraryItem libraryItem : availableLibraryItemList) {
+            result += libraryItem;
+        }
+        return result;
     }
 
     public boolean checkOut(String requestedLibraryItem, User user) {

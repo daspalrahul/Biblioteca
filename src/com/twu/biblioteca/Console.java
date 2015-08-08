@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Console {
 
-    public void printOutput(String result) {
+    public void printOutput(Object result) {
         System.out.println(result);
     }
 

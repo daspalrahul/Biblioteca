@@ -42,9 +42,9 @@ public class ViewTest {
         Menu menu = new Menu();
         View view = new View(console, menu);
 
-        view.displayListOfAllAvailableLibraryItems(books);
+        view.displayListOfAllAvailableLibraryItems(books.listOfAllAvailableLibraryItems());
 
-        Mockito.verify(console,times(2)).printOutput(anyString());
+        Mockito.verify(console).printOutput(anyString());
     }
 
     @Test

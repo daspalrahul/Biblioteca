@@ -24,7 +24,7 @@ public class SectionTest {
         ArrayList<com.twu.biblioteca.model.LibraryItem> expectedList = new ArrayList<>();
         expectedList.add(book);
 
-        assertEquals(expectedList, section.listOfAllAvailableLibraryItems());
+        assertEquals("A Game Of Thrones                George R.R. Martin       1996", section.listOfAllAvailableLibraryItems());
     }
 
     @Test
@@ -65,7 +65,7 @@ public class SectionTest {
         ArrayList<com.twu.biblioteca.model.LibraryItem> expectedList = new ArrayList<>();
         expectedList.add(book);
 
-        assertEquals(expectedList, section.listOfAllAvailableLibraryItems());
+        assertEquals("A Game Of Thrones                George R.R. Martin       1996", section.listOfAllAvailableLibraryItems());
     }
 
     @Test

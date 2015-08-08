@@ -25,12 +25,8 @@ public class View {
         console.printOutput("=======");
     }
 
-    public void displayListOfAllAvailableLibraryItems(Section section) {
-        int i = 1;
-        ArrayList<LibraryItem> listOfLibraryItems = section.listOfAllAvailableLibraryItems();
-        for (LibraryItem libraryItem : listOfLibraryItems) {
-            console.printOutput(i++ + ". " + libraryItem);
-        }
+    public void displayListOfAllAvailableLibraryItems(String libraryItemList) {
+        console.printOutput(libraryItemList);
     }
 
     public void displayListOfAllCheckedOutLibraryItems(String list) {
