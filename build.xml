@@ -19,23 +19,13 @@
 
     <target name="runjunit" depends="compile">
         <junit haltonfailure="true" printsummary="true" showoutput="yes">
-            <test name="com.twu.biblioteca.view.ViewTest"/>
-            <test name="com.twu.biblioteca.controller.ParserTest"/>
-            <test name="com.twu.biblioteca.operation.CheckoutTest"/>
-            <test name="com.twu.biblioteca.operation.CheckinTest"/>
             <test name="com.twu.biblioteca.model.SectionTest"/>
-            <test name="com.twu.biblioteca.operation.InvalidOptionTest"/>
-            <test name="com.twu.biblioteca.operation.ListLibraryItemsTest"/>
             <test name="com.twu.biblioteca.controller.BibliotecaAppTest"/>
             <test name="com.twu.biblioteca.model.BookTest"/>
             <test name="com.twu.biblioteca.model.MovieTest"/>
             <test name="com.twu.biblioteca.model.UserTest"/>
             <test name="com.twu.biblioteca.view.MenuTest"/>
             <test name="com.twu.biblioteca.controller.LoginAuthenticatorTest"/>
-            <test name="com.twu.biblioteca.operation.LoginTest"/>
-            <test name="com.twu.biblioteca.operation.LogoutTest"/>
-            <test name="com.twu.biblioteca.operation.ListCheckedOutLibraryItemsTest"/>
-            <test name="com.twu.biblioteca.operation.UserDetailsTest"/>
             <test name="com.twu.biblioteca.view.DisplayWelcomeMessageViewTest"/>
             <test name="com.twu.biblioteca.view.LoginMenuViewTest"/>
             <test name="com.twu.biblioteca.view.InvalidLoginMenuOptionViewTest"/>

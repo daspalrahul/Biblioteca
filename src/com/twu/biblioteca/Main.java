@@ -21,7 +21,6 @@ public class Main {
         Section movies = new Section(movieList, new HashMap<LibraryItem, User>());
         Console console = new Console();
         Menu menu = new Menu();
-        View view = new View(console, menu);
         ArrayList<User> users = new ArrayList<>();
         users.add(new User("111-1111", "123456", "Rahul", "daspalrahul@gmail.com", "8860250486", "customer"));
         users.add(new User("222-2222", "123456", "Customer", "customer@gmail.com", "9876437654", "customer"));
@@ -29,7 +28,6 @@ public class Main {
 
 
         LoginAuthenticator loginAuthenticator = new LoginAuthenticator(users);
-        Parser parser = new Parser(view, loginAuthenticator);
         IView quitView = new QuitView();
         Session session = new Session();
 

@@ -19,7 +19,7 @@ public class LogoutView implements IView {
     @Override
     public void draw() {
         session.unsetCurrentUser();
-        console.printOutput("You Have successfully logged out!");
+        console.printOutput("You have successfully logged out!");
     }
 
     @Override

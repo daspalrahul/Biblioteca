@@ -24,7 +24,7 @@ public class CheckinMovieView implements IView {
         if (movies.checkIn(console.getInput(), session.getCurrentUser()))
             console.printOutput("Thank you for returning the movie.");
         else
-            console.printOutput("That is not a valid book to return.");
+            console.printOutput("That is not a valid movie to return.");
     }
 
     @Override
