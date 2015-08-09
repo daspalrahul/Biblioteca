@@ -9,13 +9,13 @@ import com.twu.biblioteca.model.Section;
 public class ListMoviesView implements IView {
 
     private Console console;
-    private IView userMenuView;
     private Section movies;
+    private String listMoviesView;
 
-    public ListMoviesView(Console console, IView userMenuView, Section movies) {
+    public ListMoviesView(Console console, Section movies) {
         this.console = console;
-        this.userMenuView = userMenuView;
         this.movies = movies;
+        this.listMoviesView = "List Movies View";
     }
 
     @Override
@@ -25,6 +25,6 @@ public class ListMoviesView implements IView {
 
     @Override
     public IView next(UserMenuDispatcher userMenuDispatcher) {
-        return userMenuView;
+        return userMenuDispatcher.userMenuDispatch(listMoviesView);
     }
 }

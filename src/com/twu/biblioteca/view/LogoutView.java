@@ -7,13 +7,13 @@ import com.twu.biblioteca.model.Session;
 public class LogoutView implements IView {
 
     private Console console;
-    private IView loginMenuView;
     private Session session;
+    private String logoutView;
 
-    public LogoutView(Console console, IView loginMenuView, Session session) {
+    public LogoutView(Console console, Session session) {
         this.console = console;
-        this.loginMenuView = loginMenuView;
         this.session = session;
+        this.logoutView = "Logout View";
     }
 
     @Override
@@ -24,6 +24,6 @@ public class LogoutView implements IView {
 
     @Override
     public IView next(UserMenuDispatcher userMenuDispatcher) {
-        return loginMenuView;
+        return userMenuDispatcher.userMenuDispatch(logoutView);
     }
 }

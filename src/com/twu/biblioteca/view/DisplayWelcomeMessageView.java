@@ -5,12 +5,12 @@ import com.twu.biblioteca.controller.UserMenuDispatcher;
 
 public class DisplayWelcomeMessageView implements IView {
 
-    IView loginMenuView;
-    Console console;
+    private Console console;
+    private String displayWelcomeMessageView;
 
-    public DisplayWelcomeMessageView(IView loginMenuView, Console console) {
-        this.loginMenuView = loginMenuView;
+    public DisplayWelcomeMessageView(Console console) {
         this.console = console;
+        this.displayWelcomeMessageView = "Display Welcome Message View";
     }
 
     @Override
@@ -20,6 +20,6 @@ public class DisplayWelcomeMessageView implements IView {
 
     @Override
     public IView next(UserMenuDispatcher userMenuDispatcher) {
-        return loginMenuView;
+        return userMenuDispatcher.loginMenuDispatch(displayWelcomeMessageView);
     }
 }

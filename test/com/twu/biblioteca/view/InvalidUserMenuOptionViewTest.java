@@ -14,8 +14,7 @@ public class InvalidUserMenuOptionViewTest {
     @Test
     public void invalidUserMenuOptionViewKnowsHowToDrawItself() {
         Console console = Mockito.mock(Console.class);
-        IView userMenuView = Mockito.mock(UserMenuView.class);
-        IView invalidUserMenuOptionView = new InvalidUserMenuOptionView(console, userMenuView);
+        IView invalidUserMenuOptionView = new InvalidUserMenuOptionView(console);
 
         invalidUserMenuOptionView.draw();
 
@@ -26,8 +25,10 @@ public class InvalidUserMenuOptionViewTest {
     public void invalidUserMenuOptionViewKnowsWhatViewToCallNext() {
         Console console = Mockito.mock(Console.class);
         IView userMenuView = Mockito.mock(UserMenuView.class);
-        IView invalidUserMenuOptionView = new InvalidUserMenuOptionView(console, userMenuView);
+        IView invalidUserMenuOptionView = new InvalidUserMenuOptionView(console);
         UserMenuDispatcher userMenuDispatcher = Mockito.mock(UserMenuDispatcher.class);
+
+        Mockito.when(userMenuDispatcher.userMenuDispatch("Invalid User Menu Option View")).thenReturn(userMenuView);
 
         assertEquals(userMenuView, invalidUserMenuOptionView.next(userMenuDispatcher));
     }

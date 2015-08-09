@@ -15,9 +15,8 @@ public class ListMoviesViewTest {
     @Test
     public void listMoviesViewCanDisplayListOfMovies() {
         Console console = Mockito.mock(Console.class);
-        IView userMenuView = Mockito.mock(UserMenuView.class);
         Section movies = Mockito.mock(Section.class);
-        IView listBooksView = new ListBooksView(console, userMenuView, movies);
+        IView listBooksView = new ListBooksView(console, movies);
 
         Mockito.when(movies.listOfAllAvailableLibraryItems()).thenReturn("movielist");
         listBooksView.draw();
@@ -26,13 +25,15 @@ public class ListMoviesViewTest {
     }
 
     @Test
-    public void listBookViewKnowsHowToReturnNextView() {
+    public void listMoviesViewKnowsHowToReturnNextView() {
         Console console = Mockito.mock(Console.class);
         IView userMenuView = Mockito.mock(UserMenuView.class);
         Section movies = Mockito.mock(Section.class);
-        IView listBooksView = new ListBooksView(console, userMenuView, movies);
+        IView listMoviesView = new ListMoviesView(console, movies);
         UserMenuDispatcher userMenuDispatcher = Mockito.mock(UserMenuDispatcher.class);
 
-        assertEquals(userMenuView, listBooksView.next(userMenuDispatcher));
+        Mockito.when(userMenuDispatcher.userMenuDispatch("List Movies View")).thenReturn(userMenuView);
+
+        assertEquals(userMenuView, listMoviesView.next(userMenuDispatcher));
     }
 }

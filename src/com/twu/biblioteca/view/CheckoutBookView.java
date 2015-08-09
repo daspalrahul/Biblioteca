@@ -9,15 +9,15 @@ import com.twu.biblioteca.model.Session;
 public class CheckoutBookView implements IView {
 
     private Console console;
-    private IView userMenuView;
     private Session session;
     private Section books;
+    private String checkoutBookView;
 
-    public CheckoutBookView(Console console, IView userMenuView, Session session, Section books) {
+    public CheckoutBookView(Console console, Session session, Section books) {
         this.console = console;
-        this.userMenuView = userMenuView;
         this.session = session;
         this.books = books;
+        this.checkoutBookView = "Checkout Book View";
     }
 
     @Override
@@ -30,6 +30,6 @@ public class CheckoutBookView implements IView {
 
     @Override
     public IView next(UserMenuDispatcher userMenuDispatcher) {
-        return userMenuView;
+        return userMenuDispatcher.userMenuDispatch(checkoutBookView);
     }
 }

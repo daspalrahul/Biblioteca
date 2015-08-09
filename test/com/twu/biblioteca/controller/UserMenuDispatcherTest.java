@@ -25,8 +25,9 @@ public class UserMenuDispatcherTest {
         IView invalidLoginOptionView = Mockito.mock(InvalidLoginMenuOptionView.class);
         IView quitView = Mockito.mock(QuitView.class);
         IView loginView = Mockito.mock(LoginView.class);
-        UserMenuDispatcher userMenuDispatcher = new UserMenuDispatcher();
-        userMenuDispatcher.setViews(listBooksView, listMoviesView, checkinBookView, checkinMovieView, checkoutBookView, checkoutMovieView, logoutView, userDetailsView, invalidUserMenuOptionView, invalidLoginOptionView, quitView, loginView);
+        IView userMenuView = Mockito.mock(UserMenuView.class);
+        IView loginMenuView = Mockito.mock(LoginMenuView.class);
+        UserMenuDispatcher userMenuDispatcher = new UserMenuDispatcher(listBooksView, listMoviesView, checkinBookView, checkinMovieView, checkoutBookView, checkoutMovieView, logoutView, userDetailsView, invalidUserMenuOptionView, invalidLoginOptionView, quitView, loginView, userMenuView, loginMenuView);
 
         assertEquals(listBooksView, userMenuDispatcher.userMenuDispatch("List Books"));
     }
@@ -46,11 +47,11 @@ public class UserMenuDispatcherTest {
         IView quitView = Mockito.mock(QuitView.class);
         IView loginView = Mockito.mock(LoginView.class);
         Console console = Mockito.mock(Console.class);
+        IView userMenuView = Mockito.mock(UserMenuView.class);
+        IView loginMenuView = Mockito.mock(LoginMenuView.class);
+        UserMenuDispatcher userMenuDispatcher = new UserMenuDispatcher(listBooksView, listMoviesView, checkinBookView, checkinMovieView, checkoutBookView, checkoutMovieView, logoutView, userDetailsView, invalidUserMenuOptionView, invalidLoginOptionView, quitView, loginView, userMenuView, loginMenuView);
 
         Mockito.when(console.getInput()).thenReturn("Login");
-        UserMenuDispatcher userMenuDispatcher = new UserMenuDispatcher();
-        userMenuDispatcher.setViews(listBooksView, listMoviesView, checkinBookView, checkinMovieView, checkoutBookView, checkoutMovieView, logoutView, userDetailsView, invalidUserMenuOptionView, invalidLoginOptionView, quitView, loginView);
-
 
         assertEquals(loginView, userMenuDispatcher.loginMenuDispatch(console.getInput()));
     }

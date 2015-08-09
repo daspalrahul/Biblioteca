@@ -27,7 +27,7 @@ public class MenuTest {
                 "Checkout Movie\n" +
                 "List CheckedOut Books\n" +
                 "List CheckedOut Movies\n" +
-                "User Information\n" +
+                "User Details\n" +
                 "Logout\n" +
                 "===========================\n" +
                 "\n", menu.displayOptionMenuList(user));

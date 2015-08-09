@@ -7,13 +7,13 @@ import com.twu.biblioteca.model.Session;
 public class UserDetailsView implements IView {
 
     private Console console;
-    private IView userMenuView;
     private Session session;
+    private String userDetailsView;
 
-    public UserDetailsView(Console console, IView userMenuView, Session session) {
+    public UserDetailsView(Console console, Session session) {
         this.console = console;
-        this.userMenuView = userMenuView;
         this.session = session;
+        this.userDetailsView = "User Details View";
     }
 
     @Override
@@ -23,6 +23,6 @@ public class UserDetailsView implements IView {
 
     @Override
     public IView next(UserMenuDispatcher userMenuDispatcher) {
-        return userMenuView;
+        return userMenuDispatcher.userMenuDispatch(userDetailsView);
     }
 }

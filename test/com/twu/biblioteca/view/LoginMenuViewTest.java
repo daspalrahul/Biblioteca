@@ -53,9 +53,9 @@ public class LoginMenuViewTest {
         IView invalidLoginOptionView = Mockito.mock(InvalidLoginMenuOptionView.class);
         IView quitView = Mockito.mock(QuitView.class);
         IView loginView = Mockito.mock(LoginView.class);
-        UserMenuDispatcher userMenuDispatcher = new UserMenuDispatcher();
-        userMenuDispatcher.setViews(listBooksView, listMoviesView, checkinBookView, checkinMovieView, checkoutBookView, checkoutMovieView, logoutView, userDetailsView, invalidUserMenuOptionView, invalidLoginOptionView, quitView, loginView);
+        IView userMenuView = Mockito.mock(UserMenuView.class);
         IView loginMenuView = new LoginMenuView(menu, console);
+        UserMenuDispatcher userMenuDispatcher = new UserMenuDispatcher(listBooksView, listMoviesView, checkinBookView, checkinMovieView, checkoutBookView, checkoutMovieView, logoutView, userDetailsView, invalidUserMenuOptionView, invalidLoginOptionView, quitView, loginView, userMenuView, loginMenuView);
 
         Mockito.when(console.getInput()).thenReturn("Login");
 

@@ -14,8 +14,7 @@ public class DisplayWelcomeMessageViewTest {
     @Test
     public void displayWelcomeMessageViewKnowsHowToDrawItself() {
         Console console = Mockito.mock(Console.class);
-        IView loginMenuView = Mockito.mock(LoginMenuView.class);
-        DisplayWelcomeMessageView displayWelcomeMessageView = new DisplayWelcomeMessageView(loginMenuView, console);
+        DisplayWelcomeMessageView displayWelcomeMessageView = new DisplayWelcomeMessageView(console);
 
         displayWelcomeMessageView.draw();
 
@@ -26,8 +25,10 @@ public class DisplayWelcomeMessageViewTest {
     public void displayWelcomeMessageViewKnowsWhatViewToGoNext() {
         Console console = Mockito.mock(Console.class);
         IView loginMenuView = Mockito.mock(LoginMenuView.class);
-        DisplayWelcomeMessageView displayWelcomeMessageView = new DisplayWelcomeMessageView(loginMenuView, console);
+        DisplayWelcomeMessageView displayWelcomeMessageView = new DisplayWelcomeMessageView(console);
         UserMenuDispatcher userMenuDispatcher = Mockito.mock(UserMenuDispatcher.class);
+
+        Mockito.when(userMenuDispatcher.loginMenuDispatch("Display Welcome Message View")).thenReturn(loginMenuView);
 
         assertEquals(loginMenuView, displayWelcomeMessageView.next(userMenuDispatcher));
     }

@@ -8,11 +8,11 @@ import com.twu.biblioteca.controller.UserMenuDispatcher;
 public class InvalidUserMenuOptionView implements IView {
 
     private Console console;
-    private IView userMenuView;
+    private String invalidUserMenuOptionView;
 
-    public InvalidUserMenuOptionView(Console console, IView userMenuView) {
+    public InvalidUserMenuOptionView(Console console) {
         this.console = console;
-        this.userMenuView = userMenuView;
+        this.invalidUserMenuOptionView = "Invalid User Menu Option View";
     }
 
     @Override
@@ -22,6 +22,6 @@ public class InvalidUserMenuOptionView implements IView {
 
     @Override
     public IView next(UserMenuDispatcher userMenuDispatcher) {
-        return userMenuView;
+        return userMenuDispatcher.userMenuDispatch(invalidUserMenuOptionView);
     }
 }

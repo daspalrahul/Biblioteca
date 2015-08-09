@@ -22,8 +22,7 @@ public class CheckinMovieViewTest {
         Section movies = Mockito.mock(Section.class);
         Session session = Mockito.mock(Session.class);
         User user = Mockito.mock(User.class);
-        IView userMenuView = Mockito.mock(UserMenuView.class);
-        IView checkinMovieView = new CheckinMovieView(console, userMenuView, session, movies);
+        IView checkinMovieView = new CheckinMovieView(console, session, movies);
 
         Mockito.when(session.getCurrentUser()).thenReturn(user);
         Mockito.when(console.getInput()).thenReturn("Kick");
@@ -38,8 +37,10 @@ public class CheckinMovieViewTest {
         Section movies = Mockito.mock(Section.class);
         Session session = Mockito.mock(Session.class);
         IView userMenuView = Mockito.mock(UserMenuView.class);
-        IView checkinMovieView = new CheckinMovieView(console, userMenuView, session, movies);
+        IView checkinMovieView = new CheckinMovieView(console, session, movies);
         UserMenuDispatcher userMenuDispatcher = Mockito.mock(UserMenuDispatcher.class);
+
+        Mockito.when(userMenuDispatcher.userMenuDispatch("Checkin Movie View")).thenReturn(userMenuView);
 
         assertEquals(userMenuView, checkinMovieView.next(userMenuDispatcher));
     }

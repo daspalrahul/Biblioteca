@@ -22,8 +22,7 @@ public class CheckoutBookViewTest {
         Section books = Mockito.mock(Section.class);
         Session session = Mockito.mock(Session.class);
         User user = Mockito.mock(User.class);
-        IView userMenuView = Mockito.mock(UserMenuView.class);
-        IView checkoutBookView = new CheckoutBookView(console, userMenuView, session, books);
+        IView checkoutBookView = new CheckoutBookView(console, session, books);
 
         Mockito.when(session.getCurrentUser()).thenReturn(user);
         Mockito.when(console.getInput()).thenReturn("A Game of Thrones");
@@ -38,8 +37,10 @@ public class CheckoutBookViewTest {
         Section books = Mockito.mock(Section.class);
         Session session = Mockito.mock(Session.class);
         IView userMenuView = Mockito.mock(UserMenuView.class);
-        IView checkoutBookView = new CheckoutBookView(console, userMenuView, session, books);
+        IView checkoutBookView = new CheckoutBookView(console, session, books);
         UserMenuDispatcher userMenuDispatcher = Mockito.mock(UserMenuDispatcher.class);
+
+        Mockito.when(userMenuDispatcher.userMenuDispatch("Checkout Book View")).thenReturn(userMenuView);
 
         assertEquals(userMenuView, checkoutBookView.next(userMenuDispatcher));
     }

@@ -32,23 +32,23 @@ public class Main {
         Parser parser = new Parser(view, loginAuthenticator);
         IView quitView = new QuitView();
         Session session = new Session();
-        UserMenuDispatcher userMenuDispatcher = new UserMenuDispatcher();
+
         IView userMenuView = new UserMenuView(menu, console, session);
-        IView listBooksView = new ListBooksView(console, userMenuView, books);
-        IView listMoviesView = new ListMoviesView(console, userMenuView, movies);
-        IView checkinBookView = new CheckinBookView(console, userMenuView, session, books);
-        IView checkinMovieView = new CheckinMovieView(console, userMenuView, session, movies);
-        IView checkoutBookView = new CheckoutBookView(console, userMenuView, session, books);
-        IView checkoutMovieView = new CheckoutMovieView(console, userMenuView, session, movies);
+        IView listBooksView = new ListBooksView(console, books);
+        IView listMoviesView = new ListMoviesView(console, movies);
+        IView checkinBookView = new CheckinBookView(console, session, books);
+        IView checkinMovieView = new CheckinMovieView(console, session, movies);
+        IView checkoutBookView = new CheckoutBookView(console, session, books);
+        IView checkoutMovieView = new CheckoutMovieView(console, session, movies);
         IView loginMenuView = new LoginMenuView(menu, console);
-        IView displayWelcomeMessageView = new DisplayWelcomeMessageView(loginMenuView, console);
-        IView invalidUserMenuOptionView = new InvalidUserMenuOptionView(console, userMenuView);
-        IView userDetailsView = new UserDetailsView(console, userMenuView, session);
-        IView invalidLoginMenuOptionView = new InvalidLoginMenuOptionView(console, loginMenuView);
+        IView displayWelcomeMessageView = new DisplayWelcomeMessageView(console);
+        IView invalidUserMenuOptionView = new InvalidUserMenuOptionView(console);
+        IView userDetailsView = new UserDetailsView(console, session);
+        IView invalidLoginMenuOptionView = new InvalidLoginMenuOptionView(console);
         IView librarianMenuView = new LibrarianMenuView();
         IView loginView = new LoginView(console, loginAuthenticator, session, loginMenuView, userMenuView, librarianMenuView);
-        IView logoutView = new LogoutView(console, loginMenuView, session);
-        userMenuDispatcher.setViews(listBooksView, listMoviesView, checkinBookView, checkinMovieView, checkoutBookView, checkoutMovieView, logoutView, userDetailsView, invalidUserMenuOptionView, invalidLoginMenuOptionView, quitView, loginView);
+        IView logoutView = new LogoutView(console, session);
+        UserMenuDispatcher userMenuDispatcher = new UserMenuDispatcher(listBooksView, listMoviesView, checkinBookView, checkinMovieView, checkoutBookView, checkoutMovieView, logoutView, userDetailsView, invalidUserMenuOptionView, invalidLoginMenuOptionView, quitView, loginView, userMenuView, loginMenuView);
 
 
         BibliotecaApp bibliotecaApp = new BibliotecaApp(displayWelcomeMessageView, userMenuDispatcher);

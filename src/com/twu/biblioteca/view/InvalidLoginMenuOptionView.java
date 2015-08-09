@@ -5,12 +5,12 @@ import com.twu.biblioteca.controller.UserMenuDispatcher;
 
 public class InvalidLoginMenuOptionView implements IView {
 
-    Console console;
-    IView loginMenuView;
+    private Console console;
+    private String invalidLoginMenuOptionView;
 
-    public InvalidLoginMenuOptionView(Console console, IView loginMenuView) {
+    public InvalidLoginMenuOptionView(Console console) {
         this.console = console;
-        this.loginMenuView = loginMenuView;
+        this.invalidLoginMenuOptionView = "Invalid Login Menu Option View";
     }
 
     @Override
@@ -20,6 +20,6 @@ public class InvalidLoginMenuOptionView implements IView {
 
     @Override
     public IView next(UserMenuDispatcher userMenuDispatcher) {
-        return loginMenuView;
+        return userMenuDispatcher.loginMenuDispatch(invalidLoginMenuOptionView);
     }
 }

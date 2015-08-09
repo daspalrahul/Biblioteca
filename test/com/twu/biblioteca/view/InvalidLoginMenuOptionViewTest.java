@@ -13,9 +13,8 @@ public class InvalidLoginMenuOptionViewTest {
 
     @Test
     public void invalidOptionTestKnowsHowToDrawItself() {
-        IView loginMenuView = Mockito.mock(LoginMenuView.class);
         Console console = Mockito.mock(Console.class);
-        IView invalidOptionTest = new InvalidLoginMenuOptionView(console, loginMenuView);
+        IView invalidOptionTest = new InvalidLoginMenuOptionView(console);
 
         invalidOptionTest.draw();
 
@@ -26,8 +25,10 @@ public class InvalidLoginMenuOptionViewTest {
     public void invalidOptionTestKnowsHowToReturnTheNextView() {
         IView loginMenuView = Mockito.mock(LoginMenuView.class);
         Console console = Mockito.mock(Console.class);
-        IView invalidOptionTest = new InvalidLoginMenuOptionView(console, loginMenuView);
+        IView invalidOptionTest = new InvalidLoginMenuOptionView(console);
         UserMenuDispatcher userMenuDispatcher = Mockito.mock(UserMenuDispatcher.class);
+
+        Mockito.when(userMenuDispatcher.loginMenuDispatch("Invalid Login Menu Option View")).thenReturn(loginMenuView);
 
         assertEquals(loginMenuView, invalidOptionTest.next(userMenuDispatcher));
     }

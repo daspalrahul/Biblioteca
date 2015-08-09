@@ -9,13 +9,13 @@ import com.twu.biblioteca.model.Section;
 public class ListBooksView implements IView {
 
     private Console console;
-    private IView userMenuView;
     private Section books;
+    private String listBooksView;
 
-    public ListBooksView(Console console, IView userMenuView, Section books) {
+    public ListBooksView(Console console, Section books) {
         this.console = console;
-        this.userMenuView = userMenuView;
         this.books = books;
+        this.listBooksView = "List Books View";
     }
 
     @Override
@@ -25,6 +25,6 @@ public class ListBooksView implements IView {
 
     @Override
     public IView next(UserMenuDispatcher userMenuDispatcher) {
-        return userMenuView;
+        return userMenuDispatcher.userMenuDispatch(listBooksView);
     }
 }

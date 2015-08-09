@@ -18,8 +18,10 @@ public class UserMenuDispatcher {
     private IView invalidLoginMenuOptionView;
     private IView quitView;
     private IView loginView;
+    private IView userMenuView;
+    private IView loginMenuView;
 
-    public void setViews(IView listBooksView, IView listMoviesView, IView checkinBookView, IView checkinMovieView, IView checkoutBookView, IView checkoutMovieView, IView logoutView, IView userDetailsView, IView invalidUserMenuOptionView, IView invalidLoginMenuOptionView, IView quitView, IView loginView) {
+    public UserMenuDispatcher(IView listBooksView, IView listMoviesView, IView checkinBookView, IView checkinMovieView, IView checkoutBookView, IView checkoutMovieView, IView logoutView, IView userDetailsView, IView invalidUserMenuOptionView, IView invalidLoginMenuOptionView, IView quitView, IView loginView, IView userMenuView, IView loginMenuView) {
         this.listBooksView = listBooksView;
         this.listMoviesView = listMoviesView;
         this.checkinBookView = checkinBookView;
@@ -32,6 +34,8 @@ public class UserMenuDispatcher {
         this.invalidLoginMenuOptionView = invalidLoginMenuOptionView;
         this.quitView = quitView;
         this.loginView = loginView;
+        this.userMenuView = userMenuView;
+        this.loginMenuView = loginMenuView;
     }
 
     public IView userMenuDispatch(String userInput) {
@@ -52,6 +56,24 @@ public class UserMenuDispatcher {
                 return logoutView;
             case "User Details":
                 return userDetailsView;
+            case "Checkin Book View":
+                return userMenuView;
+            case "Checkin Movie View":
+                return userMenuView;
+            case "Checkout Book View":
+                return userMenuView;
+            case "Checkout Movie View":
+                return userMenuView;
+            case "List Books View":
+                return userMenuView;
+            case "List Movies View":
+                return userMenuView;
+            case "User Details View":
+                return userMenuView;
+            case "Invalid User Menu Option View":
+                return userMenuView;
+            case "Logout View":
+                return loginMenuView;
             default:
                 return invalidUserMenuOptionView;
         }
@@ -59,10 +81,14 @@ public class UserMenuDispatcher {
 
     public IView loginMenuDispatch(String userInput) {
         switch (userInput) {
+            case "Display Welcome Message View":
+                return loginMenuView;
             case "Login":
                 return loginView;
             case "Quit":
                 return quitView;
+            case "Invalid Login Menu Option View":
+                return loginMenuView;
             default:
                 return invalidLoginMenuOptionView;
         }
