@@ -36,7 +36,7 @@ public class UserMenuViewTest {
         IView userMenuViewTest = new UserMenuView(menu, console, session, userMenuDispatcher);
 
         Mockito.when(console.getInput()).thenReturn("List Books");
-        Mockito.when(userMenuDispatcher.dispatch("List Books")).thenReturn(listBooksView);
+        Mockito.when(userMenuDispatcher.userMenuDispatch("List Books")).thenReturn(listBooksView);
 
         assertEquals(listBooksView, userMenuViewTest.next());
     }

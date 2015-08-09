@@ -50,7 +50,6 @@
             <test name="com.twu.biblioteca.view.QuitViewTest"/>
             <test name="com.twu.biblioteca.view.UserDetailsViewTest"/>
             <test name="com.twu.biblioteca.view.CheckinBookViewTest"/>
-            <test name="com.twu.biblioteca.controller.ViewDispatcherTest"/>
             <classpath>
                 <pathelement location="out"/>
                 <path refid="classpath"/>

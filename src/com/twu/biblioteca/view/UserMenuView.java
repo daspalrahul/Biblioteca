@@ -25,6 +25,6 @@ public class UserMenuView implements IView {
 
     @Override
     public IView next() {
-        return userMenuDispatcher.dispatch(console.getInput());
+        return userMenuDispatcher.userMenuDispatch(console.getInput());
     }
 }

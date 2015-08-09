@@ -15,8 +15,11 @@ public class UserMenuDispatcher {
     private IView logoutView;
     private IView userDetailsView;
     private IView invalidUserMenuOptionView;
+    private IView invalidLoginMenuOptionView;
+    private IView quitView;
+    private IView loginView;
 
-    public UserMenuDispatcher(IView listBooksView, IView listMoviesView, IView checkinBookView, IView checkinMovieView, IView checkoutBookView, IView checkoutMovieView, IView logoutView, IView userDetailsView, IView invalidUserMenuOptionView) {
+    public void setViews(IView listBooksView, IView listMoviesView, IView checkinBookView, IView checkinMovieView, IView checkoutBookView, IView checkoutMovieView, IView logoutView, IView userDetailsView, IView invalidUserMenuOptionView, IView invalidLoginMenuOptionView, IView quitView, IView loginView) {
         this.listBooksView = listBooksView;
         this.listMoviesView = listMoviesView;
         this.checkinBookView = checkinBookView;
@@ -26,9 +29,12 @@ public class UserMenuDispatcher {
         this.logoutView = logoutView;
         this.userDetailsView = userDetailsView;
         this.invalidUserMenuOptionView = invalidUserMenuOptionView;
+        this.invalidLoginMenuOptionView = invalidLoginMenuOptionView;
+        this.quitView = quitView;
+        this.loginView = loginView;
     }
 
-    public IView dispatch(String userInput) {
+    public IView userMenuDispatch(String userInput) {
         switch (userInput) {
             case "List Books":
                 return listBooksView;
@@ -48,6 +54,17 @@ public class UserMenuDispatcher {
                 return userDetailsView;
             default:
                 return invalidUserMenuOptionView;
+        }
+    }
+
+    public IView loginMenuDispatch(String userInput) {
+        switch (userInput) {
+            case "Login":
+                return loginView;
+            case "Quit":
+                return quitView;
+            default:
+                return invalidLoginMenuOptionView;
         }
     }
 }
