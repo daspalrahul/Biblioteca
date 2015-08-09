@@ -15,4 +15,8 @@ public class Session {
     public void setCurrentUser(User currentUser) {
         this.currentUser = currentUser;
     }
+
+    public void unsetCurrentUser() {
+        this.currentUser = null;
+    }
 }
