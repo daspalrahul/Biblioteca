@@ -45,6 +45,9 @@
             <test name="com.twu.biblioteca.view.CheckoutBookViewTest"/>
             <test name="com.twu.biblioteca.view.CheckoutMovieViewTest"/>
             <test name="com.twu.biblioteca.view.InvalidUserMenuOptionViewTest"/>
+            <test name="com.twu.biblioteca.view.LogoutViewTest"/>
+            <test name="com.twu.biblioteca.view.LoginViewTest"/>
+            <test name="com.twu.biblioteca.view.QuitViewTest"/>
             <test name="com.twu.biblioteca.controller.ViewDispatcherTest"/>
             <classpath>
                 <pathelement location="out"/>
