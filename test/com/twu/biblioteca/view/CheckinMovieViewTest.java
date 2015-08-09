@@ -13,32 +13,32 @@ import static org.mockito.Matchers.anyString;
 import static org.mockito.Matchers.eq;
 
 
-public class CheckoutMovieViewTest {
+public class CheckinMovieViewTest {
 
     @Test
-    public void checkoutMovieViewKnowsHowToDrawItself() {
+    public void checkinMovieViewKnowsHowToDrawItself() {
         Console console = Mockito.mock(Console.class);
         Section movies = Mockito.mock(Section.class);
         Session session = Mockito.mock(Session.class);
         User user = Mockito.mock(User.class);
         IView userMenuView = Mockito.mock(UserMenuView.class);
-        IView checkoutMovieView = new CheckoutMovieView(console, userMenuView, session, movies);
+        IView checkinMovieView = new CheckinMovieView(console, userMenuView, session, movies);
 
         Mockito.when(session.getCurrentUser()).thenReturn(user);
         Mockito.when(console.getInput()).thenReturn("Kick");
-        checkoutMovieView.draw();
+        checkinMovieView.draw();
 
-        Mockito.verify(movies).checkOut(anyString(), eq(user));
+        Mockito.verify(movies).checkIn(anyString(), eq(user));
     }
 
     @Test
-    public void checkoutMovieViewKnowsHowToReturnTheNextView() {
+    public void checkinMovieViewKnowsHowToReturnTheNextView() {
         Console console = Mockito.mock(Console.class);
         Section movies = Mockito.mock(Section.class);
         Session session = Mockito.mock(Session.class);
         IView userMenuView = Mockito.mock(UserMenuView.class);
-        IView checkoutMovieView = new CheckoutMovieView(console, userMenuView, session, movies);
+        IView checkinMovieView = new CheckinMovieView(console, userMenuView, session, movies);
 
-        assertEquals(userMenuView, checkoutMovieView.next());
+        assertEquals(userMenuView, checkinMovieView.next());
     }
 }
