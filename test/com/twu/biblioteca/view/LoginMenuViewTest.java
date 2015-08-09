@@ -15,8 +15,7 @@ public class LoginMenuViewTest {
     public void loginMenuViewKnowsHowToDrawItself() {
         Console console = Mockito.mock(Console.class);
         Menu menu = Mockito.mock(Menu.class);
-        UserMenuDispatcher userMenuDispatcher = Mockito.mock(UserMenuDispatcher.class);
-        IView loginMenuView = new LoginMenuView(menu, console, userMenuDispatcher);
+        IView loginMenuView = new LoginMenuView(menu, console);
 
         Mockito.when(menu.displayLoginMenu()).thenReturn("\n" +
                 "===========================\n" +
@@ -56,10 +55,10 @@ public class LoginMenuViewTest {
         IView loginView = Mockito.mock(LoginView.class);
         UserMenuDispatcher userMenuDispatcher = new UserMenuDispatcher();
         userMenuDispatcher.setViews(listBooksView, listMoviesView, checkinBookView, checkinMovieView, checkoutBookView, checkoutMovieView, logoutView, userDetailsView, invalidUserMenuOptionView, invalidLoginOptionView, quitView, loginView);
-        IView loginMenuView = new LoginMenuView(menu, console, userMenuDispatcher);
+        IView loginMenuView = new LoginMenuView(menu, console);
 
         Mockito.when(console.getInput()).thenReturn("Login");
 
-        assertEquals(loginView, loginMenuView.next());
+        assertEquals(loginView, loginMenuView.next(userMenuDispatcher));
     }
 }

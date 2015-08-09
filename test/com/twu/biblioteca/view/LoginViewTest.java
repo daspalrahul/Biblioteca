@@ -3,6 +3,7 @@ package com.twu.biblioteca.view;
 
 import com.twu.biblioteca.Console;
 import com.twu.biblioteca.controller.LoginAuthenticator;
+import com.twu.biblioteca.controller.UserMenuDispatcher;
 import com.twu.biblioteca.model.Session;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -37,8 +38,9 @@ public class LoginViewTest {
         LoginAuthenticator loginAuthenticator = Mockito.mock(LoginAuthenticator.class);
         Session session = Mockito.mock(Session.class);
         IView loginView = new LoginView(console, loginAuthenticator, session, loginMenuView, userMenuView, librarianMenuView);
+        UserMenuDispatcher userMenuDispatcher = Mockito.mock(UserMenuDispatcher.class);
 
-        assertEquals(loginMenuView, loginView.next());
+        assertEquals(loginMenuView, loginView.next(userMenuDispatcher));
     }
 
 }

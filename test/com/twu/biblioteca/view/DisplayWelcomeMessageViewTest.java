@@ -2,6 +2,7 @@ package com.twu.biblioteca.view;
 
 
 import com.twu.biblioteca.Console;
+import com.twu.biblioteca.controller.UserMenuDispatcher;
 import org.junit.Test;
 import org.mockito.Mockito;
 
@@ -26,7 +27,8 @@ public class DisplayWelcomeMessageViewTest {
         Console console = Mockito.mock(Console.class);
         IView loginMenuView = Mockito.mock(LoginMenuView.class);
         DisplayWelcomeMessageView displayWelcomeMessageView = new DisplayWelcomeMessageView(loginMenuView, console);
+        UserMenuDispatcher userMenuDispatcher = Mockito.mock(UserMenuDispatcher.class);
 
-        assertEquals(loginMenuView, displayWelcomeMessageView.next());
+        assertEquals(loginMenuView, displayWelcomeMessageView.next(userMenuDispatcher));
     }
 }

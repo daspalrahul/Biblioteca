@@ -2,6 +2,7 @@ package com.twu.biblioteca.view;
 
 
 import com.twu.biblioteca.Console;
+import com.twu.biblioteca.controller.UserMenuDispatcher;
 import com.twu.biblioteca.model.Session;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -29,7 +30,8 @@ public class LogoutViewTest {
         IView loginMenuView = Mockito.mock(LoginMenuView.class);
         Session session = Mockito.mock(Session.class);
         IView logoutView = new LogoutView(console, loginMenuView, session);
+        UserMenuDispatcher userMenuDispatcher = Mockito.mock(UserMenuDispatcher.class);
 
-        assertEquals(loginMenuView, logoutView.next());
+        assertEquals(loginMenuView, logoutView.next(userMenuDispatcher));
     }
 }

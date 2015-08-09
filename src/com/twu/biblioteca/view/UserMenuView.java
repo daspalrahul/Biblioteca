@@ -9,13 +9,11 @@ public class UserMenuView implements IView {
     private Menu menu;
     private Console console;
     private Session session;
-    private UserMenuDispatcher userMenuDispatcher;
 
-    public UserMenuView(Menu menu, Console console, Session session, UserMenuDispatcher userMenuDispatcher) {
+    public UserMenuView(Menu menu, Console console, Session session) {
         this.menu = menu;
         this.console = console;
         this.session = session;
-        this.userMenuDispatcher = userMenuDispatcher;
     }
 
     @Override
@@ -24,7 +22,7 @@ public class UserMenuView implements IView {
     }
 
     @Override
-    public IView next() {
+    public IView next(UserMenuDispatcher userMenuDispatcher) {
         return userMenuDispatcher.userMenuDispatch(console.getInput());
     }
 }

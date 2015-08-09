@@ -1,5 +1,7 @@
 package com.twu.biblioteca.view;
 
+import com.twu.biblioteca.controller.UserMenuDispatcher;
+
 public class LibrarianMenuView implements IView {
 
     @Override
@@ -8,7 +10,7 @@ public class LibrarianMenuView implements IView {
     }
 
     @Override
-    public IView next() {
+    public IView next(UserMenuDispatcher userMenuDispatcher) {
         return null;
     }
 }

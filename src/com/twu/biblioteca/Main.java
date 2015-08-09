@@ -33,14 +33,14 @@ public class Main {
         IView quitView = new QuitView();
         Session session = new Session();
         UserMenuDispatcher userMenuDispatcher = new UserMenuDispatcher();
-        IView userMenuView = new UserMenuView(menu, console, session, userMenuDispatcher);
+        IView userMenuView = new UserMenuView(menu, console, session);
         IView listBooksView = new ListBooksView(console, userMenuView, books);
         IView listMoviesView = new ListMoviesView(console, userMenuView, movies);
         IView checkinBookView = new CheckinBookView(console, userMenuView, session, books);
         IView checkinMovieView = new CheckinMovieView(console, userMenuView, session, movies);
         IView checkoutBookView = new CheckoutBookView(console, userMenuView, session, books);
         IView checkoutMovieView = new CheckoutMovieView(console, userMenuView, session, movies);
-        IView loginMenuView = new LoginMenuView(menu, console, userMenuDispatcher);
+        IView loginMenuView = new LoginMenuView(menu, console);
         IView displayWelcomeMessageView = new DisplayWelcomeMessageView(loginMenuView, console);
         IView invalidUserMenuOptionView = new InvalidUserMenuOptionView(console, userMenuView);
         IView userDetailsView = new UserDetailsView(console, userMenuView, session);
@@ -51,7 +51,7 @@ public class Main {
         userMenuDispatcher.setViews(listBooksView, listMoviesView, checkinBookView, checkinMovieView, checkoutBookView, checkoutMovieView, logoutView, userDetailsView, invalidUserMenuOptionView, invalidLoginMenuOptionView, quitView, loginView);
 
 
-        BibliotecaApp bibliotecaApp = new BibliotecaApp(displayWelcomeMessageView);
+        BibliotecaApp bibliotecaApp = new BibliotecaApp(displayWelcomeMessageView, userMenuDispatcher);
         bibliotecaApp.start();
     }
 }

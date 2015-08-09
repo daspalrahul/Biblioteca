@@ -17,9 +17,8 @@ public class UserMenuViewTest {
     public void userMenuViewTestKnowsHowToDrawItself() {
         Menu menu = Mockito.mock(Menu.class);
         Console console = Mockito.mock(Console.class);
-        UserMenuDispatcher userMenuDispatcher = Mockito.mock(UserMenuDispatcher.class);
         Session session = Mockito.mock(Session.class);
-        IView userMenuViewTest = new UserMenuView(menu, console, session, userMenuDispatcher);
+        IView userMenuViewTest = new UserMenuView(menu, console, session);
 
         userMenuViewTest.draw();
 
@@ -33,11 +32,11 @@ public class UserMenuViewTest {
         UserMenuDispatcher userMenuDispatcher = Mockito.mock(UserMenuDispatcher.class);
         IView listBooksView = Mockito.mock(ListBooksView.class);
         Session session = Mockito.mock(Session.class);
-        IView userMenuViewTest = new UserMenuView(menu, console, session, userMenuDispatcher);
+        IView userMenuViewTest = new UserMenuView(menu, console, session);
 
         Mockito.when(console.getInput()).thenReturn("List Books");
         Mockito.when(userMenuDispatcher.userMenuDispatch("List Books")).thenReturn(listBooksView);
 
-        assertEquals(listBooksView, userMenuViewTest.next());
+        assertEquals(listBooksView, userMenuViewTest.next(userMenuDispatcher));
     }
 }

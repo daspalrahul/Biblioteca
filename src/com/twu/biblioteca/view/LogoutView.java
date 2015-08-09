@@ -1,6 +1,7 @@
 package com.twu.biblioteca.view;
 
 import com.twu.biblioteca.Console;
+import com.twu.biblioteca.controller.UserMenuDispatcher;
 import com.twu.biblioteca.model.Session;
 
 public class LogoutView implements IView {
@@ -22,7 +23,7 @@ public class LogoutView implements IView {
     }
 
     @Override
-    public IView next() {
+    public IView next(UserMenuDispatcher userMenuDispatcher) {
         return loginMenuView;
     }
 }

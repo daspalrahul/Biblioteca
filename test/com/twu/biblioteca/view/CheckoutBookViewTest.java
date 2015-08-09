@@ -2,6 +2,7 @@ package com.twu.biblioteca.view;
 
 
 import com.twu.biblioteca.Console;
+import com.twu.biblioteca.controller.UserMenuDispatcher;
 import com.twu.biblioteca.model.Section;
 import com.twu.biblioteca.model.Session;
 import com.twu.biblioteca.model.User;
@@ -38,7 +39,8 @@ public class CheckoutBookViewTest {
         Session session = Mockito.mock(Session.class);
         IView userMenuView = Mockito.mock(UserMenuView.class);
         IView checkoutBookView = new CheckoutBookView(console, userMenuView, session, books);
+        UserMenuDispatcher userMenuDispatcher = Mockito.mock(UserMenuDispatcher.class);
 
-        assertEquals(userMenuView, checkoutBookView.next());
+        assertEquals(userMenuView, checkoutBookView.next(userMenuDispatcher));
     }
 }
