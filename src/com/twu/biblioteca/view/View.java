@@ -79,7 +79,7 @@ public class View {
 
     public void successfulLogin(User user) {
         this.user = user;
-        console.printOutput("Thanks for logging in " + user.userInformation());
+        console.printOutput("Thanks for logging in " + user);
     }
 
     public User getUser() {
@@ -96,6 +96,6 @@ public class View {
     }
 
     public void displayUserInformation() {
-        console.printOutput(user.userInformation());
+        console.printOutput(user);
     }
 }

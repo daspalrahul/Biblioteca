@@ -103,7 +103,7 @@ public class SectionTest {
         com.twu.biblioteca.model.Section section = new com.twu.biblioteca.model.Section(new ArrayList<com.twu.biblioteca.model.LibraryItem>(), map);
 
         Mockito.when(book.toString()).thenReturn("book");
-        Mockito.when(user.userInformation()).thenReturn("user");
+        Mockito.when(user.toString()).thenReturn("user");
 
         assertEquals("book    user\n", section.listOfAllCheckedOutLIbraryItems());
     }

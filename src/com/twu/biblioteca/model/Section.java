@@ -52,7 +52,7 @@ public class Section {
         for (Map.Entry<LibraryItem, User> entry : checkedOutLibraryItemList.entrySet()) {
             LibraryItem libraryItem = entry.getKey();
             User user = entry.getValue();
-            result += libraryItem.toString() + "    " + user.userInformation() + "\n";
+            result += libraryItem + "    " + user + "\n";
         }
         return result;
     }

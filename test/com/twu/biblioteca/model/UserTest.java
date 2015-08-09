@@ -17,7 +17,7 @@ public class UserTest {
     public void userKnowsTheInformationItNeedsTodisplay() {
         com.twu.biblioteca.model.User user = new com.twu.biblioteca.model.User("123-4567", "diney", "Rahul", "daspalrahul@gmail.com", "8860250486", "customer");
 
-        assertEquals("123-4567             Rahul                daspalrahul@gmail.com           8860250486", user.userInformation());
+        assertEquals("123-4567             Rahul                daspalrahul@gmail.com           8860250486", user.toString());
     }
 
     @Test

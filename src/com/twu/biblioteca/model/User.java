@@ -23,7 +23,8 @@ public class User {
         return libraryNumber.equals(this.libraryNumber) && password.equals(this.password);
     }
 
-    public String userInformation() {
+    @Override
+    public String toString() {
         return String.format("%-20s %-20s %20s %20s", libraryNumber, name, email, phoneNumber);
     }
 
