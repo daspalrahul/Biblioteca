@@ -11,23 +11,24 @@ public class CheckoutBookView implements IView {
     private IView userMenuView;
     private Session session;
     private Section books;
-    private boolean result;
 
     public CheckoutBookView(Console console, IView userMenuView, Session session, Section books) {
         this.console = console;
         this.userMenuView = userMenuView;
         this.session = session;
         this.books = books;
-        this.result = false;
     }
 
     @Override
     public void draw() {
-        result = books.checkOut(console.getInput(), session.getCurrentUser());
+        if (books.checkOut(console.getInput(), session.getCurrentUser()))
+            console.printOutput("Thank you! Enjoy the book");
+        else
+            console.printOutput("That book is not available.");
     }
 
     @Override
     public IView next() {
-        return null;
+        return userMenuView;
     }
 }

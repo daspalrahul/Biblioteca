@@ -30,4 +30,15 @@ public class CheckoutBookViewTest {
 
         Mockito.verify(books).checkOut(anyString(), eq(user));
     }
+
+    @Test
+    public void checkoutBookViewKnowsHowToReturnTheNextView() {
+        Console console = Mockito.mock(Console.class);
+        Section books = Mockito.mock(Section.class);
+        Session session = Mockito.mock(Session.class);
+        IView userMenuView = Mockito.mock(UserMenuView.class);
+        IView checkoutBookView = new CheckoutBookView(console, userMenuView, session, books);
+
+        assertEquals(userMenuView, checkoutBookView.next());
+    }
 }
