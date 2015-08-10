@@ -29,8 +29,8 @@ public class Menu {
         checkinMovie = "Checkin Movie";
         checkoutBook = "Checkout Book";
         checkoutMovie = "Checkout Movie";
-        listCheckedOutBooks = "List CheckedOut Books";
-        listCheckedOutMovies = "List CheckedOut Movies";
+        listCheckedOutBooks = "List Checkedout Books";
+        listCheckedOutMovies = "List Checkedout Movies";
         quit = "Quit";
         login = "Login";
         logout = "Logout";

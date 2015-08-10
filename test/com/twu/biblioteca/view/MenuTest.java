@@ -25,8 +25,8 @@ public class MenuTest {
                 "Checkout Book\n" +
                 "Checkin Movie\n" +
                 "Checkout Movie\n" +
-                "List CheckedOut Books\n" +
-                "List CheckedOut Movies\n" +
+                "List Checkedout Books\n" +
+                "List Checkedout Movies\n" +
                 "User Details\n" +
                 "Logout\n" +
                 "===========================\n" +

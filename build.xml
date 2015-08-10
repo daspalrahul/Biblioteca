@@ -40,6 +40,9 @@
             <test name="com.twu.biblioteca.view.QuitViewTest"/>
             <test name="com.twu.biblioteca.view.UserDetailsViewTest"/>
             <test name="com.twu.biblioteca.view.CheckinBookViewTest"/>
+            <test name="com.twu.biblioteca.view.ListCheckedoutBooksViewViewTest"/>
+            <test name="com.twu.biblioteca.view.ListCheckedoutMoviesViewTest"/>
+            <test name="com.twu.biblioteca.view.InvalidLibrarianMenuOptionViewTest"/>
             <classpath>
                 <pathelement location="out"/>
                 <path refid="classpath"/>
