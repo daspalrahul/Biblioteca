@@ -2,7 +2,7 @@ package com.twu.biblioteca.view;
 
 
 import com.twu.biblioteca.Console;
-import com.twu.biblioteca.controller.UserMenuDispatcher;
+import com.twu.biblioteca.controller.ViewDispatcher;
 import com.twu.biblioteca.model.Section;
 
 
@@ -24,7 +24,7 @@ public class ListMoviesView implements IView {
     }
 
     @Override
-    public IView next(UserMenuDispatcher userMenuDispatcher) {
-        return userMenuDispatcher.userMenuDispatch(listMoviesView);
+    public IView next(ViewDispatcher viewDispatcher) {
+        return viewDispatcher.userMenuDispatch(listMoviesView);
     }
 }

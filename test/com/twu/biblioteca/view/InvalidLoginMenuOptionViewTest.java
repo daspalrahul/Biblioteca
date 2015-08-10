@@ -2,7 +2,7 @@ package com.twu.biblioteca.view;
 
 
 import com.twu.biblioteca.Console;
-import com.twu.biblioteca.controller.UserMenuDispatcher;
+import com.twu.biblioteca.controller.ViewDispatcher;
 import org.junit.Test;
 import org.mockito.Mockito;
 
@@ -26,10 +26,10 @@ public class InvalidLoginMenuOptionViewTest {
         IView loginMenuView = Mockito.mock(LoginMenuView.class);
         Console console = Mockito.mock(Console.class);
         IView invalidOptionTest = new InvalidLoginMenuOptionView(console);
-        UserMenuDispatcher userMenuDispatcher = Mockito.mock(UserMenuDispatcher.class);
+        ViewDispatcher viewDispatcher = Mockito.mock(ViewDispatcher.class);
 
-        Mockito.when(userMenuDispatcher.loginMenuDispatch("Invalid Login Menu Option View")).thenReturn(loginMenuView);
+        Mockito.when(viewDispatcher.loginMenuDispatch("Invalid Login Menu Option View")).thenReturn(loginMenuView);
 
-        assertEquals(loginMenuView, invalidOptionTest.next(userMenuDispatcher));
+        assertEquals(loginMenuView, invalidOptionTest.next(viewDispatcher));
     }
 }

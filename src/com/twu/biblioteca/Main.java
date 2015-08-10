@@ -48,10 +48,10 @@ public class Main {
         IView logoutView = new LogoutView(console, session);
         IView listCheckedoutBookView = new ListCheckedoutBooks();
         IView listCheckedoutMoviesView = new ListCheckedoutMovies();
-        UserMenuDispatcher userMenuDispatcher = new UserMenuDispatcher(listBooksView, listMoviesView, checkinBookView, checkinMovieView, checkoutBookView, checkoutMovieView, logoutView, userDetailsView, invalidUserMenuOptionView, invalidLoginMenuOptionView, quitView, loginView, userMenuView, loginMenuView, listCheckedoutBookView, listCheckedoutMoviesView, librarianMenuView);
+        ViewDispatcher viewDispatcher = new ViewDispatcher(listBooksView, listMoviesView, checkinBookView, checkinMovieView, checkoutBookView, checkoutMovieView, logoutView, userDetailsView, invalidUserMenuOptionView, invalidLoginMenuOptionView, quitView, loginView, userMenuView, loginMenuView, listCheckedoutBookView, listCheckedoutMoviesView, librarianMenuView);
 
 
-        BibliotecaApp bibliotecaApp = new BibliotecaApp(displayWelcomeMessageView, userMenuDispatcher);
+        BibliotecaApp bibliotecaApp = new BibliotecaApp(displayWelcomeMessageView, viewDispatcher);
         bibliotecaApp.start();
     }
 }

@@ -7,17 +7,17 @@ import com.twu.biblioteca.view.IView;
 public class BibliotecaApp {
 
     private IView currentView;
-    private UserMenuDispatcher userMenuDispatcher;
+    private ViewDispatcher viewDispatcher;
 
-    public BibliotecaApp(IView currentView, UserMenuDispatcher userMenuDispatcher) {
+    public BibliotecaApp(IView currentView, ViewDispatcher viewDispatcher) {
         this.currentView = currentView;
-        this.userMenuDispatcher = userMenuDispatcher;
+        this.viewDispatcher = viewDispatcher;
     }
 
     public void start() {
         while(currentView != null) {
             currentView.draw();
-            currentView = currentView.next(userMenuDispatcher);
+            currentView = currentView.next(viewDispatcher);
         }
     }
 }

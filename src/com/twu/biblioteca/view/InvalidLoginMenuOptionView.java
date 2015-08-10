@@ -1,7 +1,7 @@
 package com.twu.biblioteca.view;
 
 import com.twu.biblioteca.Console;
-import com.twu.biblioteca.controller.UserMenuDispatcher;
+import com.twu.biblioteca.controller.ViewDispatcher;
 
 public class InvalidLoginMenuOptionView implements IView {
 
@@ -19,7 +19,7 @@ public class InvalidLoginMenuOptionView implements IView {
     }
 
     @Override
-    public IView next(UserMenuDispatcher userMenuDispatcher) {
-        return userMenuDispatcher.loginMenuDispatch(invalidLoginMenuOptionView);
+    public IView next(ViewDispatcher viewDispatcher) {
+        return viewDispatcher.loginMenuDispatch(invalidLoginMenuOptionView);
     }
 }

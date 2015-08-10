@@ -2,7 +2,7 @@ package com.twu.biblioteca.view;
 
 
 import com.twu.biblioteca.Console;
-import com.twu.biblioteca.controller.UserMenuDispatcher;
+import com.twu.biblioteca.controller.ViewDispatcher;
 import com.twu.biblioteca.model.Session;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -29,14 +29,14 @@ public class UserMenuViewTest {
     public void userMenuViewKnowsWhatToReturnNext() {
         Menu menu = Mockito.mock(Menu.class);
         Console console = Mockito.mock(Console.class);
-        UserMenuDispatcher userMenuDispatcher = Mockito.mock(UserMenuDispatcher.class);
+        ViewDispatcher viewDispatcher = Mockito.mock(ViewDispatcher.class);
         IView listBooksView = Mockito.mock(ListBooksView.class);
         Session session = Mockito.mock(Session.class);
         IView userMenuViewTest = new UserMenuView(menu, console, session);
 
         Mockito.when(console.getInput()).thenReturn("List Books");
-        Mockito.when(userMenuDispatcher.userMenuDispatch("List Books")).thenReturn(listBooksView);
+        Mockito.when(viewDispatcher.userMenuDispatch("List Books")).thenReturn(listBooksView);
 
-        assertEquals(listBooksView, userMenuViewTest.next(userMenuDispatcher));
+        assertEquals(listBooksView, userMenuViewTest.next(viewDispatcher));
     }
 }

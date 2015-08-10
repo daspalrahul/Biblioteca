@@ -2,7 +2,7 @@ package com.twu.biblioteca.view;
 
 
 import com.twu.biblioteca.Console;
-import com.twu.biblioteca.controller.UserMenuDispatcher;
+import com.twu.biblioteca.controller.ViewDispatcher;
 import com.twu.biblioteca.model.Section;
 import com.twu.biblioteca.model.Session;
 
@@ -29,7 +29,7 @@ public class CheckoutBookView implements IView {
     }
 
     @Override
-    public IView next(UserMenuDispatcher userMenuDispatcher) {
-        return userMenuDispatcher.userMenuDispatch(checkoutBookView);
+    public IView next(ViewDispatcher viewDispatcher) {
+        return viewDispatcher.userMenuDispatch(checkoutBookView);
     }
 }

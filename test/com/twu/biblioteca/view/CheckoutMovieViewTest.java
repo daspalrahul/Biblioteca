@@ -2,7 +2,7 @@ package com.twu.biblioteca.view;
 
 
 import com.twu.biblioteca.Console;
-import com.twu.biblioteca.controller.UserMenuDispatcher;
+import com.twu.biblioteca.controller.ViewDispatcher;
 import com.twu.biblioteca.model.Section;
 import com.twu.biblioteca.model.Session;
 import com.twu.biblioteca.model.User;
@@ -38,10 +38,10 @@ public class CheckoutMovieViewTest {
         Session session = Mockito.mock(Session.class);
         IView userMenuView = Mockito.mock(UserMenuView.class);
         IView checkoutMovieView = new CheckoutMovieView(console, session, movies);
-        UserMenuDispatcher userMenuDispatcher = Mockito.mock(UserMenuDispatcher.class);
+        ViewDispatcher viewDispatcher = Mockito.mock(ViewDispatcher.class);
 
-        Mockito.when(userMenuDispatcher.userMenuDispatch("Checkout Movie View")).thenReturn(userMenuView);
+        Mockito.when(viewDispatcher.userMenuDispatch("Checkout Movie View")).thenReturn(userMenuView);
 
-        assertEquals(userMenuView, checkoutMovieView.next(userMenuDispatcher));
+        assertEquals(userMenuView, checkoutMovieView.next(viewDispatcher));
     }
 }

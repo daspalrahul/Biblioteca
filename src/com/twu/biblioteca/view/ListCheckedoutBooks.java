@@ -1,6 +1,6 @@
 package com.twu.biblioteca.view;
 
-import com.twu.biblioteca.controller.UserMenuDispatcher;
+import com.twu.biblioteca.controller.ViewDispatcher;
 
 public class ListCheckedoutBooks implements IView {
     @Override
@@ -9,7 +9,7 @@ public class ListCheckedoutBooks implements IView {
     }
 
     @Override
-    public IView next(UserMenuDispatcher userMenuDispatcher) {
+    public IView next(ViewDispatcher viewDispatcher) {
         return null;
     }
 }

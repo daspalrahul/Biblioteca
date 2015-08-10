@@ -4,7 +4,7 @@ package com.twu.biblioteca.controller;
 import com.twu.biblioteca.view.IView;
 
 
-public class UserMenuDispatcher {
+public class ViewDispatcher {
 
     private IView listBooksView;
     private IView listMoviesView;
@@ -24,7 +24,7 @@ public class UserMenuDispatcher {
     private IView listCheckedOutMoviesView;
     private IView librarianMenuView;
 
-    public UserMenuDispatcher(IView listBooksView, IView listMoviesView, IView checkinBookView, IView checkinMovieView, IView checkoutBookView, IView checkoutMovieView, IView logoutView, IView userDetailsView, IView invalidUserMenuOptionView, IView invalidLoginMenuOptionView, IView quitView, IView loginView, IView userMenuView, IView loginMenuView, IView listCheckedoutBooksView, IView listCheckedOutMoviesView, IView librarianMenuView) {
+    public ViewDispatcher(IView listBooksView, IView listMoviesView, IView checkinBookView, IView checkinMovieView, IView checkoutBookView, IView checkoutMovieView, IView logoutView, IView userDetailsView, IView invalidUserMenuOptionView, IView invalidLoginMenuOptionView, IView quitView, IView loginView, IView userMenuView, IView loginMenuView, IView listCheckedoutBooksView, IView listCheckedOutMoviesView, IView librarianMenuView) {
         this.listBooksView = listBooksView;
         this.listMoviesView = listMoviesView;
         this.checkinBookView = checkinBookView;

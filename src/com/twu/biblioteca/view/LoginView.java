@@ -2,7 +2,7 @@ package com.twu.biblioteca.view;
 
 import com.twu.biblioteca.Console;
 import com.twu.biblioteca.controller.LoginAuthenticator;
-import com.twu.biblioteca.controller.UserMenuDispatcher;
+import com.twu.biblioteca.controller.ViewDispatcher;
 import com.twu.biblioteca.model.Session;
 import com.twu.biblioteca.model.User;
 
@@ -34,7 +34,7 @@ public class LoginView implements IView{
     }
 
     @Override
-    public IView next(UserMenuDispatcher userMenuDispatcher) {
+    public IView next(ViewDispatcher viewDispatcher) {
         User currentUser = session.getCurrentUser();
         if (currentUser == null)
             return loginMenuView;

@@ -1,6 +1,6 @@
 package com.twu.biblioteca.view;
 
-import com.twu.biblioteca.controller.UserMenuDispatcher;
+import com.twu.biblioteca.controller.ViewDispatcher;
 
 public class QuitView implements IView {
 
@@ -10,7 +10,7 @@ public class QuitView implements IView {
     }
 
     @Override
-    public IView next(UserMenuDispatcher userMenuDispatcher) {
+    public IView next(ViewDispatcher viewDispatcher) {
         return null;
     }
 }

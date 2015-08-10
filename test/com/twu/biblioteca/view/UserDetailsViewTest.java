@@ -2,7 +2,7 @@ package com.twu.biblioteca.view;
 
 
 import com.twu.biblioteca.Console;
-import com.twu.biblioteca.controller.UserMenuDispatcher;
+import com.twu.biblioteca.controller.ViewDispatcher;
 import com.twu.biblioteca.model.Session;
 import com.twu.biblioteca.model.User;
 import org.junit.Test;
@@ -32,10 +32,10 @@ public class UserDetailsViewTest {
         IView userMenuView = Mockito.mock(UserMenuView.class);
         Session session = Mockito.mock(Session.class);
         IView userDetailsView = new UserDetailsView(console, session);
-        UserMenuDispatcher userMenuDispatcher = Mockito.mock(UserMenuDispatcher.class);
+        ViewDispatcher viewDispatcher = Mockito.mock(ViewDispatcher.class);
 
-        Mockito.when(userMenuDispatcher.userMenuDispatch("User Details View")).thenReturn(userMenuView);
+        Mockito.when(viewDispatcher.userMenuDispatch("User Details View")).thenReturn(userMenuView);
 
-        assertEquals(userMenuView, userDetailsView.next(userMenuDispatcher));
+        assertEquals(userMenuView, userDetailsView.next(viewDispatcher));
     }
 }

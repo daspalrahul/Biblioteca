@@ -2,7 +2,7 @@ package com.twu.biblioteca.view;
 
 
 import com.twu.biblioteca.Console;
-import com.twu.biblioteca.controller.UserMenuDispatcher;
+import com.twu.biblioteca.controller.ViewDispatcher;
 
 
 public class LoginMenuView implements IView {
@@ -21,7 +21,7 @@ public class LoginMenuView implements IView {
     }
 
     @Override
-    public IView next(UserMenuDispatcher userMenuDispatcher) {
-        return userMenuDispatcher.loginMenuDispatch(console.getInput());
+    public IView next(ViewDispatcher viewDispatcher) {
+        return viewDispatcher.loginMenuDispatch(console.getInput());
     }
 }
