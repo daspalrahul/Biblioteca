@@ -2,29 +2,18 @@ package com.twu.biblioteca.view;
 
 
 import com.twu.biblioteca.Console;
-import com.twu.biblioteca.controller.ViewDispatcher;
 import com.twu.biblioteca.model.Section;
 
 
-public class ListBooksView implements IView {
+public class ListBooksView extends ListItemsView implements IView {
 
-    private Console console;
-    private Section books;
-    private String listBooksView;
 
     public ListBooksView(Console console, Section books) {
-        this.console = console;
-        this.books = books;
-        this.listBooksView = "List Books View";
+        super(console, books);
     }
 
     @Override
-    public void draw() {
-        console.printOutput(books.listOfAllAvailableLibraryItems());
-    }
-
-    @Override
-    public IView next(ViewDispatcher viewDispatcher) {
-        return viewDispatcher.userMenuDispatch(listBooksView);
+    public String toString() {
+        return "List Books View";
     }
 }
