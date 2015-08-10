@@ -47,7 +47,7 @@ public class Main {
         IView loginView = new LoginView(console, loginAuthenticator, session, loginMenuView, userMenuView, librarianMenuView);
         IView logoutView = new LogoutView(console, session);
         IView listCheckedoutBookView = new ListCheckedoutBooksView(console, books);
-        IView listCheckedoutMoviesView = new ListCheckedoutMovies();
+        IView listCheckedoutMoviesView = new ListCheckedoutMoviesView(console, movies);
         ViewDispatcher viewDispatcher = new ViewDispatcher(listBooksView, listMoviesView, checkinBookView, checkinMovieView, checkoutBookView, checkoutMovieView, logoutView, userDetailsView, invalidUserMenuOptionView, invalidLoginMenuOptionView, quitView, loginView, userMenuView, loginMenuView, listCheckedoutBookView, listCheckedoutMoviesView, librarianMenuView);
 
 

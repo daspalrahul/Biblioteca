@@ -28,7 +28,7 @@ public class ViewDispatcherTest {
         IView userMenuView = Mockito.mock(UserMenuView.class);
         IView loginMenuView = Mockito.mock(LoginMenuView.class);
         IView listCheckedoutBooksView = Mockito.mock(ListCheckedoutBooksView.class);
-        IView listCheckedOutMoviesView = Mockito.mock(ListCheckedoutMovies.class);
+        IView listCheckedOutMoviesView = Mockito.mock(ListCheckedoutMoviesView.class);
         IView librarianMenuView = Mockito.mock(LibrarianMenuView.class);
         ViewDispatcher viewDispatcher = new ViewDispatcher(listBooksView, listMoviesView, checkinBookView, checkinMovieView, checkoutBookView, checkoutMovieView, logoutView, userDetailsView, invalidUserMenuOptionView, invalidLoginOptionView, quitView, loginView, userMenuView, loginMenuView, listCheckedoutBooksView, listCheckedOutMoviesView, librarianMenuView);
 
@@ -53,7 +53,7 @@ public class ViewDispatcherTest {
         IView userMenuView = Mockito.mock(UserMenuView.class);
         IView loginMenuView = Mockito.mock(LoginMenuView.class);
         IView listCheckedoutBooksView = Mockito.mock(ListCheckedoutBooksView.class);
-        IView listCheckedOutMoviesView = Mockito.mock(ListCheckedoutMovies.class);
+        IView listCheckedOutMoviesView = Mockito.mock(ListCheckedoutMoviesView.class);
         IView librarianMenuView = Mockito.mock(LibrarianMenuView.class);
         ViewDispatcher viewDispatcher = new ViewDispatcher(listBooksView, listMoviesView, checkinBookView, checkinMovieView, checkoutBookView, checkoutMovieView, logoutView, userDetailsView, invalidUserMenuOptionView, invalidLoginOptionView, quitView, loginView, userMenuView, loginMenuView, listCheckedoutBooksView, listCheckedOutMoviesView, librarianMenuView);
 

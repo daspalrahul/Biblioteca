@@ -27,13 +27,13 @@ public class ListCheckedoutBooksViewViewTest {
     @Test
     public void listBookViewKnowsHowToReturnNextView() {
         Console console = Mockito.mock(Console.class);
-        IView userMenuView = Mockito.mock(UserMenuView.class);
+        IView librarianMenuView = Mockito.mock(LibrarianMenuView.class);
         Section books = Mockito.mock(Section.class);
         IView listCheckedoutBooksView = new ListCheckedoutBooksView(console, books);
         ViewDispatcher viewDispatcher = Mockito.mock(ViewDispatcher.class);
 
-        Mockito.when(viewDispatcher.librarianMenuDispatch("List Checkedout Books View")).thenReturn(userMenuView);
+        Mockito.when(viewDispatcher.librarianMenuDispatch("List Checkedout Books View")).thenReturn(librarianMenuView);
 
-        assertEquals(userMenuView, listCheckedoutBooksView.next(viewDispatcher));
+        assertEquals(librarianMenuView, listCheckedoutBooksView.next(viewDispatcher));
     }
 }

@@ -109,9 +109,9 @@ public class ViewDispatcher {
                 return listCheckedoutBooksView;
             case "List Checkedout Movies":
                 return listCheckedOutMoviesView;
-            case "List Books View":
+            case "List Checkedout Books View":
                 return librarianMenuView;
-            case "List Movies View":
+            case "List Checkedout Movies View":
                 return librarianMenuView;
             default:
                 return librarianMenuView;
