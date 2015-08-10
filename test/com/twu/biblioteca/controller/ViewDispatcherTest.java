@@ -30,7 +30,8 @@ public class ViewDispatcherTest {
         IView listCheckedoutBooksView = Mockito.mock(ListCheckedoutBooksView.class);
         IView listCheckedOutMoviesView = Mockito.mock(ListCheckedoutMoviesView.class);
         IView librarianMenuView = Mockito.mock(LibrarianMenuView.class);
-        ViewDispatcher viewDispatcher = new ViewDispatcher(listBooksView, listMoviesView, checkinBookView, checkinMovieView, checkoutBookView, checkoutMovieView, logoutView, userDetailsView, invalidUserMenuOptionView, invalidLoginOptionView, quitView, loginView, userMenuView, loginMenuView, listCheckedoutBooksView, listCheckedOutMoviesView, librarianMenuView);
+        IView invalidLibrarianMenuOptionView = Mockito.mock(InvalidLibrarianMenuOptionView.class);
+        ViewDispatcher viewDispatcher = new ViewDispatcher(listBooksView, listMoviesView, checkinBookView, checkinMovieView, checkoutBookView, checkoutMovieView, logoutView, userDetailsView, invalidUserMenuOptionView, invalidLoginOptionView, quitView, loginView, userMenuView, loginMenuView, listCheckedoutBooksView, listCheckedOutMoviesView, librarianMenuView, invalidLibrarianMenuOptionView);
 
         assertEquals(listBooksView, viewDispatcher.userMenuDispatch("List Books"));
     }
@@ -55,7 +56,8 @@ public class ViewDispatcherTest {
         IView listCheckedoutBooksView = Mockito.mock(ListCheckedoutBooksView.class);
         IView listCheckedOutMoviesView = Mockito.mock(ListCheckedoutMoviesView.class);
         IView librarianMenuView = Mockito.mock(LibrarianMenuView.class);
-        ViewDispatcher viewDispatcher = new ViewDispatcher(listBooksView, listMoviesView, checkinBookView, checkinMovieView, checkoutBookView, checkoutMovieView, logoutView, userDetailsView, invalidUserMenuOptionView, invalidLoginOptionView, quitView, loginView, userMenuView, loginMenuView, listCheckedoutBooksView, listCheckedOutMoviesView, librarianMenuView);
+        IView invalidLibrarianMenuOptionView = new InvalidLibrarianMenuOptionView(console);
+        ViewDispatcher viewDispatcher = new ViewDispatcher(listBooksView, listMoviesView, checkinBookView, checkinMovieView, checkoutBookView, checkoutMovieView, logoutView, userDetailsView, invalidUserMenuOptionView, invalidLoginOptionView, quitView, loginView, userMenuView, loginMenuView, listCheckedoutBooksView, listCheckedOutMoviesView, librarianMenuView, invalidLibrarianMenuOptionView);
 
         Mockito.when(console.getInput()).thenReturn("Login");
 

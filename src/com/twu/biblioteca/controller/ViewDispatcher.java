@@ -23,8 +23,9 @@ public class ViewDispatcher {
     private IView listCheckedoutBooksView;
     private IView listCheckedOutMoviesView;
     private IView librarianMenuView;
+    private IView invalidLibrarianMenuOptionView;
 
-    public ViewDispatcher(IView listBooksView, IView listMoviesView, IView checkinBookView, IView checkinMovieView, IView checkoutBookView, IView checkoutMovieView, IView logoutView, IView userDetailsView, IView invalidUserMenuOptionView, IView invalidLoginMenuOptionView, IView quitView, IView loginView, IView userMenuView, IView loginMenuView, IView listCheckedoutBooksView, IView listCheckedOutMoviesView, IView librarianMenuView) {
+    public ViewDispatcher(IView listBooksView, IView listMoviesView, IView checkinBookView, IView checkinMovieView, IView checkoutBookView, IView checkoutMovieView, IView logoutView, IView userDetailsView, IView invalidUserMenuOptionView, IView invalidLoginMenuOptionView, IView quitView, IView loginView, IView userMenuView, IView loginMenuView, IView listCheckedoutBooksView, IView listCheckedOutMoviesView, IView librarianMenuView, IView invalidLibrarianMenuOptionView) {
         this.listBooksView = listBooksView;
         this.listMoviesView = listMoviesView;
         this.checkinBookView = checkinBookView;
@@ -42,6 +43,7 @@ public class ViewDispatcher {
         this.listCheckedoutBooksView = listCheckedoutBooksView;
         this.listCheckedOutMoviesView = listCheckedOutMoviesView;
         this.librarianMenuView = librarianMenuView;
+        this.invalidLibrarianMenuOptionView = invalidLibrarianMenuOptionView;
     }
 
     public IView userMenuDispatch(String userInput) {
@@ -113,8 +115,10 @@ public class ViewDispatcher {
                 return librarianMenuView;
             case "List Checkedout Movies View":
                 return librarianMenuView;
-            default:
+            case "Invalid Librarian Menu Option View":
                 return librarianMenuView;
+            default:
+                return invalidLibrarianMenuOptionView;
         }
     }
 }
