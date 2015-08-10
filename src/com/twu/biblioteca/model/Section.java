@@ -47,7 +47,7 @@ public class Section {
         return false;
     }
 
-    public String listOfAllCheckedOutLIbraryItems() {
+    public String listOfAllCheckedOutLibraryItems() {
         String result = "";
         for (Map.Entry<LibraryItem, User> entry : checkedOutLibraryItemList.entrySet()) {
             LibraryItem libraryItem = entry.getKey();

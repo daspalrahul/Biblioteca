@@ -105,6 +105,6 @@ public class SectionTest {
         Mockito.when(book.toString()).thenReturn("book");
         Mockito.when(user.toString()).thenReturn("user");
 
-        assertEquals("book    user\n", section.listOfAllCheckedOutLIbraryItems());
+        assertEquals("book    user\n", section.listOfAllCheckedOutLibraryItems());
     }
 }
