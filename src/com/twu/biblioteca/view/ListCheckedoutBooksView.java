@@ -1,28 +1,19 @@
 package com.twu.biblioteca.view;
 
+
 import com.twu.biblioteca.Console;
-import com.twu.biblioteca.controller.ViewDispatcher;
 import com.twu.biblioteca.model.Section;
 
-public class ListCheckedoutBooksView implements IView {
 
-    private Console console;
-    private Section books;
-    private String listCheckedoutBooksView;
+public class ListCheckedoutBooksView extends ListCheckedoutItemsView implements IView {
+
 
     public ListCheckedoutBooksView(Console console, Section books) {
-        this.console = console;
-        this.books = books;
-        this.listCheckedoutBooksView = "List Checkedout Books View";
+        super(console, books);
     }
 
     @Override
-    public void draw() {
-        console.printOutput(books.listOfAllCheckedOutLibraryItems());
-    }
-
-    @Override
-    public IView next(ViewDispatcher viewDispatcher) {
-        return viewDispatcher.librarianMenuDispatch(listCheckedoutBooksView);
+    public String toString() {
+        return "List Checkedout Books View";
     }
 }
