@@ -20,8 +20,11 @@ public class UserMenuDispatcher {
     private IView loginView;
     private IView userMenuView;
     private IView loginMenuView;
+    private IView listCheckedoutBooksView;
+    private IView listCheckedOutMoviesView;
+    private IView librarianMenuView;
 
-    public UserMenuDispatcher(IView listBooksView, IView listMoviesView, IView checkinBookView, IView checkinMovieView, IView checkoutBookView, IView checkoutMovieView, IView logoutView, IView userDetailsView, IView invalidUserMenuOptionView, IView invalidLoginMenuOptionView, IView quitView, IView loginView, IView userMenuView, IView loginMenuView) {
+    public UserMenuDispatcher(IView listBooksView, IView listMoviesView, IView checkinBookView, IView checkinMovieView, IView checkoutBookView, IView checkoutMovieView, IView logoutView, IView userDetailsView, IView invalidUserMenuOptionView, IView invalidLoginMenuOptionView, IView quitView, IView loginView, IView userMenuView, IView loginMenuView, IView listCheckedoutBooksView, IView listCheckedOutMoviesView, IView librarianMenuView) {
         this.listBooksView = listBooksView;
         this.listMoviesView = listMoviesView;
         this.checkinBookView = checkinBookView;
@@ -36,6 +39,9 @@ public class UserMenuDispatcher {
         this.loginView = loginView;
         this.userMenuView = userMenuView;
         this.loginMenuView = loginMenuView;
+        this.listCheckedoutBooksView = listCheckedoutBooksView;
+        this.listCheckedOutMoviesView = listCheckedOutMoviesView;
+        this.librarianMenuView = librarianMenuView;
     }
 
     public IView userMenuDispatch(String userInput) {
@@ -91,6 +97,20 @@ public class UserMenuDispatcher {
                 return loginMenuView;
             default:
                 return invalidLoginMenuOptionView;
+        }
+    }
+
+    public IView librarianMenuDispatch(String userInput) {
+        IView view = userMenuDispatch(userInput);
+        if (view != invalidUserMenuOptionView)
+            return view;
+        switch (userInput) {
+            case "List Checkedout Books":
+                return listCheckedoutBooksView;
+            case "List Checkedout Movies":
+                return listCheckedOutMoviesView;
+            default:
+                return librarianMenuView;
         }
     }
 }
